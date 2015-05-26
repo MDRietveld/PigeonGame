@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace PigeonGame
 {
-	// Pigeon Character
+	// Pigeon Character jhkj
 	public class Pidgy
 	{
 		Game1 _game;
