@@ -47,6 +47,8 @@ namespace PigeonGame
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch (GraphicsDevice);
 
+			// HIER HEEFT MARTIJN WAT GESCHREVEN
+
 			//TODO: use this.Content to load your game content here 
 		}
 
