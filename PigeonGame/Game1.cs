@@ -10,7 +10,6 @@ using Microsoft.Xna.Framework.Input;
 
 namespace PigeonGame
 {
-
 	public class Game1 : Game
 	{
 		GraphicsDeviceManager graphics;
