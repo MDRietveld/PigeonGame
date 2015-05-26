@@ -10,14 +10,11 @@ using Microsoft.Xna.Framework.Input;
 
 namespace PigeonGame
 {
-	// ik
 	public class Game1 : Game
 	{
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
-		Pidgy _pidgy;
-		Texture2D _pidgyTexture;
-		Vector2 _pidgyPosition ;
+		World _world;
 
 		public Game1 ()
 		{
@@ -31,22 +28,20 @@ namespace PigeonGame
 		protected override void Initialize ()
 		{
 			base.Initialize ();
-			_pidgyTexture = (this).Content.Load<Texture2D> ("Untitled");
-			_pidgyPosition = new Vector2 (30, (this).GraphicsDevice.Viewport.Height - _pidgyTexture.Height - 30);
+			_world = new World (this);
 
-			_pidgy = new Pidgy ((this), _pidgyTexture, _pidgyPosition);
+
 		}
 
 
 		protected override void LoadContent ()
 		{
 			spriteBatch = new SpriteBatch (GraphicsDevice);
-
 		}
 
 		protected override void Update (GameTime gameTime)
 		{
-			_pidgy.Update ();
+			_world.Update ();
 		}
 
 		protected override void Draw (GameTime gameTime)
@@ -54,7 +49,7 @@ namespace PigeonGame
 			graphics.GraphicsDevice.Clear (Color.CornflowerBlue);
 
 			spriteBatch.Begin ();
-			_pidgy.Draw (spriteBatch);
+			_world.Draw (spriteBatch);
 			spriteBatch.End ();
 		}
 	}
