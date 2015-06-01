@@ -21,7 +21,7 @@ namespace PigeonGame
 			_game = g;
 			_texture = texture;
 			_position = position;
-			_fly = new Vector2 (0, 1);
+			_fly = new Vector2 (0, 1.5f);
 			_gravity = new Vector2 (0, 2);
 		}
 
@@ -46,7 +46,7 @@ namespace PigeonGame
 				}
 				_position.Y -= _fly.Y;
 			} else {
-				_fly = new Vector2 (0, 2);
+				_fly = new Vector2 (0, 1.5f);
 			}
 
 
