@@ -18,7 +18,10 @@ namespace PigeonGame
 			_position = new Vector2(0, 0);
 			_texture = texture;
 
-			_scale = game.GraphicsDevice.Viewport.Height/ _texture.Height;
+			float gameh = game.GraphicsDevice.Viewport.Height;
+			float texh = _texture.Height;
+
+			_scale = gameh / texh;
 
 		}
 
@@ -29,6 +32,7 @@ namespace PigeonGame
 
 		public void Draw(SpriteBatch spriteBatch){
 			spriteBatch.Draw (_texture, _position, null, Color.White, 0f, Vector2.Zero, _scale, SpriteEffects.None, 0f);
+//			spriteBatch.Draw (_texture, _position, null, null, Vector2.Zero, 0f, _scale, Color.White, SpriteEffects.None, 0f);
 		}
 	}
 }
