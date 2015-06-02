@@ -9,6 +9,7 @@ namespace PigeonGame
 	{
 		private Texture2D _texture;
 		private	Vector2 _position;
+		private World _world;
 //		private Game1 game;
 		private float _scale;
 		private float _gameh;
@@ -26,15 +27,11 @@ namespace PigeonGame
 			_gameh = game.GraphicsDevice.Viewport.Height;
 			_texh = _texture.Height;
 
-//			_scale = _gameh / _texh;
+			_scale = _gameh / _texh;
 
 
 		}
 
-		public float Scaling()
-		{
-			return _scale = _gameh / _texh;
-		}
 
 		public void Update(){
 			// TODO laat de weg naar links bewegen
@@ -42,7 +39,7 @@ namespace PigeonGame
 		}
 
 		public void Draw(SpriteBatch spriteBatch){
-			spriteBatch.Draw (_texture, _position, null, Color.White, 0f, Vector2.Zero, Scaling(), SpriteEffects.None, 0f);
+			spriteBatch.Draw (_texture, _position, null, Color.White, 0f, Vector2.Zero, _scale, SpriteEffects.None, 0f);
 		}
 	}
 }

@@ -14,18 +14,19 @@ namespace PigeonGame
 		Vector2 _gravity;
 		Vector2 _fly;
 		KeyboardState _keyboard;
-		Background _background;
-		float _scale;
+		World _world;
 
-		public Pidgy (Game1 g, Texture2D texture, Vector2 position)
+		public Pidgy (Game1 g, World w, Texture2D texture, Vector2 position)
 		{
 
 			_game = g;
+			_world = w;
 			_texture = texture;
 			_position = position;
 			_fly = new Vector2 (0, 1.5f);
 			_gravity = new Vector2 (0, 2);
 //			_scale = _background.Scaling () / 77;
+			Console.WriteLine (_world.PidgyHeight());
 		}
 
 
@@ -35,9 +36,9 @@ namespace PigeonGame
 			_position += _gravity;
 
 
-			if (_position.Y > _game.GraphicsDevice.Viewport.Height - 30)// - _scale)
+			if (_position.Y > _game.GraphicsDevice.Viewport.Height - _texture.Height - _world.PidgyHeight())// - _scale)
 			{
-				_position.Y = _game.GraphicsDevice.Viewport.Height - 30;// - _scale;
+				_position.Y = _game.GraphicsDevice.Viewport.Height - _texture.Height - _world.PidgyHeight();// - _scale;
 			}
 
 			_keyboard = Keyboard.GetState ();
