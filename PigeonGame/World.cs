@@ -12,20 +12,21 @@ namespace PigeonGame
 //		Game1 _g;
 		Background _background;
 		Texture2D _bgTexture;
+		float _scale;
 
 
 		public World (Game1 g)
 		{
-
 			_bgTexture = g.Content.Load<Texture2D> ("w");
 //			_bgTexture.Height = g.GraphicsDevice.Viewport.Height;
 			_background = new Background(g, _bgTexture);
 
 			_pidgyTexture = g.Content.Load<Texture2D> ("Untitled");
-			_pidgyPosition = new Vector2 (30, g.GraphicsDevice.Viewport.Height - _pidgyTexture.Height - 30);
+			_pidgyPosition = new Vector2 (30, g.GraphicsDevice.Viewport.Height - _pidgyTexture.Height - (_background.Scaling()/77));
 
 			_pidgy = new Pidgy (g, _pidgyTexture, _pidgyPosition);
 		}
+			
 
 		public void Update ()
 		{

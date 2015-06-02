@@ -11,6 +11,8 @@ namespace PigeonGame
 		private	Vector2 _position;
 //		private Game1 game;
 		private float _scale;
+		private float _gameh;
+		private float _texh;
 
 
 		public Background (Game1 game, Texture2D texture)
@@ -18,11 +20,20 @@ namespace PigeonGame
 			_position = new Vector2(0, 0);
 			_texture = texture;
 
-			float gameh = game.GraphicsDevice.Viewport.Height;
-			float texh = _texture.Height;
+//			float gameh = _gameh;
+//			float texh = _texh;
 
-			_scale = gameh / texh;
+			_gameh = game.GraphicsDevice.Viewport.Height;
+			_texh = _texture.Height;
 
+//			_scale = _gameh / _texh;
+
+
+		}
+
+		public float Scaling()
+		{
+			return _scale = _gameh / _texh;
 		}
 
 		public void Update(){
@@ -31,8 +42,7 @@ namespace PigeonGame
 		}
 
 		public void Draw(SpriteBatch spriteBatch){
-			spriteBatch.Draw (_texture, _position, null, Color.White, 0f, Vector2.Zero, _scale, SpriteEffects.None, 0f);
-//			spriteBatch.Draw (_texture, _position, null, null, Vector2.Zero, 0f, _scale, Color.White, SpriteEffects.None, 0f);
+			spriteBatch.Draw (_texture, _position, null, Color.White, 0f, Vector2.Zero, Scaling(), SpriteEffects.None, 0f);
 		}
 	}
 }
