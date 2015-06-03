@@ -35,7 +35,6 @@ namespace PigeonGame
 
 			_pidgy = new Pidgy (g, this, _pidgyTexture, _pidgyPosition);
 
-<<<<<<< HEAD
 			var fontFilePath = Path.Combine(g.Content.RootDirectory, "minecrafter.fnt");
 			var fontFile = FontLoader.Load(fontFilePath);
 			var fontTexture = g.Content.Load<Texture2D>("minecrafter_0.png");
@@ -46,14 +45,11 @@ namespace PigeonGame
 			Console.WriteLine (_scale = _texh/ _gameh);
 			Console.WriteLine (Scaling());
 			Console.WriteLine (PidgyHeight());
-
-=======
 		}
 
 		public Vector2 GetPidgyPosition()
 		{
 			return _pidgy.GetPosition ();
->>>>>>> origin/master
 		}
 
 		public float PidgyHeight ()

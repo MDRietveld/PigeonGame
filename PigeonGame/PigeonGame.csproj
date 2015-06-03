@@ -67,11 +67,8 @@
     <Compile Include="Pidgy.cs" />
     <Compile Include="World.cs" />
     <Compile Include="Background.cs" />
-<<<<<<< HEAD
     <Compile Include="fontloader.cs" />
-=======
     <Compile Include="Enemy.cs" />
->>>>>>> origin/master
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -80,7 +77,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-<<<<<<< HEAD
     <BundleResource Include="Content\Untitled.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
@@ -93,11 +89,9 @@
     <BundleResource Include="Content\minecrafter.fnt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
-=======
     <BundleResource Include="Content\Untitled.jpg" />
     <BundleResource Include="Content\w.png" />
     <BundleResource Include="Content\Level.png" />
     <BundleResource Include="Content\Main.png" />
->>>>>>> origin/master
   </ItemGroup>
 </Project>
