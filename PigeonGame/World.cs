@@ -19,7 +19,7 @@ namespace PigeonGame
 
 		public World (Game1 g)
 		{
-			_bgTexture = g.Content.Load<Texture2D> ("w");
+			_bgTexture = g.Content.Load<Texture2D> ("Main");
 			_background = new Background(g, this, _bgTexture);
 
 			_gameh = g.GraphicsDevice.Viewport.Height;
