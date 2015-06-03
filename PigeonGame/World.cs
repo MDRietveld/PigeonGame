@@ -10,6 +10,8 @@ namespace PigeonGame
 	{
 		private Enemy _enemy;
 		private Enemy _enemy2;
+		private Enemy _enemy3;
+
 		Pidgy _pidgy;
 		Vector2 _pidgyPosition;
 		Background _background;
@@ -26,7 +28,12 @@ namespace PigeonGame
 		{
 			_enemy = new Enemy (g, new Vector2 (100, 70), 3);
 			_enemy2 = new Enemy (g, new Vector2 (50, 20), 4);
+<<<<<<< HEAD
 			_bgTexture = g.Content.Load<Texture2D> ("Level2");
+=======
+			_enemy3 = new Enemy (g, new Vector2 (200, 150), 5);
+			_bgTexture = g.Content.Load<Texture2D> ("w");
+>>>>>>> origin/master
 			_background = new Background(g, this, _bgTexture);
 
 			_gameh = g.GraphicsDevice.Viewport.Height;
@@ -54,7 +61,7 @@ namespace PigeonGame
 			Console.WriteLine (Scaling());
 			Console.WriteLine (PidgyHeight());
 		}
-
+	
 		public Vector2 GetPidgyPosition()
 		{
 			return _pidgy.GetPosition ();
@@ -78,6 +85,7 @@ namespace PigeonGame
 
 			_enemy.Update ();
 			_enemy2.Update ();
+			_enemy3.Update ();
 		}
 
 		public void Draw (SpriteBatch spriteBatch)
@@ -93,6 +101,7 @@ namespace PigeonGame
 
 			_enemy.Draw (spriteBatch);
 			_enemy2.Draw (spriteBatch);
+			_enemy3.Draw (spriteBatch);
 
 		}
 	}

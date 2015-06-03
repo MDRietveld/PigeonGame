@@ -12,7 +12,6 @@ namespace PigeonGame
 		private int _speed;
 		public Game1 g;
 
-
 		public Enemy (Game1 g,Vector2 position, int speed)
 		{
 			_enemyTexture = g.Content.Load<Texture2D> ("enemy");
@@ -22,7 +21,7 @@ namespace PigeonGame
 		public void Update ()
 		{
 			_myPosition.X += _speed;
-			if (_myPosition.X + _enemyTexture.Width > 800 || _myPosition.X < 0) 
+			if (_myPosition.X + _enemyTexture.Width > 300 || _myPosition.X < 0) 
 			{
 				_speed *= -1;
 			}
