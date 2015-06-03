@@ -22,6 +22,7 @@ namespace PigeonGame
 			Content.RootDirectory = "Content";	            
 			graphics.IsFullScreen = false;	
 
+			IsMouseVisible = true;
 		}
 
 

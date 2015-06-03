@@ -7,22 +7,20 @@ namespace PigeonGame
 	public class World
 	{
 		Pidgy _pidgy;
-		Texture2D _pidgyTexture;
-		Vector2 _pidgyPosition ;
-//		Game1 _g;
+		Vector2 _pidgyPosition;
 		Background _background;
+		Texture2D _pidgyTexture;
 		Texture2D _bgTexture;
-		private float _scale;
-		private float _gameh;
-		private float _texh;
+		float _scale;
+		float _gameh;
+		float _texh;
 		float _pidgyHeight;
 
 
 		public World (Game1 g)
 		{
 			_bgTexture = g.Content.Load<Texture2D> ("w");
-//			_bgTexture.Height = g.GraphicsDevice.Viewport.Height;
-			_background = new Background(g, _bgTexture);
+			_background = new Background(g, this, _bgTexture);
 
 			_gameh = g.GraphicsDevice.Viewport.Height;
 			_texh = _bgTexture.Height;
@@ -34,14 +32,11 @@ namespace PigeonGame
 
 			_pidgy = new Pidgy (g, this, _pidgyTexture, _pidgyPosition);
 
+		}
 
-
-			Console.WriteLine (_gameh);
-			Console.WriteLine (_texh);
-			Console.WriteLine (_scale = _texh/ _gameh);
-			Console.WriteLine (Scaling());
-			Console.WriteLine (PidgyHeight());
-
+		public Vector2 GetPidgyPosition()
+		{
+			return _pidgy.GetPosition ();
 		}
 
 		public float PidgyHeight ()
