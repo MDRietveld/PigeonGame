@@ -67,6 +67,7 @@
     <Compile Include="Pidgy.cs" />
     <Compile Include="World.cs" />
     <Compile Include="Background.cs" />
+    <Compile Include="Enemy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
