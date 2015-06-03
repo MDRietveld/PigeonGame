@@ -28,7 +28,7 @@ namespace PigeonGame
 
 
 			_pidgyTexture = g.Content.Load<Texture2D> ("Untitled");
-			_pidgyPosition = new Vector2 (30, g.GraphicsDevice.Viewport.Height - _pidgyTexture.Height - PidgyHeight());
+			_pidgyPosition = new Vector2 (g.GraphicsDevice.Viewport.Width/8, g.GraphicsDevice.Viewport.Height - _pidgyTexture.Height - PidgyHeight());
 
 			_pidgy = new Pidgy (g, this, _pidgyTexture, _pidgyPosition);
 
