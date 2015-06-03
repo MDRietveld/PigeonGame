@@ -10,8 +10,6 @@
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
     <AssemblyName>PigeonGame</AssemblyName>
     <SuppressXamMacUpsell>True</SuppressXamMacUpsell>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -82,19 +80,15 @@
     <BundleResource Include="Content\Untitled.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
-    <BundleResource Include="Content\w.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </BundleResource>
     <BundleResource Include="Content\enemytest.png" />
     <BundleResource Include="Content\enemy.png" />
-    <BundleResource Include="Content\Level.png" />
-    <BundleResource Include="Content\Main.png" />
-    <BundleResource Include="Content\Level2.png" />
     <BundleResource Include="Content\minecrafter_0.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
     <BundleResource Include="Content\minecrafter.fnt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
+    <BundleResource Include="Content\level.png" />
+    <BundleResource Include="Content\main.png" />
   </ItemGroup>
 </Project>
