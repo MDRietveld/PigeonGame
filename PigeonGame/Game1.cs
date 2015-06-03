@@ -20,7 +20,7 @@ namespace PigeonGame
 		{
 			graphics = new GraphicsDeviceManager (this);
 			Content.RootDirectory = "Content";	            
-			graphics.IsFullScreen = false;	
+			graphics.IsFullScreen = false;
 
 			IsMouseVisible = true;
 		}

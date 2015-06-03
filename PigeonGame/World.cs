@@ -6,6 +6,8 @@ namespace PigeonGame
 {
 	public class World
 	{
+		private Enemy _enemy;
+		private Enemy _enemy2;
 		Pidgy _pidgy;
 		Vector2 _pidgyPosition;
 		Background _background;
@@ -19,6 +21,9 @@ namespace PigeonGame
 
 		public World (Game1 g)
 		{
+			_enemy = new Enemy (g, new Vector2 (100, 70), 3);
+			_enemy2 = new Enemy (g, new Vector2 (50, 20), 4);
+
 			_bgTexture = g.Content.Load<Texture2D> ("w");
 			_background = new Background(g, this, _bgTexture);
 
@@ -54,6 +59,9 @@ namespace PigeonGame
 		{
 			_pidgy.Update ();
 			_background.Update ();
+
+			_enemy.Update ();
+			_enemy2.Update ();
 		}
 
 		public void Draw (SpriteBatch spriteBatch)
@@ -61,6 +69,9 @@ namespace PigeonGame
 			_background.Draw (spriteBatch);
 
 			_pidgy.Draw (spriteBatch);
+
+			_enemy.Draw (spriteBatch);
+			_enemy2.Draw (spriteBatch);
 
 		}
 	}

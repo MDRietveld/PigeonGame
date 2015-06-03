@@ -78,5 +78,7 @@
   <ItemGroup>
     <BundleResource Include="Content\Untitled.jpg" />
     <BundleResource Include="Content\w.png" />
+    <BundleResource Include="Content\enemytest.png" />
+    <BundleResource Include="Content\enemy.png" />
   </ItemGroup>
 </Project>
