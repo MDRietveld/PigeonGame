@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework;
 
 namespace PigeonGame
 {
-	class Enemy
+	public class Enemy
 	{
 		private Texture2D _enemyTexture;
 		private Vector2 _myPosition;
@@ -12,11 +12,5 @@ namespace PigeonGame
 
 
 		}
-	public class Enemy
-	{
-		public Enemy ()
-		{
-		}
-	}
 }
 
