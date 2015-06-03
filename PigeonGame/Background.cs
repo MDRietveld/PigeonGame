@@ -30,11 +30,6 @@ namespace PigeonGame
 			_texh = _texture.Height;
 
 			_scale = _gameh / _texh;
-<<<<<<< Updated upstream
-=======
-
-
->>>>>>> Stashed changes
 		}
 
 

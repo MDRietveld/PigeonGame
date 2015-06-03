@@ -24,17 +24,9 @@ namespace PigeonGame
 
 		public World (Game1 g)
 		{
-<<<<<<< Updated upstream
 			_enemy = new Enemy (g, new Vector2 (100, 70), 3);
 			_enemy2 = new Enemy (g, new Vector2 (50, 20), 4);
-
-=======
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
 			_bgTexture = g.Content.Load<Texture2D> ("w");
-=======
-			_bgTexture = g.Content.Load<Texture2D> ("level");
->>>>>>> Stashed changes
 			_background = new Background(g, this, _bgTexture);
 
 			_gameh = g.GraphicsDevice.Viewport.Height;
@@ -61,10 +53,6 @@ namespace PigeonGame
 			Console.WriteLine (_scale = _texh/ _gameh);
 			Console.WriteLine (Scaling());
 			Console.WriteLine (PidgyHeight());
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
 		}
 
 		public Vector2 GetPidgyPosition()
