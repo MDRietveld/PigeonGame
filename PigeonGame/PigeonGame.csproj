@@ -89,17 +89,9 @@
     <BundleResource Include="Content\minecrafter.fnt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
-<<<<<<< HEAD
-    <BundleResource Include="Content\Untitled.jpg" />
-    <BundleResource Include="Content\w.png" />
-<<<<<<< HEAD
     <BundleResource Include="Content\enemytest.png" />
     <BundleResource Include="Content\enemy.png" />
-=======
-=======
->>>>>>> origin/master
     <BundleResource Include="Content\Level.png" />
     <BundleResource Include="Content\Main.png" />
->>>>>>> origin/master
   </ItemGroup>
 </Project>
