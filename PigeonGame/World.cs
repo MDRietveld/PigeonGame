@@ -26,7 +26,7 @@ namespace PigeonGame
 		{
 			_enemy = new Enemy (g, new Vector2 (100, 70), 3);
 			_enemy2 = new Enemy (g, new Vector2 (50, 20), 4);
-			_bgTexture = g.Content.Load<Texture2D> ("w");
+			_bgTexture = g.Content.Load<Texture2D> ("Level2");
 			_background = new Background(g, this, _bgTexture);
 
 			_gameh = g.GraphicsDevice.Viewport.Height;

@@ -91,7 +91,7 @@
     </BundleResource>
     <BundleResource Include="Content\enemytest.png" />
     <BundleResource Include="Content\enemy.png" />
-    <BundleResource Include="Content\Level.png" />
     <BundleResource Include="Content\Main.png" />
+    <BundleResource Include="Content\Level2.png" />
   </ItemGroup>
 </Project>
