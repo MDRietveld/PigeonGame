@@ -1,6 +1,8 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.IO;
+using BmFont;
 
 namespace PigeonGame
 {
@@ -17,6 +19,7 @@ namespace PigeonGame
 		float _gameh;
 		float _texh;
 		float _pidgyHeight;
+		FontRenderer _fontRenderer;
 
 
 		public World (Game1 g)
@@ -33,10 +36,31 @@ namespace PigeonGame
 
 
 			_pidgyTexture = g.Content.Load<Texture2D> ("Untitled");
-			_pidgyPosition = new Vector2 (30, g.GraphicsDevice.Viewport.Height - _pidgyTexture.Height - PidgyHeight());
+			_pidgyPosition = new Vector2 (g.GraphicsDevice.Viewport.Width/8, g.GraphicsDevice.Viewport.Height - _pidgyTexture.Height - PidgyHeight());
 
 			_pidgy = new Pidgy (g, this, _pidgyTexture, _pidgyPosition);
 
+<<<<<<< HEAD
+=======
+			/*
+			 * GENERATE FONT FROM FNT & _0.PNG FILE
+			 * 
+			 */
+>>>>>>> origin/master
+			var fontFilePath = Path.Combine(g.Content.RootDirectory, "minecrafter.fnt");
+			var fontFile = FontLoader.Load(fontFilePath);
+			var fontTexture = g.Content.Load<Texture2D>("minecrafter_0.png");
+			_fontRenderer = new FontRenderer(fontFile, fontTexture);
+
+			Console.WriteLine (_gameh);
+			Console.WriteLine (_texh);
+			Console.WriteLine (_scale = _texh/ _gameh);
+			Console.WriteLine (Scaling());
+			Console.WriteLine (PidgyHeight());
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 		}
 
 		public Vector2 GetPidgyPosition()
@@ -66,8 +90,13 @@ namespace PigeonGame
 
 		public void Draw (SpriteBatch spriteBatch)
 		{
+			// BACKGROUND DRAW
 			_background.Draw (spriteBatch);
 
+			// DRAW TEXT
+			_fontRenderer.DrawText(spriteBatch, 50, 50, "Druk op spatie om te starten");
+
+			// PIGEON DRAW
 			_pidgy.Draw (spriteBatch);
 
 			_enemy.Draw (spriteBatch);

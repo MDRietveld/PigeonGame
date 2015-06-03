@@ -29,20 +29,27 @@ namespace PigeonGame
 			_texh = _texture.Height;
 
 			_scale = _gameh / _texh;
-
 		}
 
 
-		public void Update(){
+		public void Update()
+		{
 			_keyboard = Keyboard.GetState ();
-			if (_world.GetPidgyPosition().X > _game.GraphicsDevice.Viewport.Width/2 && _keyboard.IsKeyDown (Keys.Right))
+			if (_world.GetPidgyPosition().X > _game.GraphicsDevice.Viewport.Width/2 && _keyboard.IsKeyDown (Keys.Right) && _position.X > (_texture.Width * _scale - _game.GraphicsDevice.Viewport.Width) *-1)
 			{
 				_position -= new Vector2 (3, 0);
 			}
 
+			if (_world.GetPidgyPosition().X < _game.GraphicsDevice.Viewport.Width/8 && _keyboard.IsKeyDown (Keys.Left) && _position.X < 0)
+			{
+				_position += new Vector2 (3, 0);
+			}
+
+
 		}
 
-		public void Draw(SpriteBatch spriteBatch){
+		public void Draw(SpriteBatch spriteBatch)
+		{
 			spriteBatch.Draw (_texture, _position, null, Color.White, 0f, Vector2.Zero, _scale, SpriteEffects.None, 0f);
 		}
 	}

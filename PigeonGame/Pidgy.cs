@@ -69,6 +69,11 @@ namespace PigeonGame
 				_position.X = _game.GraphicsDevice.Viewport.Width /2 + 1;
 			}
 
+			if (_position.X < _game.GraphicsDevice.Viewport.Width /8) 
+			{
+				_position.X = _game.GraphicsDevice.Viewport.Width /8;
+			}
+
 
 			if (_keyboard.IsKeyDown (Keys.Right))
 			{
