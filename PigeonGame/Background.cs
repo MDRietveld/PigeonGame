@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 
 namespace PigeonGame
 {
@@ -14,6 +15,7 @@ namespace PigeonGame
 		float _scale;
 		float _gameh;
 		float _texh;
+		KeyboardState _keyboard;
 
 
 		public Background (Game1 game, World w, Texture2D texture)
@@ -32,11 +34,10 @@ namespace PigeonGame
 
 
 		public void Update(){
-			Console.WriteLine (_world.GetPidgyPosition());
-			if (_world.GetPidgyPosition().X > _game.GraphicsDevice.Viewport.Width/2)
+			_keyboard = Keyboard.GetState ();
+			if (_world.GetPidgyPosition().X > _game.GraphicsDevice.Viewport.Width/2 && _keyboard.IsKeyDown (Keys.Right))
 			{
 				_position -= new Vector2 (3, 0);
-				Console.WriteLine ("hi");
 			}
 
 		}

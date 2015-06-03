@@ -64,6 +64,10 @@ namespace PigeonGame
 				_fly = new Vector2 (0, 0);
 			}
 
+			if (_position.X > _game.GraphicsDevice.Viewport.Width /2 + 1) 
+			{
+				_position.X = _game.GraphicsDevice.Viewport.Width /2 + 1;
+			}
 
 
 			if (_keyboard.IsKeyDown (Keys.Right))
