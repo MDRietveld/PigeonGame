@@ -22,6 +22,9 @@ namespace PigeonGame
 			Content.RootDirectory = "Content";	            
 			graphics.IsFullScreen = false;
 
+			graphics.PreferredBackBufferHeight = 595;
+			graphics.PreferredBackBufferWidth = 1000;
+
 			IsMouseVisible = true;
 		}
 

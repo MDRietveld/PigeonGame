@@ -1,7 +1,4 @@
 /PigeonGame.userprefs
-/PigeonGame/bin/Debug/PigeonGame.app/Contents/Info.plist
-/PigeonGame/obj/Debug/monomac_dll_content_processed
-/PigeonGame/bin/Debug/PigeonGame.app/Contents/MonoBundle/PigeonGame.exe.mdb
-/PigeonGame/bin/Debug/PigeonGame.exe.mdb
-/PigeonGame/bin/Debug/PigeonGame.app/Contents/MonoBundle/PigeonGame.exe
-/PigeonGame/bin/Debug/PigeonGame.exe
+/PigeonGame/bin/Debug/
+/PigeonGame/obj/Debug/
+

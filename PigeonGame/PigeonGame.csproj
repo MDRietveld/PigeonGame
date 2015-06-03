@@ -80,18 +80,15 @@
     <BundleResource Include="Content\Untitled.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
-    <BundleResource Include="Content\w.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </BundleResource>
+    <BundleResource Include="Content\enemytest.png" />
+    <BundleResource Include="Content\enemy.png" />
     <BundleResource Include="Content\minecrafter_0.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
     <BundleResource Include="Content\minecrafter.fnt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
-    <BundleResource Include="Content\enemytest.png" />
-    <BundleResource Include="Content\enemy.png" />
-    <BundleResource Include="Content\Level.png" />
-    <BundleResource Include="Content\Main.png" />
+    <BundleResource Include="Content\level.png" />
+    <BundleResource Include="Content\main.png" />
   </ItemGroup>
 </Project>
