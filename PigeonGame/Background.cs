@@ -1,40 +1,44 @@
 ﻿using System;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 
 namespace PigeonGame
 {
 	
 	public class Background
 	{
-		private Texture2D _texture;
-		private	Vector2 _position;
-		private World _world;
-//		private Game1 game;
-		private float _scale;
-		private float _gameh;
-		private float _texh;
+		Texture2D _texture;
+		Vector2 _position;
+		World _world;
+		Game1 _game;
+		float _scale;
+		float _gameh;
+		float _texh;
+		KeyboardState _keyboard;
 
 
-		public Background (Game1 game, Texture2D texture)
+		public Background (Game1 game, World w, Texture2D texture)
 		{
 			_position = new Vector2(0, 0);
 			_texture = texture;
-
-//			float gameh = _gameh;
-//			float texh = _texh;
+			_game = game;
+			_world = w;
 
 			_gameh = game.GraphicsDevice.Viewport.Height;
 			_texh = _texture.Height;
 
 			_scale = _gameh / _texh;
 
-
 		}
 
 
 		public void Update(){
-			// TODO laat de weg naar links bewegen
+			_keyboard = Keyboard.GetState ();
+			if (_world.GetPidgyPosition().X > _game.GraphicsDevice.Viewport.Width/2 && _keyboard.IsKeyDown (Keys.Right))
+			{
+				_position -= new Vector2 (3, 0);
+			}
 
 		}
 

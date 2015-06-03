@@ -9,23 +9,21 @@ namespace PigeonGame
 	public class World
 	{
 		Pidgy _pidgy;
-		Texture2D _pidgyTexture;
-		Vector2 _pidgyPosition ;
-//		Game1 _g;
+		Vector2 _pidgyPosition;
 		Background _background;
+		Texture2D _pidgyTexture;
 		Texture2D _bgTexture;
-		private float _scale;
-		private float _gameh;
-		private float _texh;
+		float _scale;
+		float _gameh;
+		float _texh;
 		float _pidgyHeight;
 		FontRenderer _fontRenderer;
 
 
 		public World (Game1 g)
 		{
-			_bgTexture = g.Content.Load<Texture2D> ("w");
-//			_bgTexture.Height = g.GraphicsDevice.Viewport.Height;
-			_background = new Background(g, _bgTexture);
+			_bgTexture = g.Content.Load<Texture2D> ("Main");
+			_background = new Background(g, this, _bgTexture);
 
 			_gameh = g.GraphicsDevice.Viewport.Height;
 			_texh = _bgTexture.Height;
@@ -37,6 +35,7 @@ namespace PigeonGame
 
 			_pidgy = new Pidgy (g, this, _pidgyTexture, _pidgyPosition);
 
+<<<<<<< HEAD
 			var fontFilePath = Path.Combine(g.Content.RootDirectory, "minecrafter.fnt");
 			var fontFile = FontLoader.Load(fontFilePath);
 			var fontTexture = g.Content.Load<Texture2D>("minecrafter_0.png");
@@ -48,6 +47,13 @@ namespace PigeonGame
 			Console.WriteLine (Scaling());
 			Console.WriteLine (PidgyHeight());
 
+=======
+		}
+
+		public Vector2 GetPidgyPosition()
+		{
+			return _pidgy.GetPosition ();
+>>>>>>> origin/master
 		}
 
 		public float PidgyHeight ()

@@ -5,9 +5,9 @@ using Microsoft.Xna.Framework.Input;
 
 namespace PigeonGame
 {
-	// Pigeon Character jhkj
 	public class Pidgy
 	{
+		// FIELDS
 		Game1 _game;
 		Texture2D _texture;
 		Vector2 _position;
@@ -15,6 +15,12 @@ namespace PigeonGame
 		Vector2 _fly;
 		KeyboardState _keyboard;
 		World _world;
+
+		// PROPERTIES
+		public Vector2 GetPosition ()
+		{
+			return _position;
+		}
 
 		public Pidgy (Game1 g, World w, Texture2D texture, Vector2 position)
 		{
@@ -25,8 +31,7 @@ namespace PigeonGame
 			_position = position;
 			_fly = new Vector2 (0, 1.5f);
 			_gravity = new Vector2 (0, 2);
-//			_scale = _background.Scaling () / 77;
-			Console.WriteLine (_world.PidgyHeight());
+//			Console.WriteLine (_world.PidgyPosition());
 		}
 
 
@@ -36,9 +41,9 @@ namespace PigeonGame
 			_position += _gravity;
 
 
-			if (_position.Y > _game.GraphicsDevice.Viewport.Height - _texture.Height - _world.PidgyHeight())// - _scale)
+			if (_position.Y > _game.GraphicsDevice.Viewport.Height - _texture.Height - _world.PidgyHeight())
 			{
-				_position.Y = _game.GraphicsDevice.Viewport.Height - _texture.Height - _world.PidgyHeight();// - _scale;
+				_position.Y = _game.GraphicsDevice.Viewport.Height - _texture.Height - _world.PidgyHeight();
 			}
 
 			_keyboard = Keyboard.GetState ();
@@ -59,6 +64,10 @@ namespace PigeonGame
 				_fly = new Vector2 (0, 0);
 			}
 
+			if (_position.X > _game.GraphicsDevice.Viewport.Width /2 + 1) 
+			{
+				_position.X = _game.GraphicsDevice.Viewport.Width /2 + 1;
+			}
 
 
 			if (_keyboard.IsKeyDown (Keys.Right))
