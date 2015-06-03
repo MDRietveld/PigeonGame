@@ -10,6 +10,7 @@ namespace PigeonGame
 	{
 		Texture2D _texture;
 		Vector2 _position;
+		Vector2 _gameEnd;
 		World _world;
 		Game1 _game;
 		float _scale;
@@ -29,6 +30,11 @@ namespace PigeonGame
 			_texh = _texture.Height;
 
 			_scale = _gameh / _texh;
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 		}
 
 
