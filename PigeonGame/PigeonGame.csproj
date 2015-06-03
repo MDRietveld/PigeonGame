@@ -10,6 +10,8 @@
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
     <AssemblyName>PigeonGame</AssemblyName>
     <SuppressXamMacUpsell>True</SuppressXamMacUpsell>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -91,6 +93,7 @@
     </BundleResource>
     <BundleResource Include="Content\enemytest.png" />
     <BundleResource Include="Content\enemy.png" />
+    <BundleResource Include="Content\Level.png" />
     <BundleResource Include="Content\Main.png" />
     <BundleResource Include="Content\Level2.png" />
   </ItemGroup>
