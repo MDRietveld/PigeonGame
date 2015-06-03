@@ -22,7 +22,7 @@ namespace PigeonGame
 
 		public World (Game1 g)
 		{
-			_bgTexture = g.Content.Load<Texture2D> ("Main");
+			_bgTexture = g.Content.Load<Texture2D> ("w");
 			_background = new Background(g, this, _bgTexture);
 
 			_gameh = g.GraphicsDevice.Viewport.Height;
@@ -35,7 +35,10 @@ namespace PigeonGame
 
 			_pidgy = new Pidgy (g, this, _pidgyTexture, _pidgyPosition);
 
-<<<<<<< HEAD
+			/*
+			 * GENERATE FONT FROM FNT & _0.PNG FILE
+			 * 
+			 */
 			var fontFilePath = Path.Combine(g.Content.RootDirectory, "minecrafter.fnt");
 			var fontFile = FontLoader.Load(fontFilePath);
 			var fontTexture = g.Content.Load<Texture2D>("minecrafter_0.png");
@@ -47,13 +50,11 @@ namespace PigeonGame
 			Console.WriteLine (Scaling());
 			Console.WriteLine (PidgyHeight());
 
-=======
 		}
 
 		public Vector2 GetPidgyPosition()
 		{
 			return _pidgy.GetPosition ();
->>>>>>> origin/master
 		}
 
 		public float PidgyHeight ()
@@ -75,8 +76,13 @@ namespace PigeonGame
 
 		public void Draw (SpriteBatch spriteBatch)
 		{
+			// BACKGROUND DRAW
 			_background.Draw (spriteBatch);
+
+			// DRAW TEXT
 			_fontRenderer.DrawText(spriteBatch, 50, 50, "Druk op spatie om te starten");
+
+			// PIGEON DRAW
 			_pidgy.Draw (spriteBatch);
 
 		}
