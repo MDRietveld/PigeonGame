@@ -90,5 +90,13 @@
     </BundleResource>
     <BundleResource Include="Content\level.png" />
     <BundleResource Include="Content\main.png" />
+    <BundleResource Include="Content\Kangeroo_sprites.png" />
+    <BundleResource Include="Content\Pigeon_sprites.png" />
+    <BundleResource Include="Content\Nest_sprites.png" />
+    <BundleResource Include="Content\Gorilla_sprites.png" />
+    <BundleResource Include="Content\Eagle_sprites.png" />
+    <BundleResource Include="Content\Fox_sprites.png" />
+    <BundleResource Include="Content\level_old.png" />
+    <BundleResource Include="Content\Flag.png" />
   </ItemGroup>
 </Project>
