@@ -11,6 +11,7 @@ namespace PigeonGame
 		private Enemy _enemy;
 		private Enemy _enemy2;
 		private Enemy _enemy3;
+		Texture2D _enemyTex;
 
 		Pidgy _pidgy;
 		Vector2 _pidgyPosition;
@@ -26,11 +27,13 @@ namespace PigeonGame
 
 		public World (Game1 g)
 		{
-			_enemy = new Enemy (g, new Vector2 (100, 70), 3);
-			_enemy2 = new Enemy (g, new Vector2 (50, 20), 4);
-			_bgTexture = g.Content.Load<Texture2D> ("level");
-			_enemy3 = new Enemy (g, new Vector2 (200, 150), 5);
-			_background = new Background(g, this, _bgTexture);
+			_enemyTex = g.Content.Load<Texture2D> ("enemy");
+			_enemy = new Enemy (g, this, _enemyTex, new Vector2 (100, 70), 3);
+			_enemy2 = new Enemy (g, this, _enemyTex, new Vector2 (50, 20), 4);
+			_enemy3 = new Enemy (g, this, _enemyTex, new Vector2 (200, 150), 5);
+
+			_bgTexture = g.Content.Load<Texture2D> ("level_old");
+			_background = new Background(g, this, _bgTexture, new Vector2(0, 0));
 
 			_gameh = g.GraphicsDevice.Viewport.Height;
 			_texh = _bgTexture.Height;
@@ -65,12 +68,12 @@ namespace PigeonGame
 
 		public float PidgyHeight ()
 		{
-			return _pidgyHeight = 77/ Scaling ();
+			return _pidgyHeight = 77* Scaling ();
 		}
 
 		public float Scaling()
 		{
-			return _scale = _texh / _gameh;
+			return _scale = _gameh / _texh;
 		}
 			
 

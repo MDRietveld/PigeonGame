@@ -6,37 +6,22 @@ using Microsoft.Xna.Framework.Input;
 namespace PigeonGame
 {
 	
-	public class Background
+	public class Background : GameObjects
 	{
-		Texture2D _texture;
-		Vector2 _position;
-		Vector2 _gameEnd;
-		World _world;
-		Game1 _game;
-		float _scale;
-		float _gameh;
-		float _texh;
+//		Vector2 _gameEnd;
 		KeyboardState _keyboard;
 
 
-		public Background (Game1 game, World w, Texture2D texture)
+		public Background (Game1 game, World w, Texture2D texture, Vector2 position) : base (game, w, texture, position)
 		{
-			_position = new Vector2(0, 0);
-			_texture = texture;
-			_game = game;
-			_world = w;
 
-			_gameh = game.GraphicsDevice.Viewport.Height;
-			_texh = _texture.Height;
-
-			_scale = _gameh / _texh;
 		}
 
 
 		public void Update()
 		{
 			_keyboard = Keyboard.GetState ();
-			if (_world.GetPidgyPosition().X > _game.GraphicsDevice.Viewport.Width/2 && _keyboard.IsKeyDown (Keys.Right) && _position.X > (_texture.Width * _scale - _game.GraphicsDevice.Viewport.Width) *-1)
+			if (_world.GetPidgyPosition().X > _game.GraphicsDevice.Viewport.Width/2 && _keyboard.IsKeyDown (Keys.Right) && _position.X > (_texture.Width * _world.Scaling() - _game.GraphicsDevice.Viewport.Width) *-1)
 			{
 				_position -= new Vector2 (3, 0);
 			}
@@ -48,11 +33,7 @@ namespace PigeonGame
 
 
 		}
-
-		public void Draw(SpriteBatch spriteBatch)
-		{
-			spriteBatch.Draw (_texture, _position, null, Color.White, 0f, Vector2.Zero, _scale, SpriteEffects.None, 0f);
-		}
+			
 	}
 }
 

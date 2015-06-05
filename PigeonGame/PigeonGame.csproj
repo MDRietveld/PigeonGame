@@ -69,6 +69,7 @@
     <Compile Include="Background.cs" />
     <Compile Include="fontloader.cs" />
     <Compile Include="Enemy.cs" />
+    <Compile Include="GameObjects.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

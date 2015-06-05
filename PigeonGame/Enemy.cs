@@ -5,29 +5,21 @@ using Microsoft.Xna.Framework;
 
 namespace PigeonGame
 {
-	class Enemy
+	class Enemy : GameObjects
 	{
-		private Texture2D _enemyTexture;
-		private Vector2 _myPosition;
 		private int _speed;
-		public Game1 g;
 
-		public Enemy (Game1 g,Vector2 position, int speed)
+		public Enemy (Game1 g, World w, Texture2D texture, Vector2 position, int speed) : base (g, w, texture, position)
 		{
-			_enemyTexture = g.Content.Load<Texture2D> ("enemy");
-			_myPosition = position;
 			_speed = speed;
 		}
 		public void Update ()
 		{
-			_myPosition.X += _speed;
-			if (_myPosition.X + _enemyTexture.Width > 300 || _myPosition.X < 0) 
+			_position.X += _speed;
+			if (_position.X + _texture.Width > 300 || _position.X < 0) 
 			{
 				_speed *= -1;
 			}
-		}
-		public void Draw (SpriteBatch batch){
-			batch.Draw (_enemyTexture,_myPosition);
 		}
 
 	}
