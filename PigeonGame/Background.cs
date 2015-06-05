@@ -18,7 +18,7 @@ namespace PigeonGame
 		}
 
 
-		public void Update()
+		public void Update(GameTime gameTime)
 		{
 			_keyboard = Keyboard.GetState ();
 			if (_world.GetPidgyPosition().X > _game.GraphicsDevice.Viewport.Width/2 && _keyboard.IsKeyDown (Keys.Right) && _position.X > (_texture.Width * _world.Scaling() - _game.GraphicsDevice.Viewport.Width) *-1)

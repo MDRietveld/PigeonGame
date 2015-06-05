@@ -40,7 +40,7 @@ namespace PigeonGame
 
 
 
-			_pidgyTexture = g.Content.Load<Texture2D> ("Untitled");
+			_pidgyTexture = g.Content.Load<Texture2D> ("untitled");
 			_pidgyPosition = new Vector2 (g.GraphicsDevice.Viewport.Width/8, g.GraphicsDevice.Viewport.Height - _pidgyTexture.Height - PidgyHeight());
 
 			_pidgy = new Pidgy (g, this, _pidgyTexture, _pidgyPosition);
@@ -54,11 +54,6 @@ namespace PigeonGame
 			var fontTexture = g.Content.Load<Texture2D>("minecrafter_0.png");
 			_fontRenderer = new FontRenderer(fontFile, fontTexture);
 
-			Console.WriteLine (_gameh);
-			Console.WriteLine (_texh);
-			Console.WriteLine (_scale = _texh/ _gameh);
-			Console.WriteLine (Scaling());
-			Console.WriteLine (PidgyHeight());
 		}
 	
 		public Vector2 GetPidgyPosition()
@@ -77,14 +72,14 @@ namespace PigeonGame
 		}
 			
 
-		public void Update ()
+		public void Update (GameTime gameTime)
 		{
-			_pidgy.Update ();
-			_background.Update ();
+			_pidgy.Update (gameTime);
+			_background.Update (gameTime);
 
-			_enemy.Update ();
-			_enemy2.Update ();
-			_enemy3.Update ();
+			_enemy.Update (gameTime);
+			_enemy2.Update (gameTime);
+			_enemy3.Update (gameTime);
 		}
 
 		public void Draw (SpriteBatch spriteBatch)

@@ -14,6 +14,14 @@ namespace PigeonGame
 		protected float _rotation;
 		protected Color _color;
 		protected Vector2 _origin;
+		protected Rectangle _sourceRectangle;
+		protected Rectangle _bounds;
+
+		public Rectangle Bounds {
+			get { 
+				return new Rectangle(0,0,_texture.Width, _texture.Height); 
+			}
+		}
 
 		public GameObjects (Game1 g, World w, Texture2D texture, Vector2 position)
 		{
@@ -28,11 +36,12 @@ namespace PigeonGame
 			_rotation = 0;
 			_origin = Vector2.Zero;
 
+			_sourceRectangle = new Rectangle (0, 0, _texture.Width, _texture.Height);
 		}
 
 		public void Draw (SpriteBatch spriteBatch)
 		{
-			spriteBatch.Draw(_texture, _position, null,	_color, _rotation, _origin, _scale, SpriteEffects.None, 0f);
+			spriteBatch.Draw(_texture, _position, _sourceRectangle,	_color, _rotation, _origin, _scale, SpriteEffects.None, 0f);
 		}
 	}
 }

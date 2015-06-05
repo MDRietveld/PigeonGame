@@ -13,7 +13,7 @@ namespace PigeonGame
 		{
 			_speed = speed;
 		}
-		public void Update ()
+		public void Update (GameTime gameTime)
 		{
 			_position.X += _speed;
 			if (_position.X + _texture.Width > 300 || _position.X < 0) 

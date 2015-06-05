@@ -45,7 +45,7 @@ namespace PigeonGame
 
 		protected override void Update (GameTime gameTime)
 		{
-			_world.Update ();
+			_world.Update (gameTime);
 		}
 
 		protected override void Draw (GameTime gameTime)
