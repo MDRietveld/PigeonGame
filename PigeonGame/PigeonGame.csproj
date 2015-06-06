@@ -10,6 +10,8 @@
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
     <AssemblyName>PigeonGame</AssemblyName>
     <SuppressXamMacUpsell>True</SuppressXamMacUpsell>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -59,6 +61,7 @@
     <Reference Include="OpenTK">
       <HintPath>..\packages\MonoGame.Framework.MacOS.3.4.0.459\lib\net45\OpenTK.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Game1.cs" />
@@ -70,6 +73,7 @@
     <Compile Include="fontloader.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="GameObjects.cs" />
+    <Compile Include="Menu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -90,9 +94,13 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
     <BundleResource Include="Content\level.png" />
-    <BundleResource Include="Content\main.png" />
+    <BundleResource Include="Content\main.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
     <BundleResource Include="Content\Kangeroo_sprites.png" />
-    <BundleResource Include="Content\Pigeon_sprites.png" />
+    <BundleResource Include="Content\Pigeon_sprites.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
     <BundleResource Include="Content\Nest_sprites.png" />
     <BundleResource Include="Content\Gorilla_sprites.png" />
     <BundleResource Include="Content\Eagle_sprites.png" />
