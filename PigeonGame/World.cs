@@ -32,7 +32,9 @@ namespace PigeonGame
 		float _gameh;
 		float _texh;
 
+		KeyboardState _keyboard;
 		Menu _menu;
+		bool _menuCheck;
 		Texture2D _menuScreenTexture;
 		FontRenderer _fontRenderer;
 
@@ -42,10 +44,10 @@ namespace PigeonGame
 			/** 
 			 * TEXTURE LOAD
 			 **/
+			_menuScreenTexture = g.Content.Load<Texture2D> ("main");
 			_enemyTex = g.Content.Load<Texture2D> ("enemy");
 			_bgTexture = g.Content.Load<Texture2D> ("level_old");
 
-			_menuScreenTexture = g.Content.Load<Texture2D> ("main");
 
 			/**
 			 * CLASSES
@@ -54,7 +56,7 @@ namespace PigeonGame
 			_enemy2 = new Enemy (g, this, _enemyTex, new Vector2 (50, 20), 4);
 			_enemy3 = new Enemy (g, this, _enemyTex, new Vector2 (200, 150), 5);
 			_background = new Background(g, this, _bgTexture, new Vector2(0, 0));
-			_menu = new Menu (g, this, _menuScreenTexture, new Vector2 (0, 0));
+			_menu = new Menu (g,_menuScreenTexture);
 
 			/**
 			 * POSITIONS
@@ -104,21 +106,37 @@ namespace PigeonGame
 		public void Draw (SpriteBatch spriteBatch)
 		{
 			//spriteBatch.Draw (_menuScreenTexture, new Vector2 (50, 50), Color.White);
-			_menu.Draw(spriteBatch);
+			_keyboard = Keyboard.GetState ();
 
-			// BACKGROUND DRAW
-			_background.Draw (spriteBatch);
+			/**
+			 * Menu Builder
+			 **/
 
-			// DRAW TEXT
-			_fontRenderer.DrawText(spriteBatch, 50, 50, "Druk op spatie om te starten");
+			// Check if menuCheck is false
+			if (!_menuCheck) {
+				if (_keyboard.IsKeyDown (Keys.Space)) {
+					_menuCheck = true;
+				} else {
+					_menu.Draw (spriteBatch);
+				}
+			// Check if menuCheck is true
+			} else if (_menuCheck) {
+				// Put all the drawings here...
 
-			// PIGEON DRAW
-			_pidgy.Draw (spriteBatch);
+				// BACKGROUND DRAW
+				_background.Draw (spriteBatch);
 
-			// CREATE ENEMIES
-			_enemy.Draw (spriteBatch);
-			_enemy2.Draw (spriteBatch);
-			_enemy3.Draw (spriteBatch);
+				// DRAW TEXT
+				//_fontRenderer.DrawText (spriteBatch, 50, 50, "Druk op spatie om te starten");
+
+				// PIGEON DRAW
+				_pidgy.Draw (spriteBatch);
+
+				// CREATE ENEMIES
+				_enemy.Draw (spriteBatch);
+				_enemy2.Draw (spriteBatch);
+				_enemy3.Draw (spriteBatch);
+			}
 		}
 	}
 }

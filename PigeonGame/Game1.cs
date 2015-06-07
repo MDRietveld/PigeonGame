@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Input;
 using BmFont;
+using System.IO;
 
 #endregion
 
@@ -46,6 +47,11 @@ namespace PigeonGame
 		protected override void LoadContent ()
 		{
 			spriteBatch = new SpriteBatch (GraphicsDevice);
+
+			var fontFilePath = Path.Combine(Content.RootDirectory, "minecrafter.fnt");
+			var fontFile = FontLoader.Load(fontFilePath);
+			var fontTexture = Content.Load<Texture2D>("minecrafter_0.png");
+			_fontRenderer = new FontRenderer(fontFile, fontTexture);
 		}
 
 		protected override void Update (GameTime gameTime)
@@ -54,9 +60,11 @@ namespace PigeonGame
 			 * Pause function
 			 */
 
+			_keyboard = Keyboard.GetState ();
+
 			if (!paused) {
-				Console.WriteLine ("It's not Paused");
-				if (_keyboard.IsKeyDown (Keys.Enter)) {
+				//Console.WriteLine ("It's not Paused");
+				if (_keyboard.IsKeyDown (Keys.P)) {
 					paused = true;
 					Console.WriteLine ("Paused is set on True");
 				}
@@ -79,7 +87,7 @@ namespace PigeonGame
 
 			// If it's paused, write the text Paused
 			if (paused) {
-				_fontRenderer.DrawText (spriteBatch, 100, 100, "Paused");
+				_fontRenderer.DrawText (spriteBatch, 480, 100, "Paused");
 			}
 
 			spriteBatch.End ();
