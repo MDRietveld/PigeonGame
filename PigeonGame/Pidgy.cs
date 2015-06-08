@@ -23,16 +23,16 @@ namespace PigeonGame
 			return _position;
 		}
 
-		public Pidgy (Game1 g, World w, Texture2D texture, Vector2 position) : base (g, w, texture, position)
+		public Pidgy (Game1 g, World w, Texture2D texture, Vector2 position, float scale) : base (g, w, texture, position, scale)
 		{
 
 			_fly = new Vector2 (0, 1.5f);
 			_gravity = new Vector2 (0, 2);
-
+			_scale = scale;
 
 //			int size = _texture.Width/12;
-//			_sourceRectangle = new Rectangle (size *1, size* _rij, size, size);
-//			_rij = 1;
+//			_sourceRectangle = new Rectangle (size *0, size* _rij, size, size);
+//			_rij = 0;
 
 		}
 			
@@ -40,7 +40,7 @@ namespace PigeonGame
 		public void Update (GameTime gameTime)
 		{
 			
-			int size = _texture.Width/12;
+//			int size = _texture.Width/12;
 
 //			_elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 //

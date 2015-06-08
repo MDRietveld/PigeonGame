@@ -64,9 +64,9 @@ namespace PigeonGame
 			_gameh = g.GraphicsDevice.Viewport.Height;
 			_texh = _bgTexture.Height;
 
-			_pidgyTexture = g.Content.Load<Texture2D> ("Untitled");
+			_pidgyTexture = g.Content.Load<Texture2D> ("untitled");
 			_pidgyPosition = new Vector2 (g.GraphicsDevice.Viewport.Width/8, g.GraphicsDevice.Viewport.Height - _pidgyTexture.Height - PidgyHeight());
-			_pidgy = new Pidgy (g, this, _pidgyTexture, _pidgyPosition);
+			_pidgy = new Pidgy (g, this, _pidgyTexture, _pidgyPosition, Scaling());
 
 			/**
 			 * GENERATE FONT FROM FNT & _0.PNG FILE
