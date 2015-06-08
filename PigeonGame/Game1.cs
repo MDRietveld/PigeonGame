@@ -87,7 +87,7 @@ namespace PigeonGame
 
 			// If it's paused, write the text Paused
 			if (paused) {
-				_fontRenderer.DrawText (spriteBatch, 480, 100, "Paused");
+				_fontRenderer.DrawText (spriteBatch, GraphicsDevice.Viewport.Width/2, GraphicsDevice.Viewport.Height/2, "Paused");
 			}
 
 			spriteBatch.End ();
