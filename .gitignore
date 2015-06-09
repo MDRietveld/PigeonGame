@@ -2,3 +2,13 @@
 /PigeonGame/bin/Debug/
 /PigeonGame/obj/Debug/
 
+
+<<<<<<< Updated upstream
+*.userprefs
+=======
+PigeonGame/bin/Debug/PigeonGame.exe.mdb
+>>>>>>> Stashed changes
+
+*.mdb
+
+*.mdb

@@ -23,6 +23,22 @@ namespace PigeonGame
 			}
 		}
 
+		public GameObjects (Game1 g, World w, Texture2D texture, Vector2 position, float scale)
+		{
+			_game = g;
+			_world = w;
+			_texture = texture;
+			_position = position;
+
+
+			_color = Color.White;
+			_scale = scale;
+			_rotation = 0;
+			_origin = Vector2.Zero;
+
+			_sourceRectangle = new Rectangle (0, 0, _texture.Width, _texture.Height);
+		}
+
 		public GameObjects (Game1 g, World w, Texture2D texture, Vector2 position)
 		{
 			_game = g;
