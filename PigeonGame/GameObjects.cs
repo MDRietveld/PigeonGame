@@ -58,14 +58,14 @@ namespace PigeonGame
 		}
 
 		//collision
-		protected void Update(GameTime gameTime)
-		{
-
-			if (GameObjects.CheckPidgyEnemyCollision(_pidgy, _enemy1))
-			{
-				Console.WriteLine ("collision");
-			}	
-		}
+//		protected void Update(GameTime gameTime)
+//		{
+//
+//			if (GameObjects.CheckPidgyEnemyCollision(_pidgy, _enemy1))
+//			{
+//				Console.WriteLine ("collision");
+//			}	
+//		}
 			
 
 		public void Draw (SpriteBatch spriteBatch)
@@ -73,11 +73,11 @@ namespace PigeonGame
 			spriteBatch.Draw(_texture, _position, _sourceRectangle,	_color, _rotation, _origin, _scale, SpriteEffects.None, 0f);
 		}
 		//collision
-		public static bool CheckPidgyEnemyCollision(Pidgy _pidgy, Enemy _enemy1)
-		{
-			if (_pidgy.Bounds.Intersects(_enemy1.Bounds))
-				return true;
-			return false;
-		}
+//		public static bool CheckPidgyEnemyCollision(Pidgy _pidgy, Enemy _enemy1)
+//		{
+//			if (_pidgy.Bounds.Intersects(_enemy1.Bounds))
+//				return true;
+//			return false;
+//		}
 	}
 }

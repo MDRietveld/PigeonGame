@@ -104,6 +104,14 @@ namespace PigeonGame
 			_enemy2.Update (gameTime);
 			_enemy3.Update (gameTime);
 
+
+
+			if(_pidgy.PigeonPosition().Intersects(_enemy.EaglePosition()))
+			{
+				Console.WriteLine ("You've hitted the eagle");
+			}
+
+
 		}
 
 		public void Draw (SpriteBatch spriteBatch)

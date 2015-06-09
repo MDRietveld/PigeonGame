@@ -14,6 +14,9 @@ namespace PigeonGame
 		int _frames2;
 		int _rij;
 
+		Rectangle _eagle;
+
+
 		public Enemy (Game1 g, World w, Texture2D texture, Vector2 position, int speed, float scale) : base (g, w, texture, position, scale)
 		{
 			_speed = speed;
@@ -22,8 +25,16 @@ namespace PigeonGame
 			_rij = 1;
 			_sourceRectangle = new Rectangle (size *0, size* _rij, size, size);
 		}
+
+		public Rectangle EaglePosition()
+		{
+			return _eagle = new Rectangle ((int)_position.X, (int)_position.Y, _texture.Width/5/8, _texture.Height/5/2);
+		}
+
 		public void Update (GameTime gameTime)
 		{
+
+
 
 			_elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
