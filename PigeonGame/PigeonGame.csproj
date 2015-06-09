@@ -10,8 +10,6 @@
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
     <AssemblyName>PigeonGame</AssemblyName>
     <SuppressXamMacUpsell>True</SuppressXamMacUpsell>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -107,5 +105,6 @@
     <BundleResource Include="Content\Fox_sprites.png" />
     <BundleResource Include="Content\level_old.png" />
     <BundleResource Include="Content\Flag.png" />
+    <BundleResource Include="Content\Pigeon_spritesheet_s.png" />
   </ItemGroup>
 </Project>
