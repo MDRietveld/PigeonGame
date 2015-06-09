@@ -106,8 +106,16 @@ namespace PigeonGame
 			_enemy3.Update (gameTime);
 
 
-
+			//Enemies sorteren per list, elke list toevoegen aan collision
 			if(_pidgy.PigeonPosition().Intersects(_enemy.EaglePosition()))
+			{
+				Console.WriteLine ("Collission!");
+			}
+			if(_pidgy.PigeonPosition().Intersects(_enemy2.EaglePosition()))
+			{
+				Console.WriteLine ("Collission!");
+			}
+			if(_pidgy.PigeonPosition().Intersects(_enemy3.EaglePosition()))
 			{
 				Console.WriteLine ("Collission!");
 			}
