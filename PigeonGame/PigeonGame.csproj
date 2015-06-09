@@ -104,14 +104,11 @@
     <BundleResource Include="Content\Fox_sprites.png" />
     <BundleResource Include="Content\level_old.png" />
     <BundleResource Include="Content\Flag.png" />
-<<<<<<< HEAD
     <BundleResource Include="Content\Pigeon_spritesheet_s.png" />
-=======
     <BundleResource Include="Content\Eagle_sprites.png" />
     <BundleResource Include="Resources\appicon.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
->>>>>>> origin/master
   </ItemGroup>
 </Project>
