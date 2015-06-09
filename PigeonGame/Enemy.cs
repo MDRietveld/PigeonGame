@@ -16,7 +16,6 @@ namespace PigeonGame
 		public void Update (GameTime gameTime)
 		{
 			_position.X += _speed;
-			_speed *= 1; //tijdelijk
 			//if (_position.X + _texture.Width > 300 || _position.X < 0) 
 			//{
 				//_speed *= -1;
