@@ -40,7 +40,7 @@ namespace PigeonGame
 
 			if (_elapsed >= _delay) 
 			{
-				if (_frames >= 7) {
+				if (_frames >= 10) {
 					_frames = 0;
 				} else {
 					_frames++;
@@ -65,7 +65,13 @@ namespace PigeonGame
 			//{
 				//_speed *= -1;
 			//}
+
+			//Check om de direction te bepalen
+			if (_speed < 0) {
+				Console.WriteLine("speed is -1");
+			}
 		}
+				
 
 	}
 }

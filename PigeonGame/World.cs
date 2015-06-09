@@ -15,7 +15,7 @@ namespace PigeonGame
 		private Enemy _enemy;
 		private Enemy _enemy2;
 		private Enemy _enemy3;
-		Texture2D _enemyTex;
+		Texture2D _enemyTex1;
 
 		/**
 		 * PIGEON
@@ -39,22 +39,23 @@ namespace PigeonGame
 		FontRenderer _fontRenderer;
 
 
+
 		public World (Game1 g)
 		{
 			/** 
 			 * TEXTURE LOAD
 			 **/
 			_menuScreenTexture = g.Content.Load<Texture2D> ("main");
-			_enemyTex = g.Content.Load<Texture2D> ("Eagle_sprites");
+			_enemyTex1 = g.Content.Load<Texture2D> ("Eagle_sprites");
 			_bgTexture = g.Content.Load<Texture2D> ("level_old");
 
 
 			/**
 			 * CLASSES
 			 **/
-			_enemy = new Enemy (g, this, _enemyTex, new Vector2 (100, 70), 1, 0.2f);
-			_enemy2 = new Enemy (g, this, _enemyTex, new Vector2 (50, 20), 1, 0.2f);
-			_enemy3 = new Enemy (g, this, _enemyTex, new Vector2 (200, 150), 1, 0.2f);
+			_enemy = new Enemy (g, this, _enemyTex1, new Vector2 (150, 50), 1, 0.2f);
+			_enemy2 = new Enemy (g, this, _enemyTex1, new Vector2 (30, 20), 1, 0.2f);
+			_enemy3 = new Enemy (g, this, _enemyTex1, new Vector2 (200, 150), 1, 0.2f);
 
 			_background = new Background(g, this, _bgTexture, new Vector2(0, 0));
 			_menu = new Menu (g,_menuScreenTexture);
@@ -108,7 +109,7 @@ namespace PigeonGame
 
 			if(_pidgy.PigeonPosition().Intersects(_enemy.EaglePosition()))
 			{
-				Console.WriteLine ("You've hitted the eagle");
+				Console.WriteLine ("Collission!");
 			}
 
 

@@ -19,6 +19,7 @@ namespace PigeonGame
 		protected Pidgy _pidgy;
 		protected Enemy _enemy1;
 
+		bool paused=false;
 		public Rectangle Bounds {
 			get { 
 				return new Rectangle(0,0,_texture.Width, _texture.Height); 
@@ -58,14 +59,10 @@ namespace PigeonGame
 		}
 
 		//collision
-//		protected void Update(GameTime gameTime)
-//		{
-//
-//			if (GameObjects.CheckPidgyEnemyCollision(_pidgy, _enemy1))
-//			{
-//				Console.WriteLine ("collision");
-//			}	
-//		}
+protected void Update(GameTime gameTime)
+		{
+			//
+		}
 			
 
 		public void Draw (SpriteBatch spriteBatch)
