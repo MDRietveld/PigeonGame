@@ -15,6 +15,7 @@ namespace PigeonGame
 		float _elapsed;
 		float _delay = 100;
 		int _frames;
+		int _frames2;
 		int _rij;
 
 		// PROPERTIES
@@ -32,8 +33,8 @@ namespace PigeonGame
 
 
 			int size = _texture.Width/12;
+			_rij = 2;
 			_sourceRectangle = new Rectangle (size *0, size* _rij, size, size);
-			_rij = 0;
 
 		}
 			
@@ -56,15 +57,33 @@ namespace PigeonGame
 
 			}
 
+			if (_elapsed >= _delay) 
+			{
+				if (_frames2 >= 3) {
+					_frames2 = 0;
+				} else {
+					_frames2++;
+				}
+				_elapsed = 0;
+				_rij = 3;
 
+			}
 //			Console.WriteLine ("ben ik " + _scale);
 
 			if (_keyboard.IsKeyDown (Keys.Right))
 			{
 				_position += new Vector2 (3, 0);
 
-				_rij = 0;
-				_sourceRectangle = new Rectangle (size * _frames, size* _rij, size, size);
+
+
+				if (_position.Y > 499) {
+					_rij = 2;
+					_sourceRectangle = new Rectangle (size * _frames2, size * _rij, size, size);
+
+				} else {
+					_rij = 0;
+					_sourceRectangle = new Rectangle (size * _frames, size* _rij, size, size);
+				}
 
 			}
 
@@ -72,8 +91,16 @@ namespace PigeonGame
 			{
 				_position -= new Vector2 (3, 0);
 
-				_rij = 1;
-				_sourceRectangle = new Rectangle (size * _frames, size* _rij, size, size);
+
+				if (_position.Y > 499) {
+					_rij = 3;
+					_sourceRectangle = new Rectangle (size * _frames2, size * _rij, size, size);
+
+				} else {
+					_rij = 1;
+					_sourceRectangle = new Rectangle (size * _frames, size* _rij, size, size);
+				}
+
 
 			}
 
@@ -94,6 +121,8 @@ namespace PigeonGame
 					_fly.Y = 6;
 				}
 				_position.Y -= _fly.Y;
+				_sourceRectangle = new Rectangle (size * _frames, size* _rij, size, size);
+
 			} else {
 				_fly = new Vector2 (0, 1.5f);
 			}
