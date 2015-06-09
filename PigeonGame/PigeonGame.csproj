@@ -104,9 +104,9 @@
     <BundleResource Include="Content\Fox_sprites.png" />
     <BundleResource Include="Content\level_old.png" />
     <BundleResource Include="Content\Flag.png" />
-    <BundleResource Include="Content\Pigeon_spritesheet_s.png" />
     <BundleResource Include="Content\Eagle_sprites.png" />
     <BundleResource Include="Resources\appicon.png" />
+    <BundleResource Include="Content\Boss.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
