@@ -45,16 +45,17 @@ namespace PigeonGame
 			 * TEXTURE LOAD
 			 **/
 			_menuScreenTexture = g.Content.Load<Texture2D> ("main");
-			_enemyTex = g.Content.Load<Texture2D> ("enemy");
+			_enemyTex = g.Content.Load<Texture2D> ("Eagle_sprites");
 			_bgTexture = g.Content.Load<Texture2D> ("level_old");
 
 
 			/**
 			 * CLASSES
 			 **/
-			_enemy = new Enemy (g, this, _enemyTex, new Vector2 (100, 70), 2);
-			_enemy2 = new Enemy (g, this, _enemyTex, new Vector2 (50, 20), 2);
-			_enemy3 = new Enemy (g, this, _enemyTex, new Vector2 (200, 150), 2);
+			_enemy = new Enemy (g, this, _enemyTex, new Vector2 (100, 70), 1, 0.2f);
+			_enemy2 = new Enemy (g, this, _enemyTex, new Vector2 (50, 20), 1, 0.2f);
+			_enemy3 = new Enemy (g, this, _enemyTex, new Vector2 (200, 150), 1, 0.2f);
+
 			_background = new Background(g, this, _bgTexture, new Vector2(0, 0));
 			_menu = new Menu (g,_menuScreenTexture);
 
@@ -102,6 +103,7 @@ namespace PigeonGame
 			_enemy.Update (gameTime);
 			_enemy2.Update (gameTime);
 			_enemy3.Update (gameTime);
+
 		}
 
 		public void Draw (SpriteBatch spriteBatch)

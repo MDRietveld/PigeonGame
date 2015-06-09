@@ -10,13 +10,14 @@ using System.IO;
 
 #endregion
 
-namespace PigeonGame
+namespace PigeonGame 
 {
 	public class Game1 : Game
 	{
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 		World _world;
+
 
 		KeyboardState _keyboard;
 		FontRenderer _fontRenderer;

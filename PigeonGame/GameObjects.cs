@@ -16,6 +16,8 @@ namespace PigeonGame
 		protected Vector2 _origin;
 		protected Rectangle _sourceRectangle;
 		protected Rectangle _bounds;
+		protected Pidgy _pidgy;
+		protected Enemy _enemy1;
 
 		public Rectangle Bounds {
 			get { 
@@ -55,10 +57,27 @@ namespace PigeonGame
 			_sourceRectangle = new Rectangle (0, 0, _texture.Width, _texture.Height);
 		}
 
+		//collision
+		protected void Update(GameTime gameTime)
+		{
+
+			if (GameObjects.CheckPidgyEnemyCollision(_pidgy, _enemy1))
+			{
+				Console.WriteLine ("collision");
+			}	
+		}
+			
+
 		public void Draw (SpriteBatch spriteBatch)
 		{
 			spriteBatch.Draw(_texture, _position, _sourceRectangle,	_color, _rotation, _origin, _scale, SpriteEffects.None, 0f);
 		}
+		//collision
+		public static bool CheckPidgyEnemyCollision(Pidgy _pidgy, Enemy _enemy1)
+		{
+			if (_pidgy.Bounds.Intersects(_enemy1.Bounds))
+				return true;
+			return false;
+		}
 	}
 }
-
