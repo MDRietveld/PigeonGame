@@ -13,7 +13,7 @@ namespace PigeonGame
 		KeyboardState _keyboard;
 
 		float _elapsed;
-		float _delay = 200;
+		float _delay = 100;
 		int _frames;
 		int _rij;
 
@@ -28,11 +28,12 @@ namespace PigeonGame
 
 			_fly = new Vector2 (0, 1.5f);
 			_gravity = new Vector2 (0, 2);
-			_scale = scale;
+			_scale = 0.2f;
 
-//			int size = _texture.Width/12;
-//			_sourceRectangle = new Rectangle (size *0, size* _rij, size, size);
-//			_rij = 0;
+
+			int size = _texture.Width/12;
+			_sourceRectangle = new Rectangle (size *0, size* _rij, size, size);
+			_rij = 0;
 
 		}
 			
@@ -40,27 +41,30 @@ namespace PigeonGame
 		public void Update (GameTime gameTime)
 		{
 			
-//			int size = _texture.Width/12;
+			int size = _texture.Width/12;
 
-//			_elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-//
-//			if (_elapsed >= _delay) 
-//			{
-//				if (_frames >= 11) {
-//					_frames = 0;
-//				} else {
-//					_frames++;
-//				}
-//				_elapsed = 0;
-//
-//			}
+			_elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+
+			if (_elapsed >= _delay) 
+			{
+				if (_frames >= 11) {
+					_frames = 0;
+				} else {
+					_frames++;
+				}
+				_elapsed = 0;
+
+			}
+
+
+//			Console.WriteLine ("ben ik " + _scale);
 
 			if (_keyboard.IsKeyDown (Keys.Right))
 			{
 				_position += new Vector2 (3, 0);
 
-//				_rij = 1;
-//				_sourceRectangle = new Rectangle (size * _frames, size* _rij, size, size);
+				_rij = 0;
+				_sourceRectangle = new Rectangle (size * _frames, size* _rij, size, size);
 
 			}
 
@@ -68,17 +72,17 @@ namespace PigeonGame
 			{
 				_position -= new Vector2 (3, 0);
 
-//				_rij = 2;
-//				_sourceRectangle = new Rectangle (size * _frames, size* _rij, size, size);
+				_rij = 1;
+				_sourceRectangle = new Rectangle (size * _frames, size* _rij, size, size);
 
 			}
 
 			_position += _gravity;
 
 
-			if (_position.Y > _game.GraphicsDevice.Viewport.Height - _texture.Height - _world.PidgyHeight())
+			if (_position.Y > 500)
 			{
-				_position.Y = _game.GraphicsDevice.Viewport.Height - _texture.Height - _world.PidgyHeight();
+				_position.Y = 500;
 			}
 
 			_keyboard = Keyboard.GetState ();
@@ -110,7 +114,7 @@ namespace PigeonGame
 			}
 
 
-
+//			_position = new Vector2 (0,0);
 		}
 			
 

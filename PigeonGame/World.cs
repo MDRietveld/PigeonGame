@@ -64,8 +64,9 @@ namespace PigeonGame
 			_gameh = g.GraphicsDevice.Viewport.Height;
 			_texh = _bgTexture.Height;
 
-			_pidgyTexture = g.Content.Load<Texture2D> ("untitled");
-			_pidgyPosition = new Vector2 (g.GraphicsDevice.Viewport.Width/8, g.GraphicsDevice.Viewport.Height - _pidgyTexture.Height - PidgyHeight());
+			_pidgyTexture = g.Content.Load<Texture2D> ("Pigeon_sprites");
+			_pidgyPosition = new Vector2 (g.GraphicsDevice.Viewport.Width/8, 500);
+//			_pidgyPosition = new Vector2(0,0);
 			_pidgy = new Pidgy (g, this, _pidgyTexture, _pidgyPosition, Scaling());
 
 			/**
@@ -86,7 +87,7 @@ namespace PigeonGame
 
 		public float PidgyHeight ()
 		{
-			return _pidgyHeight = 77* Scaling ();
+			return _pidgyHeight = 30* Scaling ();
 		}
 
 		public float Scaling()

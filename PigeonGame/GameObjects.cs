@@ -48,7 +48,7 @@ namespace PigeonGame
 
 
 			_color = Color.White;
-			_scale = 1;
+			_scale = 1f;
 			_rotation = 0;
 			_origin = Vector2.Zero;
 
