@@ -23,14 +23,12 @@ namespace PigeonGame
 		FontRenderer _fontRenderer;
 
 		// Pause
-		bool paused = false;
-
+		public bool paused = false;
 		public Game1 ()
 		{
 			graphics = new GraphicsDeviceManager (this);
 			Content.RootDirectory = "Content";	            
 			graphics.IsFullScreen = false;
-
 			graphics.PreferredBackBufferHeight = 595;
 			graphics.PreferredBackBufferWidth = 1000;
 
@@ -79,6 +77,7 @@ namespace PigeonGame
 			}
 		}
 
+
 		protected override void Draw (GameTime gameTime)
 		{
 			graphics.GraphicsDevice.Clear (Color.CornflowerBlue);
@@ -88,8 +87,9 @@ namespace PigeonGame
 
 			// If it's paused, write the text Paused
 			if (paused) {
-				_fontRenderer.DrawText (spriteBatch, GraphicsDevice.Viewport.Width/2, GraphicsDevice.Viewport.Height/2, "Paused");
+				_fontRenderer.DrawText (spriteBatch, GraphicsDevice.Viewport.Width/2, GraphicsDevice.Viewport.Height/2, "Pauze");
 			}
+
 
 			spriteBatch.End ();
 		}

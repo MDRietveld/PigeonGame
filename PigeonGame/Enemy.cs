@@ -24,12 +24,15 @@ namespace PigeonGame
 			int size = _texture.Width/8;
 			_rij = 1;
 			_sourceRectangle = new Rectangle (size *0, size* _rij, size, size);
+
 		}
 
 		public Rectangle EaglePosition()
 		{
 			return _eagle = new Rectangle ((int)_position.X, (int)_position.Y, _texture.Width/5/8, _texture.Height/5/2);
 		}
+
+
 
 		public void Update (GameTime gameTime)
 		{
@@ -40,7 +43,7 @@ namespace PigeonGame
 
 			if (_elapsed >= _delay) 
 			{
-				if (_frames >= 7) {
+				if (_frames >= 10) {
 					_frames = 0;
 				} else {
 					_frames++;
@@ -65,7 +68,13 @@ namespace PigeonGame
 			//{
 				//_speed *= -1;
 			//}
+
+			//Check om de direction te bepalen
+			if (_speed < 0) {
+				Console.WriteLine("speed is -1");
+			}
 		}
+				
 
 	}
 }

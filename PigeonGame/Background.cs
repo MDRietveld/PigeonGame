@@ -17,6 +17,11 @@ namespace PigeonGame
 
 		}
 
+		public Vector2 GetPosition()
+		{
+			return _position;
+		}
+
 
 		public void Update(GameTime gameTime)
 		{
