@@ -46,6 +46,8 @@ namespace PigeonGame
 			 * TEXTURE LOAD
 			 **/
 			_menuScreenTexture = g.Content.Load<Texture2D> ("main");
+//			_enemyTex = g.Content.Load<Texture2D> ("Eagle_sprites");
+			_bgTexture = g.Content.Load<Texture2D> ("level_lowres");
 			_enemyTex1 = g.Content.Load<Texture2D> ("Eagle_sprites");
 			_bgTexture = g.Content.Load<Texture2D> ("level_old");
 
@@ -106,7 +108,7 @@ namespace PigeonGame
 			_enemy3.Update (gameTime);
 
 
-			//Enemies sorteren per list, elke list toevoegen aan collision
+			//Enemies sorteren per class, elke list toevoegen aan collision
 			if(_pidgy.PigeonPosition().Intersects(_enemy.EaglePosition()))
 			{
 				Console.WriteLine ("Collission!");
