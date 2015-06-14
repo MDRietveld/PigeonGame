@@ -49,7 +49,7 @@ namespace PigeonGame
 //			_enemyTex = g.Content.Load<Texture2D> ("Eagle_sprites");
 			_bgTexture = g.Content.Load<Texture2D> ("level_lowres");
 			_enemyTex1 = g.Content.Load<Texture2D> ("Eagle_sprites");
-			_bgTexture = g.Content.Load<Texture2D> ("level_old");
+			_bgTexture = g.Content.Load<Texture2D> ("level_lowres");
 
 
 			/**
