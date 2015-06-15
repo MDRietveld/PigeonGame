@@ -11,7 +11,6 @@ namespace PigeonGame
 		float _elapsed;
 		float _delay = 100;
 		int _frames;
-		int _frames2;
 		int _rij;
 
 		Rectangle _eagle;
@@ -43,24 +42,12 @@ namespace PigeonGame
 
 			if (_elapsed >= _delay) 
 			{
-				if (_frames >= 10) {
+				if (_frames >= 7) {
 					_frames = 0;
 				} else {
 					_frames++;
 				}
 				_elapsed = 0;
-
-			}
-
-			if (_elapsed >= _delay) 
-			{
-				if (_frames2 >= 3) {
-					_frames2 = 0;
-				} else {
-					_frames2++;
-				}
-				_elapsed = 0;
-				_rij = 1;
 
 			}
 			_position.X += _speed;

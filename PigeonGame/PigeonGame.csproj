@@ -100,9 +100,7 @@
     <BundleResource Include="Content\Gorilla_sprites.png" />
     <BundleResource Include="Content\Fox_sprites.png" />
     <BundleResource Include="Content\Flag.png" />
-    <BundleResource Include="Content\Eagle_sprites.png">
-      <DependentUpon>minecrafter_0.png</DependentUpon>
-    </BundleResource>
+    <BundleResource Include="Content\Eagle_sprites.png" />
     <BundleResource Include="Resources\appicon.png" />
     <BundleResource Include="Content\Pigeon_sprites.png" />
     <BundleResource Include="Content\Boss.png" />
