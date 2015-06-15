@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Input;
 using BmFont;
 using System.IO;
+using Microsoft.Xna.Framework.Media;
 
 #endregion
 
@@ -17,13 +18,11 @@ namespace PigeonGame
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 		World _world;
-
-
-		KeyboardState _keyboard;
 		FontRenderer _fontRenderer;
-
+		KeyboardState _keyboard;
 		// Pause
 		public bool paused = false;
+
 		public Game1 ()
 		{
 			graphics = new GraphicsDeviceManager (this);
@@ -39,6 +38,7 @@ namespace PigeonGame
 		protected override void Initialize ()
 		{
 			base.Initialize ();
+			Assets.LoadContent (this);
 			_world = new World (this);
 		}
 
@@ -67,7 +67,9 @@ namespace PigeonGame
 					paused = true;
 					Console.WriteLine ("Paused is set on True");
 				}
+
 				_world.Update (gameTime);
+
 			} else if (paused) {
 				if (_keyboard.IsKeyDown (Keys.Escape)) {
 					paused = false;
@@ -89,7 +91,6 @@ namespace PigeonGame
 			if (paused) {
 				_fontRenderer.DrawText (spriteBatch, GraphicsDevice.Viewport.Width/2, GraphicsDevice.Viewport.Height/2, "Pauze");
 			}
-
 
 			spriteBatch.End ();
 		}

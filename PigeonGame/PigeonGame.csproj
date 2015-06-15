@@ -10,8 +10,6 @@
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
     <AssemblyName>PigeonGame</AssemblyName>
     <SuppressXamMacUpsell>True</SuppressXamMacUpsell>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -74,12 +72,13 @@
     <Compile Include="Enemy.cs" />
     <Compile Include="GameObjects.cs" />
     <Compile Include="Menu.cs" />
+    <Compile Include="Eagle.cs" />
+    <Compile Include="Assets.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Content\Content.mgcb" />
     <None Include="packages.config" />
-    <None Include="Content\1.mp3" />
     <None Include="Content\2.mp3" />
     <None Include="Content\3.mp3" />
     <None Include="Content\4.mp3" />
@@ -97,17 +96,11 @@
     <BundleResource Include="Content\minecrafter.fnt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
-    <BundleResource Include="Content\main.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </BundleResource>
     <BundleResource Include="Content\Kangeroo_sprites.png" />
     <BundleResource Include="Content\Nest_sprites.png" />
     <BundleResource Include="Content\Gorilla_sprites.png" />
     <BundleResource Include="Content\Fox_sprites.png" />
     <BundleResource Include="Content\Flag.png" />
-    <BundleResource Include="Content\Eagle_sprites.png">
-      <DependentUpon>minecrafter_0.png</DependentUpon>
-    </BundleResource>
     <BundleResource Include="Resources\appicon.png" />
     <BundleResource Include="Content\Pigeon_sprites.png" />
     <BundleResource Include="Content\Boss.png" />
@@ -122,8 +115,20 @@
     <BundleResource Include="Content\IntroLevel4.png" />
     <BundleResource Include="Content\IntroLevel5.png" />
     <BundleResource Include="Content\Hearth.png" />
+    <BundleResource Include="Content\Song1.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Content\Main.png" />
+    <BundleResource Include="Content\Eagle_sprites.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Song1.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>

@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System.IO;
 using BmFont;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 
 namespace PigeonGame
 {
@@ -12,9 +13,9 @@ namespace PigeonGame
 		/**
 		 * ENEMIES
 		 **/
-		private Enemy _enemy;
-		private Enemy _enemy2;
-		private Enemy _enemy3;
+		private Eagle _eagle;
+		private Eagle _eagle2;
+		private Eagle _eagle3;
 		Texture2D _enemyTex1;
 
 		/**
@@ -38,26 +39,21 @@ namespace PigeonGame
 		Texture2D _menuScreenTexture;
 		FontRenderer _fontRenderer;
 
-
-
 		public World (Game1 g)
 		{
 			/** 
 			 * TEXTURE LOAD
 			 **/
-			_menuScreenTexture = g.Content.Load<Texture2D> ("main");
-//			_enemyTex = g.Content.Load<Texture2D> ("Eagle_sprites");
+			_menuScreenTexture = g.Content.Load<Texture2D> ("Main");
 			_bgTexture = g.Content.Load<Texture2D> ("level_lowres");
-			_enemyTex1 = g.Content.Load<Texture2D> ("Eagle_sprites");
 			_bgTexture = g.Content.Load<Texture2D> ("level_old");
-
 
 			/**
 			 * CLASSES
 			 **/
-			_enemy = new Enemy (g, this, _enemyTex1, new Vector2 (150, 50), 1, 0.2f);
-			_enemy2 = new Enemy (g, this, _enemyTex1, new Vector2 (30, 20), 1, 0.2f);
-			_enemy3 = new Enemy (g, this, _enemyTex1, new Vector2 (200, 150), 1, 0.2f);
+			_eagle = new Eagle (g, this, Assets.EagleTexture, new Vector2 (150, 50), 1, 0.2f);
+			_eagle2 = new Eagle (g, this, Assets.EagleTexture, new Vector2 (30, 20), 1, 0.2f);
+			_eagle3 = new Eagle (g, this, Assets.EagleTexture, new Vector2 (200, 150), 1, 0.2f);
 
 			_background = new Background(g, this, _bgTexture, new Vector2(0, 0));
 			_menu = new Menu (g,_menuScreenTexture);
@@ -81,7 +77,6 @@ namespace PigeonGame
 			var fontFile = FontLoader.Load(fontFilePath);
 			var fontTexture = g.Content.Load<Texture2D>("minecrafter_0.png");
 			_fontRenderer = new FontRenderer(fontFile, fontTexture);
-
 		}
 	
 		public Vector2 GetPidgyPosition()
@@ -101,13 +96,13 @@ namespace PigeonGame
 
 		public void Update (GameTime gameTime)
 		{
-			_pidgy.Update (gameTime);
-			_background.Update (gameTime);
-			_enemy.Update (gameTime);
-			_enemy2.Update (gameTime);
-			_enemy3.Update (gameTime);
-
-
+				_pidgy.Update (gameTime);
+				_background.Update (gameTime);
+				//_eagle.Update (gameTime, _pidgy);
+				_eagle.Update(gameTime);	
+				_eagle2.Update (gameTime);
+				_eagle3.Update (gameTime);
+			/*
 			//Enemies sorteren per class, elke list toevoegen aan collision
 			if(_pidgy.PigeonPosition().Intersects(_enemy.EaglePosition()))
 			{
@@ -120,9 +115,7 @@ namespace PigeonGame
 			if(_pidgy.PigeonPosition().Intersects(_enemy3.EaglePosition()))
 			{
 				Console.WriteLine ("Collission!");
-			}
-
-
+			}*/
 		}
 
 		public void Draw (SpriteBatch spriteBatch)
@@ -138,6 +131,7 @@ namespace PigeonGame
 			if (!_menuCheck) {
 				if (_keyboard.IsKeyDown (Keys.Space)) {
 					_menuCheck = true;
+					Assets.Level1Song.Play ();
 				} else {
 					_menu.Draw (spriteBatch);
 				}
@@ -155,9 +149,9 @@ namespace PigeonGame
 				_pidgy.Draw (spriteBatch);
 
 				// CREATE ENEMIES
-				_enemy.Draw (spriteBatch);
-				_enemy2.Draw (spriteBatch);
-				_enemy3.Draw (spriteBatch);
+				_eagle.Draw (spriteBatch);
+				_eagle2.Draw (spriteBatch);
+				_eagle3.Draw (spriteBatch);
 			}
 		}
 	}

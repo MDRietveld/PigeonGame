@@ -16,8 +16,8 @@ namespace PigeonGame
 		protected Vector2 _origin;
 		protected Rectangle _sourceRectangle;
 		protected Rectangle _bounds;
-		protected Pidgy _pidgy;
-		protected Enemy _enemy1;
+		//protected Pidgy _pidgy;
+		//protected Enemy _enemy1;
 
 		bool paused=false;
 		public Rectangle Bounds {
