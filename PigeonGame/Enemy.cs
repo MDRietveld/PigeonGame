@@ -64,10 +64,10 @@ namespace PigeonGame
 
 			}
 			_position.X += _speed;
-			//if (_position.X  > 300 || _position.X < 0) 
-			//{
-				//_speed *= -1;
-			//}
+			if (_position.X  > 300 || _position.X < 0) 
+			{
+				_speed *= -1;
+			}
 
 			//Check om de direction te bepalen
 			if (_speed < 0) {
