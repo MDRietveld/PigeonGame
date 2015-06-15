@@ -118,6 +118,7 @@
     <BundleResource Include="Content\Hearth.png" />
     <BundleResource Include="Content\Main.png" />
     <BundleResource Include="Content\Boss_level.png" />
+    <BundleResource Include="Content\Pause.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
