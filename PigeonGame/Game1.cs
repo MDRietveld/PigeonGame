@@ -60,7 +60,7 @@ namespace PigeonGame
 			 */
 
 			_keyboard = Keyboard.GetState ();
-
+			//PAUSE.PNG gebruiken voor PAUSE functie!
 			if (!paused) {
 				//Console.WriteLine ("It's not Paused");
 				if (_keyboard.IsKeyDown (Keys.P)) {
