@@ -46,7 +46,7 @@ namespace PigeonGame
 			 **/
 			_menuScreenTexture = g.Content.Load<Texture2D> ("Main");
 			_bgTexture = g.Content.Load<Texture2D> ("level_lowres");
-			_bgTexture = g.Content.Load<Texture2D> ("level_old");
+//			_bgTexture = g.Content.Load<Texture2D> ("level_old");
 
 			/**
 			 * CLASSES

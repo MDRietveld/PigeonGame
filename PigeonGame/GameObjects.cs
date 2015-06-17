@@ -20,7 +20,7 @@ namespace PigeonGame
 		//protected Enemy _enemy1;
 
 		bool paused=false;
-		public Rectangle Bounds {
+		public virtual Rectangle Bounds {
 			get { 
 				return new Rectangle(0,0,_texture.Width, _texture.Height); 
 			}

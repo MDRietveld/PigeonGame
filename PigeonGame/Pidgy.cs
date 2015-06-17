@@ -17,7 +17,6 @@ namespace PigeonGame
 		int _frames;
 		int _frames2;
 		int _rij;
-		Rectangle _pigeon;
 
 		// PROPERTIES
 		public Vector2 GetPosition ()
@@ -39,10 +38,10 @@ namespace PigeonGame
 
 		}
 
-		public Rectangle PigeonPosition()
-		{
-			return _pigeon = new Rectangle ((int)_position.X, (int)_position.Y, _texture.Width/5/12, _texture.Height/5/4);
-		}
+		//private Rectangle PigeonPosition()
+		//{
+		//	return new Rectangle ((int)_position.X, (int)_position.Y, _texture.Width/5/12, _texture.Height/5/4);
+		//}
 			
 
 		public void Update (GameTime gameTime)
