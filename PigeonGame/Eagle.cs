@@ -6,6 +6,7 @@ namespace PigeonGame
 {
 	public class Eagle : Enemy
 	{
+		private Game1 _game;
 		private int _speed;
 		float _elapsed;
 		float _delay = 100;
@@ -20,9 +21,8 @@ namespace PigeonGame
 
 		public Eagle (Game1 g, World w, Texture2D texture, Vector2 position, int speed, float scale) : base (g, w, texture, position, speed, scale)
 		{
+			_game = g;
 			_speed = speed;
-
-
 
 			size_hor = _texture.Width/8;
 			size_ver = _texture.Height / 2;
@@ -34,21 +34,27 @@ namespace PigeonGame
 		}
 
 		//  wordt gebruikt voor collision detection
+		/*
 		public override Rectangle Bounds {
 			get { 
 				return new Rectangle ((int)_position.X, (int)_position.Y, _texture.Width/5/8, _texture.Height/5/2);
 			}
 		}
+		*/
 
-		public override void Update (GameTime gameTime)
+		public Rectangle EaglePosition()
 		{
-			/*
+			return new Rectangle ((int)_position.X, (int)_position.Y, _texture.Width/5/8, _texture.Height/5/2);
+		}
+
+		public override void Update (GameTime gameTime, Pidgy pidgy)
+		{
 			if(pidgy.PigeonPosition().Intersects(EaglePosition()))
 			{
+				_game.paused = true;
 				Console.WriteLine ("Collission!");
 			}
-			*/
-
+				
 			_elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
 			if (_elapsed >= _delay) 
@@ -73,11 +79,6 @@ namespace PigeonGame
 			_speed*= -1;
 			_rij =1;
 			}
-
-			//Check om de direction te bepalen
-//			if (_speed < 0) {
-//				Console.WriteLine("speed is -1");
-//			}
 		}
 	}
 }

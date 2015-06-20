@@ -76,6 +76,7 @@
     <Compile Include="Menu.cs" />
     <Compile Include="Eagle.cs" />
     <Compile Include="Assets.cs" />
+    <Compile Include="Flag.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

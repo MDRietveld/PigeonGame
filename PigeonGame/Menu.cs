@@ -26,7 +26,7 @@ namespace PigeonGame
 			 **/
 			var fontFilePath = Path.Combine(g.Content.RootDirectory, "minecrafter.fnt");
 			var fontFile = FontLoader.Load(fontFilePath);
-			var fontTexture = g.Content.Load<Texture2D>("minecrafter_0.png");
+			var fontTexture = Assets.FontTexture;
 			_fontRenderer = new FontRenderer(fontFile, fontTexture);
 		}
 

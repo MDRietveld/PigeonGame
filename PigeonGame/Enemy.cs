@@ -14,7 +14,7 @@ namespace PigeonGame
 			_speed = speed;
 		}
 			
-		public virtual void Update (GameTime gameTime)
+		public virtual void Update (GameTime gameTime, Pidgy pidgy)
 		{
 			_position.X += _speed;
 			//if (_position.X  > 300 || _position.X < 0) 
@@ -27,7 +27,5 @@ namespace PigeonGame
 				Console.WriteLine("speed is -1");
 			}
 		}
-				
-
 	}
 }

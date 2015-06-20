@@ -18,6 +18,7 @@ namespace PigeonGame
 		int _frames2;
 		int _rij;
 
+		float _cooldowntime = 0;
 		float _flying = 0;
 		float _regen = 0;
 		bool _flyup = true;
@@ -42,10 +43,10 @@ namespace PigeonGame
 
 		}
 
-		//private Rectangle PigeonPosition()
-		//{
-		//	return new Rectangle ((int)_position.X, (int)_position.Y, _texture.Width/5/12, _texture.Height/5/4);
-		//}
+		public Rectangle PigeonPosition()
+		{
+			return new Rectangle ((int)_position.X, (int)_position.Y, _texture.Width/5/12, _texture.Height/5/4);
+		}
 			
 
 		public void Update (GameTime gameTime)
@@ -82,9 +83,8 @@ namespace PigeonGame
 			_keyboard = Keyboard.GetState ();
 			if (_keyboard.IsKeyDown (Keys.Right))
 			{
-				_position += new Vector2 (3, 0);
-
-
+				//_position += new Vector2 (3, 0);
+				_position += new Vector2 (20, 0);
 
 				if (_position.Y > 499) {
 					_rij = 2;
@@ -123,19 +123,20 @@ namespace PigeonGame
 			}
 
 			_regen += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+			_cooldowntime += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+			if (_cooldowntime >= 3000f) 
+			{
+				_flyup = true;
+			}
+
+//			if (_flying += (float) gameTime.ElapsedGameTime.TotalMilliseconds)
 			Console.WriteLine (_flying);
 
 			if (_regen >= 300 && _flying >= 0) 
 			{
-				_flying -= 100;
+				_flying -= 50;
 				_regen = 0;
-			}
 
-			if (_flying >= 2000f) {
-				_flyup = false;
-				_flying = 2000f;
-			} else {
-				_flyup = true;
 			}
 
 			if (_keyboard.IsKeyDown (Keys.Up) && _flyup) {
@@ -147,7 +148,12 @@ namespace PigeonGame
 				}
 				_position.Y -= _fly.Y;
 				_sourceRectangle = new Rectangle (size * _frames, size* _rij, size, size);
-
+				if (_flying >= 2000f) 
+				{
+					_flyup = false;
+					_cooldowntime = 0;
+					_flying = 0;
+				}
 
 				if (_flying <= 0) 
 				{

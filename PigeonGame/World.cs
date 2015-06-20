@@ -19,7 +19,7 @@ namespace PigeonGame
 		Vector2 _pidgyPosition;
 		float _pidgyHeight;
 
-		Background _background;
+		public Background _background;
 
 		float _scale;
 		float _gameh;
@@ -31,18 +31,20 @@ namespace PigeonGame
 		FontRenderer _fontRenderer;
 		List<Enemy> _level1 = new List <Enemy>();
 
+		Flag _flag;
+
 		public World (Game1 g)
 		{
 			/**
 			 * CLASSES
 			 **/
-
+			_flag = new Flag(this, new Vector2(800,100), Assets.Level1Map);
 			_level1.Add (new Eagle (g, this, Assets.EagleTexture, new Vector2 (150, 50), 1, 0.2f));
 			_level1.Add (new Eagle (g, this, Assets.EagleTexture, new Vector2 (30, 20), 1, 0.2f));
 			_level1.Add (new Eagle (g, this, Assets.EagleTexture, new Vector2 (200, 150), 1, 0.2f));
 
 			_background = new Background(g, this, Assets.Level1Map, new Vector2(0, 0));
-			_menu = new Menu (g,Assets.MainScreen);
+			_menu = new Menu (g, Assets.MainScreen);
 
 			/**
 			 * POSITIONS
@@ -82,27 +84,11 @@ namespace PigeonGame
 		{
 			_pidgy.Update (gameTime);
 			_background.Update (gameTime);
-			//_eagle.Update (gameTime, _pidgy);
-
-
+			_flag.Update (gameTime, _pidgy);
 			foreach (Enemy e in _level1) 
 			{
-				e.Update (gameTime);
+				e.Update (gameTime, _pidgy);
 			}
-			/*
-			//Enemies sorteren per class, elke list toevoegen aan collision
-			if(_pidgy.PigeonPosition().Intersects(_enemy.EaglePosition()))
-			{
-				Console.WriteLine ("Collission!");
-			}
-			if(_pidgy.PigeonPosition().Intersects(_enemy2.EaglePosition()))
-			{
-				Console.WriteLine ("Collission!");
-			}
-			if(_pidgy.PigeonPosition().Intersects(_enemy3.EaglePosition()))
-			{
-				Console.WriteLine ("Collission!");
-			}*/
 		}
 
 		public void Draw (SpriteBatch spriteBatch)
@@ -134,6 +120,7 @@ namespace PigeonGame
 
 				// PIGEON DRAW
 				_pidgy.Draw (spriteBatch);
+				_flag.Draw (spriteBatch);
 
 				// CREATE ENEMIES
 				foreach (Enemy e in _level1) 
