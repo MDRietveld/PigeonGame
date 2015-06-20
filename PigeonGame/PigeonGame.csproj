@@ -103,7 +103,6 @@
     <BundleResource Include="Content\Fox_sprites.png" />
     <BundleResource Include="Content\Flag.png" />
     <BundleResource Include="Resources\appicon.png" />
-    <BundleResource Include="Content\Pigeon_sprites.png" />
     <BundleResource Include="Content\Boss.png" />
     <BundleResource Include="Content\level_highres.png" />
     <BundleResource Include="Content\level_lowres.png" />
@@ -122,6 +121,7 @@
     <BundleResource Include="Content\Boss_level.png" />
     <BundleResource Include="Content\Pause.png" />
     <BundleResource Include="Content\Eagle_sprites.png" />
+    <BundleResource Include="Content\Pigeon_sprites.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
