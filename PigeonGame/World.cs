@@ -17,11 +17,9 @@ namespace PigeonGame
 		 **/
 		Pidgy _pidgy;
 		Vector2 _pidgyPosition;
-		Texture2D _pidgyTexture;
 		float _pidgyHeight;
 
 		Background _background;
-		Texture2D _bgTexture;
 
 		float _scale;
 		float _gameh;
@@ -30,19 +28,11 @@ namespace PigeonGame
 		KeyboardState _keyboard;
 		Menu _menu;
 		bool _menuCheck;
-		Texture2D _menuScreenTexture;
 		FontRenderer _fontRenderer;
 		List<Enemy> _level1 = new List <Enemy>();
 
 		public World (Game1 g)
 		{
-			/** 
-			 * TEXTURE LOAD
-			 **/
-			_menuScreenTexture = g.Content.Load<Texture2D> ("Main");
-			_bgTexture = g.Content.Load<Texture2D> ("level_lowres");
-//			_bgTexture = g.Content.Load<Texture2D> ("level_old");
-
 			/**
 			 * CLASSES
 			 **/
@@ -51,19 +41,17 @@ namespace PigeonGame
 			_level1.Add (new Eagle (g, this, Assets.EagleTexture, new Vector2 (30, 20), 1, 0.2f));
 			_level1.Add (new Eagle (g, this, Assets.EagleTexture, new Vector2 (200, 150), 1, 0.2f));
 
-			_background = new Background(g, this, _bgTexture, new Vector2(0, 0));
-			_menu = new Menu (g,_menuScreenTexture);
+			_background = new Background(g, this, Assets.Level1Map, new Vector2(0, 0));
+			_menu = new Menu (g,Assets.MainScreen);
 
 			/**
 			 * POSITIONS
 			 **/
 			_gameh = g.GraphicsDevice.Viewport.Height;
-			_texh = _bgTexture.Height;
+			_texh = Assets.Level1Map.Height;
 
-			_pidgyTexture = g.Content.Load<Texture2D> ("Pigeon_sprites");
 			_pidgyPosition = new Vector2 (g.GraphicsDevice.Viewport.Width/8, 500);
-//			_pidgyPosition = new Vector2(0,0);
-			_pidgy = new Pidgy (g, this, _pidgyTexture, _pidgyPosition, Scaling());
+			_pidgy = new Pidgy (g, this, Assets.PigeonTexture, _pidgyPosition, Scaling());
 
 			/**
 			 * GENERATE FONT FROM FNT & _0.PNG FILE
@@ -71,7 +59,7 @@ namespace PigeonGame
 			 **/
 			var fontFilePath = Path.Combine(g.Content.RootDirectory, "minecrafter.fnt");
 			var fontFile = FontLoader.Load(fontFilePath);
-			var fontTexture = g.Content.Load<Texture2D>("minecrafter_0.png");
+			var fontTexture = Assets.FontTexture;
 			_fontRenderer = new FontRenderer(fontFile, fontTexture);
 		}
 	
