@@ -17,6 +17,8 @@ namespace PigeonGame
 		int size_ver;
 		int _kolom;
 
+		float _time = 0;
+
 		//Rectangle _eagle;
 
 		public Eagle (Game1 g, World w, Texture2D texture, Vector2 position, int speed, float scale) : base (g, w, texture, position, speed, scale)
@@ -68,16 +70,26 @@ namespace PigeonGame
 
 			}
 			_sourceRectangle = new Rectangle (size_hor *_frames, size_ver* _rij, size_hor, size_ver);
-				
+
+
 			_position.X += _speed;
-			if (_position.X  > 300) 
+
+			_time += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+
+			if (_time >= 3000) 
 			{
-			_speed *= -1;
-			 _rij= 0;
-			}else if (_position.X <0 )
-			{
-			_speed*= -1;
-			_rij =1;
+				/*
+				_speed*= -1;
+				_rij =1;
+				*/
+				_speed *= -1;
+				_time = 0;
+
+				if (_rij == 1) {
+					_rij = 0;
+				} else {
+					_rij = 1;
+				}
 			}
 		}
 	}

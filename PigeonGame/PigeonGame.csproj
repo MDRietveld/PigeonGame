@@ -10,8 +10,6 @@
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
     <AssemblyName>PigeonGame</AssemblyName>
     <SuppressXamMacUpsell>True</SuppressXamMacUpsell>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -77,6 +75,7 @@
     <Compile Include="Eagle.cs" />
     <Compile Include="Assets.cs" />
     <Compile Include="Flag.cs" />
+    <Compile Include="Level.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -105,7 +104,6 @@
     <BundleResource Include="Content\Fox_sprites.png" />
     <BundleResource Include="Content\Flag.png" />
     <BundleResource Include="Resources\appicon.png" />
-    <BundleResource Include="Content\Pigeon_sprites.png" />
     <BundleResource Include="Content\Boss.png" />
     <BundleResource Include="Content\level_highres.png" />
     <BundleResource Include="Content\level_lowres.png" />
@@ -124,6 +122,7 @@
     <BundleResource Include="Content\Boss_level.png" />
     <BundleResource Include="Content\Pause.png" />
     <BundleResource Include="Content\Eagle_sprites.png" />
+    <BundleResource Include="Content\Pigeon_sprites.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
