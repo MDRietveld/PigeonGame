@@ -5,18 +5,12 @@ using System.IO;
 using BmFont;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using System.Collections.Generic;
 
 namespace PigeonGame
 {
 	public class World
 	{
-		/**
-		 * ENEMIES
-		 **/
-		private Eagle _eagle;
-		private Eagle _eagle2;
-		private Eagle _eagle3;
-		Texture2D _enemyTex1;
 
 		/**
 		 * PIGEON
@@ -38,6 +32,7 @@ namespace PigeonGame
 		bool _menuCheck;
 		Texture2D _menuScreenTexture;
 		FontRenderer _fontRenderer;
+		List<Enemy> _level1 = new List <Enemy>();
 
 		public World (Game1 g)
 		{
@@ -51,9 +46,10 @@ namespace PigeonGame
 			/**
 			 * CLASSES
 			 **/
-			_eagle = new Eagle (g, this, Assets.EagleTexture, new Vector2 (150, 50), 1, 0.2f);
-			_eagle2 = new Eagle (g, this, Assets.EagleTexture, new Vector2 (30, 20), 1, 0.2f);
-			_eagle3 = new Eagle (g, this, Assets.EagleTexture, new Vector2 (200, 150), 1, 0.2f);
+
+			_level1.Add (new Eagle (g, this, Assets.EagleTexture, new Vector2 (150, 50), 1, 0.2f));
+			_level1.Add (new Eagle (g, this, Assets.EagleTexture, new Vector2 (30, 20), 1, 0.2f));
+			_level1.Add (new Eagle (g, this, Assets.EagleTexture, new Vector2 (200, 150), 1, 0.2f));
 
 			_background = new Background(g, this, _bgTexture, new Vector2(0, 0));
 			_menu = new Menu (g,_menuScreenTexture);
@@ -96,12 +92,15 @@ namespace PigeonGame
 
 		public void Update (GameTime gameTime)
 		{
-				_pidgy.Update (gameTime);
-				_background.Update (gameTime);
-				//_eagle.Update (gameTime, _pidgy);
-				_eagle.Update(gameTime);	
-				_eagle2.Update (gameTime);
-				_eagle3.Update (gameTime);
+			_pidgy.Update (gameTime);
+			_background.Update (gameTime);
+			//_eagle.Update (gameTime, _pidgy);
+
+
+			foreach (Enemy e in _level1) 
+			{
+				e.Update (gameTime);
+			}
 			/*
 			//Enemies sorteren per class, elke list toevoegen aan collision
 			if(_pidgy.PigeonPosition().Intersects(_enemy.EaglePosition()))
@@ -149,9 +148,10 @@ namespace PigeonGame
 				_pidgy.Draw (spriteBatch);
 
 				// CREATE ENEMIES
-				_eagle.Draw (spriteBatch);
-				_eagle2.Draw (spriteBatch);
-				_eagle3.Draw (spriteBatch);
+				foreach (Enemy e in _level1) 
+				{
+					e.Draw (spriteBatch);
+				}
 			}
 		}
 	}
