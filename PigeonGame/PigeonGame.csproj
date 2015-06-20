@@ -10,8 +10,6 @@
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
     <AssemblyName>PigeonGame</AssemblyName>
     <SuppressXamMacUpsell>True</SuppressXamMacUpsell>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -76,6 +74,7 @@
     <Compile Include="Menu.cs" />
     <Compile Include="Eagle.cs" />
     <Compile Include="Assets.cs" />
+    <Compile Include="Level.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

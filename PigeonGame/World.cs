@@ -29,7 +29,8 @@ namespace PigeonGame
 		Menu _menu;
 		bool _menuCheck;
 		FontRenderer _fontRenderer;
-		List<Enemy> _level1 = new List <Enemy>();
+		Level _level;
+//		List<Enemy> _level1 = new List <Enemy>();
 
 		public World (Game1 g)
 		{
@@ -37,9 +38,11 @@ namespace PigeonGame
 			 * CLASSES
 			 **/
 
-			_level1.Add (new Eagle (g, this, Assets.EagleTexture, new Vector2 (150, 50), 1, 0.2f));
-			_level1.Add (new Eagle (g, this, Assets.EagleTexture, new Vector2 (30, 20), 1, 0.2f));
-			_level1.Add (new Eagle (g, this, Assets.EagleTexture, new Vector2 (200, 150), 1, 0.2f));
+			_level = new Level (g, this);
+
+//			_level1.Add (new Eagle (g, this, Assets.EagleTexture, new Vector2 (150, 50), 1, 0.2f));
+//			_level1.Add (new Eagle (g, this, Assets.EagleTexture, new Vector2 (30, 20), 1, 0.2f));
+//			_level1.Add (new Eagle (g, this, Assets.EagleTexture, new Vector2 (200, 150), 1, 0.2f));
 
 			_background = new Background(g, this, Assets.Level1Map, new Vector2(0, 0));
 			_menu = new Menu (g,Assets.MainScreen);
@@ -82,13 +85,16 @@ namespace PigeonGame
 		{
 			_pidgy.Update (gameTime);
 			_background.Update (gameTime);
+			_level.Update (gameTime);
 			//_eagle.Update (gameTime, _pidgy);
 
 
-			foreach (Enemy e in _level1) 
-			{
-				e.Update (gameTime);
-			}
+//			foreach (Enemy e in _level1) 
+//			{
+//				e.Update (gameTime);
+//			}
+
+
 			/*
 			//Enemies sorteren per class, elke list toevoegen aan collision
 			if(_pidgy.PigeonPosition().Intersects(_enemy.EaglePosition()))
@@ -136,10 +142,11 @@ namespace PigeonGame
 				_pidgy.Draw (spriteBatch);
 
 				// CREATE ENEMIES
-				foreach (Enemy e in _level1) 
-				{
-					e.Draw (spriteBatch);
-				}
+				_level.Draw (spriteBatch);
+//				foreach (Enemy e in _level1) 
+//				{
+//					e.Draw (spriteBatch);
+//				}
 			}
 		}
 	}
