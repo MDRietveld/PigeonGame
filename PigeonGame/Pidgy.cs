@@ -20,6 +20,7 @@ namespace PigeonGame
 
 		float _cooldowntime = 0;
 		float _flying = 0;
+		float _regen = 0;
 		bool _flyup = true;
 
 		// PROPERTIES
@@ -122,7 +123,7 @@ namespace PigeonGame
 				_position.Y = 500;
 			}
 
-
+			_regen += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 			_cooldowntime += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 			if (_cooldowntime >= 3000f) 
 			{
@@ -130,8 +131,15 @@ namespace PigeonGame
 			}
 
 //			if (_flying += (float) gameTime.ElapsedGameTime.TotalMilliseconds)
+			Console.WriteLine (_flying);
 
-				
+			if (_regen >= 300 && _flying >= 0) 
+			{
+				_flying -= 50;
+				_regen = 0;
+
+			}
+
 			if (_keyboard.IsKeyDown (Keys.Up) && _flyup) {
 				_flying += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 				_fly.Y *= 1.05f;
@@ -147,6 +155,13 @@ namespace PigeonGame
 					_cooldowntime = 0;
 					_flying = 0;
 				}
+
+				if (_flying <= 0) 
+				{
+					_flying = 0;
+				}
+
+
 			} else {
 				_fly = new Vector2 (0, 1.5f);
 			}

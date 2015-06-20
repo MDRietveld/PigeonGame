@@ -43,15 +43,15 @@ namespace PigeonGame
 
 			Level3Intro 	= game.Content.Load<Texture2D> ("IntroLevel3");
 			Level3Map 		= game.Content.Load<Texture2D> ("Level3_lowres");
-			Level3Song 		= game.Content.Load<SoundEffect>("Song2");
+//			Level3Song 		= game.Content.Load<SoundEffect>("Song2");
 
 			Level4Intro 	= game.Content.Load<Texture2D> ("IntroLevel4");
 			Level4Map 		= game.Content.Load<Texture2D> ("Level4_lowres");
-			Level4Song 		= game.Content.Load<SoundEffect>("Song3");
+//			Level4Song 		= game.Content.Load<SoundEffect>("Song3");
 
 			Level5Intro 	= game.Content.Load<Texture2D> ("IntroLevel5");
 			Level5Map 		= game.Content.Load<Texture2D> ("Boss_level");
-			Level5Song 		= game.Content.Load<SoundEffect>("Song4");
+//			Level5Song 		= game.Content.Load<SoundEffect>("Song4");
 		}
 	}
 }
