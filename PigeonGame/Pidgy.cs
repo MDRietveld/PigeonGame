@@ -149,6 +149,7 @@ namespace PigeonGame
 			if (_keyboard.IsKeyDown (Keys.Up) && _flyup) {
 				_flying += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 				_fly.Y *= 1.05f;
+				_rij = 0;
 				if (_fly.Y > 6) 
 				{
 					_fly.Y = 6;
