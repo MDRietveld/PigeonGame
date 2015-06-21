@@ -50,7 +50,7 @@ namespace PigeonGame
 
 			switch (_enemyClass) {
 			case "Fox":
-				_textureFrames = 11;
+				_textureFrames = 10;
 				break;
 			case "Eagle":
 				_textureFrames = 7;	
