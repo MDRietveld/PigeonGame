@@ -123,20 +123,25 @@ namespace PigeonGame
 			}
 
 			_regen += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-			_cooldowntime += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-			if (_cooldowntime >= 3000f) 
-			{
-				_flyup = true;
-			}
+//			_cooldowntime += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+//			if (_cooldowntime >= 3000f) 
+//			{
+//				_flyup = true;
+//			}
 
 //			if (_flying += (float) gameTime.ElapsedGameTime.TotalMilliseconds)
 			Console.WriteLine (_flying);
 
 			if (_regen >= 300 && _flying >= 0) 
 			{
-				_flying -= 50;
+				_flying -= 100;
 				_regen = 0;
 
+			}
+			if (_flying >= 2000f) {
+				_flyup = false;
+			} else {
+				_flyup = true;
 			}
 
 			if (_keyboard.IsKeyDown (Keys.Up) && _flyup) {
@@ -148,12 +153,7 @@ namespace PigeonGame
 				}
 				_position.Y -= _fly.Y;
 				_sourceRectangle = new Rectangle (size * _frames, size* _rij, size, size);
-				if (_flying >= 2000f) 
-				{
-					_flyup = false;
-					_cooldowntime = 0;
-					_flying = 0;
-				}
+
 
 				if (_flying <= 0) 
 				{
