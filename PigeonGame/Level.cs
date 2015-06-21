@@ -25,11 +25,9 @@ namespace PigeonGame
 			_game = g;
 			_world = world;
 
-			_level1.Add (new Eagle (g, world, Assets.EagleTexture, new Vector2 (150, 50), 1, 0.2f));
-			_level1.Add (new Eagle (g, world, Assets.EagleTexture, new Vector2 (30, 20), 1, 0.2f));
-			_level1.Add (new Eagle (g, world, Assets.EagleTexture, new Vector2 (200, 150), 1, 0.2f));
-
-
+			_level1.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (150, 50), 1, 0.2f, 8, 2, "Eagle"));
+			_level1.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (30, 20), 1, 0.2f, 8, 2, "Eagle"));
+			_level1.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (200, 150), 1, 0.2f, 8, 2, "Eagle"));
 		}
 
 

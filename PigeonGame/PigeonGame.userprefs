@@ -1,21 +1,23 @@
-<<<<<<< HEAD
-﻿<Properties MonoDevelop.MonoMac.LastXamMacNagTime="6/20/2015 12:41:05 PM">
-=======
-﻿<Properties StartupItem="PigeonGame.csproj" MonoDevelop.MonoMac.LastXamMacNagTime="6/9/2015 12:43:18 PM">
->>>>>>> origin/master
+﻿<Properties MonoDevelop.MonoMac.LastXamMacNagTime="6/21/2015 10:06:15 AM">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Eagle.cs">
     <Files>
-      <File FileName="Game1.cs" Line="1" Column="1" />
-      <File FileName="World.cs" Line="49" Column="38" />
-      <File FileName="Menu.cs" Line="39" Column="4" />
-      <File FileName="Pidgy.cs" Line="41" Column="3" />
-      <File FileName="GameObjects.cs" Line="38" Column="10" />
-      <File FileName="Background.cs" Line="22" Column="21" />
-      <File FileName="Enemy.cs" Line="1" Column="1" />
-      <File FileName="Eagle.cs" Line="78" Column="6" />
-      <File FileName="Assets.cs" Line="14" Column="55" />
+      <File FileName="Pidgy.cs" Line="30" Column="4" />
+      <File FileName="Eagle.cs" Line="54" Column="1" />
+      <File FileName="Level.cs" Line="15" Column="16" />
+      <File FileName="World.cs" Line="87" Column="36" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="PigeonGame" expanded="True">
+            <Node name="PigeonGame" expanded="True">
+              <Node name="Eagle.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
