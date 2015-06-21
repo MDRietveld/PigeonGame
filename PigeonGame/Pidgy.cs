@@ -81,40 +81,7 @@ namespace PigeonGame
 //			}
 //			Console.WriteLine ("ben ik " + _scale);
 			_keyboard = Keyboard.GetState ();
-			if (_keyboard.IsKeyDown (Keys.Right))
-			{
-				_sourceRectangle = new Rectangle (size * _frames, size * _rij, size, size);
 
-				//_position += new Vector2 (3, 0);
-				_position += new Vector2 (20, 0);
-
-				if (_position.Y > 499) {
-					_rij = 3;
-
-				} else {
-					_rij = 0;
-//					_sourceRectangle = new Rectangle (size * _frames, size* _rij, size, size);
-				}
-
-			}
-
-			if (_keyboard.IsKeyDown (Keys.Left))
-			{
-				_position -= new Vector2 (3, 0);
-				_sourceRectangle = new Rectangle (size * _frames, size * _rij, size, size);
-
-
-				if (_position.Y > 499) {
-					_rij = 2;
-//					_sourceRectangle = new Rectangle (size * _frames, size * _rij, size, size);
-
-				} else {
-					_rij = 1;
-//					_sourceRectangle = new Rectangle (size * _frames, size* _rij, size, size);
-				}
-
-
-			}
 
 			_position += _gravity;
 
@@ -149,7 +116,6 @@ namespace PigeonGame
 			if (_keyboard.IsKeyDown (Keys.Up) && _flyup) {
 				_flying += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 				_fly.Y *= 1.05f;
-				_rij = 0;
 				if (_fly.Y > 6) 
 				{
 					_fly.Y = 6;
@@ -167,6 +133,43 @@ namespace PigeonGame
 			} else {
 				_fly = new Vector2 (0, 1.5f);
 			}
+				
+
+
+			if (_keyboard.IsKeyDown (Keys.Right))
+			{
+				_sourceRectangle = new Rectangle (size * _frames, size * _rij, size, size);
+
+				//_position += new Vector2 (3, 0);
+				_position += new Vector2 (20, 0);
+
+				if (_position.Y > 499) {
+					_rij = 2;
+
+				} else {
+					_rij = 0;
+					//					_sourceRectangle = new Rectangle (size * _frames, size* _rij, size, size);
+				}
+
+			}
+
+			if (_keyboard.IsKeyDown (Keys.Left))
+			{
+				_position -= new Vector2 (3, 0);
+				_sourceRectangle = new Rectangle (size * _frames, size * _rij, size, size);
+
+
+				if (_position.Y > 499) {
+					_rij = 3;
+					//					_sourceRectangle = new Rectangle (size * _frames, size * _rij, size, size);
+
+				} else {
+					_rij = 1;
+					//					_sourceRectangle = new Rectangle (size * _frames, size* _rij, size, size);
+				}
+
+
+			}
 
 
 
@@ -174,10 +177,10 @@ namespace PigeonGame
 			{
 				_fly = new Vector2 (0, 0);
 			}
-//			if (_position.Y < 500) 
-//			{
-//				_rij = 0;
-//			}
+			if (_position.Y < 500 && (_rij == 2 || _rij == 3)) 
+			{
+				_rij = 0;
+			}
 //			if (_position.Y > 499) 
 //			{
 //				_sourceRectangle = new Rectangle (size * 1, size* 3, size, size);
