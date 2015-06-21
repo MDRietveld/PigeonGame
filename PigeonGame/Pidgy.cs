@@ -177,17 +177,18 @@ namespace PigeonGame
 			{
 				_fly = new Vector2 (0, 0);
 			}
-			if (_position.Y < 500 && (_rij == 2 || _rij == 3)) 
+
+			if (_position.Y < 500 && _rij == 2) 
 			{
 				_rij = 0;
+			} else if (_position.Y < 500 && _rij == 3){
+				_rij = 1;
 			}
-//			if (_position.Y > 499) 
-//			{
-//				_sourceRectangle = new Rectangle (size * 1, size* 3, size, size);
-//				if (_keyboard.IsKeyDown(Keys.Left)){
-//					_sourceRectangle = new Rectangle (size * 1, size* 2, size, size);
-//				}
-//
+
+//			if (_position.Y == 500 && _rij == 0) {
+//				_rij = 2;
+//			} else if (_position.Y == 500 && _rij == 0){
+//				_rij = 3;
 //			}
 
 			if (_position.X > _game.GraphicsDevice.Viewport.Width /2 + 1) 
