@@ -35,7 +35,6 @@ namespace PigeonGame
 			if (_world.GetPidgyPosition().X < _game.GraphicsDevice.Viewport.Width/8 && _keyboard.IsKeyDown (Keys.Left) && _position.X > 0)
 			{
 				_position += new Vector2 (3, 0);
-				Console.WriteLine ("hi");
 			}
 
 

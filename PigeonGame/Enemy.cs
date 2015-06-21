@@ -7,7 +7,7 @@ namespace PigeonGame
 {
 	public class Enemy : GameObjects
 	{
-		Game1 _game;
+		World _world;
 		private int _speed;
 		float _elapsed;
 		float _delay = 100;
@@ -17,7 +17,7 @@ namespace PigeonGame
 
 		public Enemy (Game1 g, World w, Texture2D texture, Vector2 position, int speed, float scale, int scale_x, int scale_y, string enemyclass) : base (g, w, texture, position, scale)
 		{
-			_game = g;
+			_world = w;
 			_speed = speed;
 			_enemyClass = enemyclass;
 
@@ -42,7 +42,7 @@ namespace PigeonGame
 		{
 			if(pidgy.PigeonPosition().Intersects(EnemyPosition()))
 			{
-				_game.paused = true;
+				_world.paused = true;
 				Console.WriteLine ("Collission!");
 			}
 				
@@ -50,16 +50,16 @@ namespace PigeonGame
 
 			switch (_enemyClass) {
 			case "Fox":
-				_textureFrames = 11;
+				_textureFrames = 10;
 				break;
 			case "Eagle":
 				_textureFrames = 7;	
 				break;
 			case "Gorilla":
-				_textureFrames = 8;
+				_textureFrames = 7;
 				break;
 			case "Kangeroo":
-				_textureFrames = 2;
+				_textureFrames = 1;
 				break;
 			}
 

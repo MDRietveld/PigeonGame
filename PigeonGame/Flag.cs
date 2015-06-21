@@ -8,21 +8,16 @@ namespace PigeonGame
 	public class Flag
 	{
 		private World 		_world;
-		private Texture2D 	_texture = Assets.Flag, _level;
-		private Vector2 	_position, _newPosition;
+		private Level 		_level;
+		private Texture2D 	_texture = Assets.Flag;
+		private Vector2 	_position;
 		private float		_scale;
 
-		public Flag (World world, Vector2 position, Texture2D level)
+		public Flag (World world, Vector2 position)
 		{
 			_world 		= world;
-			_level 		= level;
 			_position 	= position;
 			_scale 		= 0.2f;
-
-			var _positionX = _level.Width - _position.X;
-			var _positionY = _level.Height - _position.Y;
-
-			_newPosition = new Vector2 (600, 0);
 		}
 
 		public Rectangle FlagPosition()
@@ -34,15 +29,52 @@ namespace PigeonGame
 		{
 			if(_pidgy.PigeonPosition().Intersects(FlagPosition()))
 			{
-				Console.WriteLine ("Finished");
+				Assets.LevelComplete = true;
+				Assets.IntervalNewLevel = gameTime.TotalGameTime + TimeSpan.FromMilliseconds (3000);
+
+				this._position.X += 100; // Tijdelijk gebruik om te testen of de levels werken //
+
+				switch (_world.LevelState) {
+				case 1:
+					Assets.Level1SongInstance.Stop ();
+					Assets.Level2SongInstance.Play ();
+
+					_world.LevelState = 2;
+					Console.WriteLine ("LEVEL 2");
+					break;
+				case 2:
+					Assets.Level2SongInstance.Stop ();
+					Assets.Level3SongInstance.Play ();
+
+					_world.LevelState = 3;
+					Console.WriteLine ("LEVEL 3");
+					break;
+				case 3:
+					Assets.Level3SongInstance.Stop ();
+					Assets.Level4SongInstance.Play ();
+
+					_world.LevelState = 4;
+					Console.WriteLine ("LEVEL 4");
+					break;
+				case 4:
+					Assets.Level4SongInstance.Stop ();
+					Assets.Level5SongInstance.Play ();
+
+					_world.LevelState = 5;
+					Console.WriteLine ("BOSS LEVEL");
+					break;
+				case 5:
+				// GAME FINISHED
+					break;
+				}
 			}
 
-			Console.WriteLine (_world._background.GetPosition().X);
+			//Console.WriteLine (_world._level._background.GetPosition().X);
 		}
 
 		public void Draw (SpriteBatch spriteBatch)
 		{
-			spriteBatch.Draw(_texture, _newPosition, null, Color.White, 0f, Vector2.Zero, _scale, SpriteEffects.None, 0f);
+			spriteBatch.Draw(_texture, _position, null, Color.White, 0f, Vector2.Zero, _scale, SpriteEffects.None, 0f);
 		}
 	}
 }

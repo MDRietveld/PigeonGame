@@ -48,11 +48,16 @@ namespace PigeonGame
 			return new Rectangle ((int)_position.X, (int)_position.Y, _texture.Width/5/12, _texture.Height/5/4);
 		}
 			
+		public void ResetPosition() {
+			_position = new Vector2 (_game.GraphicsDevice.Viewport.Width/8, 500);
+		}
 
 		public void Update (GameTime gameTime)
 		{
+			if (Assets.LevelComplete) {
+				ResetPosition ();
+			}
 
-			
 			int size = _texture.Width/12;
 
 			_elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
@@ -130,7 +135,7 @@ namespace PigeonGame
 			}
 
 //			if (_flying += (float) gameTime.ElapsedGameTime.TotalMilliseconds)
-			Console.WriteLine (_flying);
+			//Console.WriteLine (_flying);
 
 			if (_regen >= 300 && _flying >= 0) 
 			{

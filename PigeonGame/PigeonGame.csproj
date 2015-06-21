@@ -78,6 +78,7 @@
     <Compile Include="Assets.cs" />
     <Compile Include="Flag.cs" />
     <Compile Include="Level.cs" />
+    <Compile Include="Lives.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

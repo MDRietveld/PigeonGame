@@ -18,10 +18,6 @@ namespace PigeonGame
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 		World _world;
-		FontRenderer _fontRenderer;
-		KeyboardState _keyboard;
-		// Pause
-		public bool paused = false;
 
 		public Game1 ()
 		{
@@ -46,53 +42,19 @@ namespace PigeonGame
 		protected override void LoadContent ()
 		{
 			spriteBatch = new SpriteBatch (GraphicsDevice);
-
-			var fontFilePath = Path.Combine(Content.RootDirectory, "minecrafter.fnt");
-			var fontFile = FontLoader.Load(fontFilePath);
-			var fontTexture = Content.Load<Texture2D>("minecrafter_0.png");
-			_fontRenderer = new FontRenderer(fontFile, fontTexture);
 		}
 
 		protected override void Update (GameTime gameTime)
 		{
-			/**
-			 * Pause function
-			 */
-
-			_keyboard = Keyboard.GetState ();
-			//PAUSE.PNG gebruiken voor PAUSE functie!
-			if (!paused) {
-				//Console.WriteLine ("It's not Paused");
-				if (_keyboard.IsKeyDown (Keys.P)) {
-					paused = true;
-					Console.WriteLine ("Paused is set on True");
-				}
-
-				_world.Update (gameTime);
-
-			} else if (paused) {
-				if (_keyboard.IsKeyDown (Keys.Escape)) {
-					paused = false;
-					Console.WriteLine ("Paused is set on False");
-				}
-				Console.WriteLine ("Paused is true");
-			}
+			_world.Update (gameTime);
 		}
 
 
 		protected override void Draw (GameTime gameTime)
 		{
-			graphics.GraphicsDevice.Clear (Color.CornflowerBlue);
-
+			graphics.GraphicsDevice.Clear (Color.Black);
 			spriteBatch.Begin ();
 			_world.Draw (spriteBatch);
-
-			// If it's paused, write the text Paused
-			if (paused) {
-				spriteBatch.Draw(Assets.PauseScreen, new Vector2(40 ,GraphicsDevice.Viewport.Height/4), Color.White);
-				//_fontRenderer.DrawText (spriteBatch, GraphicsDevice.Viewport.Width/2, GraphicsDevice.Viewport.Height/2, "Pauze");
-			}
-
 			spriteBatch.End ();
 		}
 	}
