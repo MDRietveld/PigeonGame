@@ -35,7 +35,7 @@ namespace PigeonGame
 
 			_level1.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (150, 50), 1, 0.2f, 8, 2, "Eagle"));
 			_level1.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (30, 20), 1, 0.2f, 8, 2, "Eagle"));
-			_level1.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (200, 150), 1, 0.2f, 8, 2, "Eagle"));
+			_level1.Add (new Enemy (_game, _world, Assets.FoxTexture, new Vector2 (500, 500), 1, 0.2f, 11, 2, "Fox"));
 
 			_level2.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (150, 50), 1, 0.2f, 8, 2, "Eagle"));
 			_level2.Add (new Enemy (_game, _world, Assets.FoxTexture, new Vector2 (30, 20), 1, 0.2f, 8, 2, "Fox"));
@@ -51,7 +51,6 @@ namespace PigeonGame
 			_level4.Add (new Enemy (_game, _world, Assets.FoxTexture, new Vector2 (30, 20), 1, 0.2f, 8, 2, "Fox"));
 			_level4.Add (new Enemy (_game, _world, Assets.GorillaTexture, new Vector2 (200, 150), 1, 0.2f, 8, 2, "Gorilla"));
 			_level4.Add (new Enemy (_game, _world, Assets.KangerooTexture, new Vector2 (300, 50), 1, 0.2f, 8, 2, "Kangeroo"));
-
 		}
 
 

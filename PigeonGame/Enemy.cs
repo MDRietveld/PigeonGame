@@ -8,7 +8,7 @@ namespace PigeonGame
 	public class Enemy : GameObjects
 	{
 		World _world;
-		private int _speed;
+		int _speed;
 		float _elapsed;
 		float _delay = 100;
 		int _frames, _textureFrames, _rij, size_hor, size_ver, _kolom, _scaleX, _scaleY;

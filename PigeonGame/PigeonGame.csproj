@@ -10,8 +10,6 @@
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
     <AssemblyName>PigeonGame</AssemblyName>
     <SuppressXamMacUpsell>True</SuppressXamMacUpsell>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -101,12 +99,6 @@
     <BundleResource Include="Content\minecrafter.fnt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
-    <BundleResource Include="Content\Kangeroo_sprites.png" />
-    <BundleResource Include="Content\Nest_sprites.png" />
-    <BundleResource Include="Content\Gorilla_sprites.png" />
-    <BundleResource Include="Content\Fox_sprites.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </BundleResource>
     <BundleResource Include="Content\Flag.png" />
     <BundleResource Include="Resources\appicon.png" />
     <BundleResource Include="Content\Boss.png" />
@@ -128,6 +120,11 @@
     <BundleResource Include="Content\Pause.png" />
     <BundleResource Include="Content\Eagle_sprites.png" />
     <BundleResource Include="Content\Pigeon_sprites.png" />
+    <BundleResource Include="Content\Gorilla_sprites.png" />
+    <BundleResource Include="Content\Kangeroo_sprites.png" />
+    <BundleResource Include="Content\Nest_sprites.png" />
+    <BundleResource Include="Content\Fox_sprites.png" />
+    <BundleResource Include="Content\Food_sprite.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
