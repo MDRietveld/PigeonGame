@@ -17,6 +17,8 @@ namespace PigeonGame
 		float _scale;
 		float _gameh;
 		float _texh;
+		float _drawCD = 0;
+		GameTime _gameTime;
 
 		Game1 _game;
 		KeyboardState _keyboard;
@@ -24,6 +26,7 @@ namespace PigeonGame
 		bool _menuCheck;
 		FontRenderer _fontRenderer;
 		Flag _flag;
+
 
 		List<Lives> _lives = new List <Lives>();
 		public bool	RemoveLife = false;
@@ -82,6 +85,7 @@ namespace PigeonGame
 		public void Update (GameTime gameTime)
 		{
 			_keyboard = Keyboard.GetState ();
+			_gameTime = gameTime;
 
 			//_background = new Background(_game, this, _background.GetMap (LevelState), new Vector2(0,0));
 			level.Update (gameTime, _pidgy);
@@ -180,10 +184,15 @@ namespace PigeonGame
 						//Console.WriteLine ("Paused is set on True");
 					}
 					// CREATE ENEMIES
+					_drawCD += (float)_gameTime.ElapsedGameTime.TotalMilliseconds;
 					level.Draw (spriteBatch);
 
-					_pidgy.Draw (spriteBatch);
-					_flag.Draw (spriteBatch);
+					if (_drawCD >= 1200f) {
+
+						_pidgy.Draw (spriteBatch);
+						_flag.Draw (spriteBatch);
+					}
+
 
 					foreach (Lives life in _lives) {
 						life.Draw (spriteBatch);
