@@ -122,13 +122,13 @@
     <BundleResource Include="Content\Pause.png" />
     <BundleResource Include="Content\Eagle_sprites.png" />
     <BundleResource Include="Content\Pigeon_sprites.png" />
-    <BundleResource Include="Content\Gorilla_sprites.png" />
     <BundleResource Include="Content\Kangeroo_sprites.png" />
     <BundleResource Include="Content\Nest_sprites.png" />
     <BundleResource Include="Content\Fox_sprites.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
     <BundleResource Include="Content\Food_sprite.png" />
+    <BundleResource Include="Content\Gorilla_sprites.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
