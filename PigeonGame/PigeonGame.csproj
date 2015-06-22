@@ -126,6 +126,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
     <BundleResource Include="Content\Food_sprite.png" />
+    <BundleResource Include="Content\Gorilla_sprites.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />

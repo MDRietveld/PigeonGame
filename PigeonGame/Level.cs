@@ -96,16 +96,16 @@ namespace PigeonGame
 					break;
 				}
 			}
-			_keyboard = Keyboard.GetState ();
-			if (_world.GetPidgyPosition().X > _game.GraphicsDevice.Viewport.Width/2 && _keyboard.IsKeyDown (Keys.Right) && _position.X > (Assets.Level1Map.Width * _world.Scaling() - _game.GraphicsDevice.Viewport.Width) *-1)
-			{
-				_position -= new Vector2 (3, 0);
-			}
-
-			if (_world.GetPidgyPosition().X < _game.GraphicsDevice.Viewport.Width/8 && _keyboard.IsKeyDown (Keys.Left) && _position.X > 0)
-			{
-				_position += new Vector2 (3, 0);
-			}
+//			_keyboard = Keyboard.GetState ();
+//			if (_world.GetPidgyPosition().X > _game.GraphicsDevice.Viewport.Width/2 && _keyboard.IsKeyDown (Keys.Right) && _position.X > (Assets.Level1Map.Width * _world.Scaling() - _game.GraphicsDevice.Viewport.Width) *-1)
+//			{
+//				_position -= new Vector2 (3, 0);
+//			}
+//
+//			if (_world.GetPidgyPosition().X < _game.GraphicsDevice.Viewport.Width/8 && _keyboard.IsKeyDown (Keys.Left) && _position.X > 0)
+//			{
+//				_position += new Vector2 (3, 0);
+//			}
 
 		}
 
@@ -132,7 +132,7 @@ namespace PigeonGame
 			} else {
 				switch (_world.LevelState) {
 				case 1:
-					_background = new Background (_game, _world, Assets.Level1Map, new Vector2 (0, 0));
+//					_background = new Background (_game, _world, Assets.Level1Map, new Vector2 (0, 0));
 					foreach (Enemy e in _level1) {
 						e.Draw (spriteBatch);
 					}

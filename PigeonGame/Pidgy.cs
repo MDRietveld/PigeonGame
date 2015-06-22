@@ -146,7 +146,7 @@ namespace PigeonGame
 				_sourceRectangle = new Rectangle (size * _frames, size * _rij, size, size);
 
 				//_position += new Vector2 (3, 0);
-				_position += new Vector2 (20, 0);
+				_position += new Vector2 (3, 0);
 
 				if (_position.Y > 499) {
 					_rij = 2;

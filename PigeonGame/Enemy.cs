@@ -2,6 +2,7 @@
 using System;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 
 namespace PigeonGame
 {
@@ -14,6 +15,7 @@ namespace PigeonGame
 		int _frames, _textureFrames, _rij, size_hor, size_ver, _kolom, _scaleX, _scaleY;
 		float _time = 0;
 		string _enemyClass;
+		KeyboardState _keyboard;
 
 		public Enemy (Game1 g, World w, Texture2D texture, Vector2 position, int speed, float scale, int scale_x, int scale_y, string enemyclass) : base (g, w, texture, position, scale)
 		{
@@ -40,6 +42,20 @@ namespace PigeonGame
 			
 		public virtual void Update (GameTime gameTime, Pidgy pidgy)
 		{
+
+			_keyboard = Keyboard.GetState ();
+			if (_world.GetPidgyPosition().X > _game.GraphicsDevice.Viewport.Width/2 && _keyboard.IsKeyDown (Keys.Right) && _position.X > (_texture.Width * _world.Scaling() - _game.GraphicsDevice.Viewport.Width) *-1)
+			{
+				//_position -= new Vector2 (3, 0);
+				_position -= new Vector2 (3, 0);
+			}
+
+			if (_world.GetPidgyPosition().X < _game.GraphicsDevice.Viewport.Width/8 && _keyboard.IsKeyDown (Keys.Left) && _position.X > 0)
+			{
+				_position += new Vector2 (3, 0);
+			}
+
+
 			if(pidgy.PigeonPosition().Intersects(EnemyPosition()))
 			{
 				_world.paused = true;
