@@ -8,7 +8,8 @@ namespace PigeonGame
 {
 	public class Enemy : GameObjects
 	{
-		World _world;
+		Pidgy _pidgy;
+		Level _level;
 		int _speed;
 		float _elapsed;
 		float _delay = 100;
@@ -17,9 +18,11 @@ namespace PigeonGame
 		string _enemyClass;
 		KeyboardState _keyboard;
 
-		public Enemy (Game1 g, World w, Texture2D texture, Vector2 position, int speed, float scale, int scale_x, int scale_y, string enemyclass) : base (g, w, texture, position, scale)
+		public Enemy (Game1 g, World w, Level l, Pidgy p, Texture2D texture, Vector2 position, int speed, float scale, int scale_x, int scale_y, string enemyclass) : base (g, w, l, texture, position, scale)
 		{
 			_world = w;
+			_level = l;
+			_pidgy = p;
 			_speed = speed;
 			_enemyClass = enemyclass;
 
@@ -44,19 +47,19 @@ namespace PigeonGame
 		{
 
 			_keyboard = Keyboard.GetState ();
-			if (_world.GetPidgyPosition().X > _game.GraphicsDevice.Viewport.Width/2 && _keyboard.IsKeyDown (Keys.Right) && _position.X > (_texture.Width * _world.Scaling() - _game.GraphicsDevice.Viewport.Width) *-1)
+			if (_level.GetPidgyPosition().X > _game.GraphicsDevice.Viewport.Width/2 && _keyboard.IsKeyDown (Keys.Right) && _position.X > (_texture.Width * _level.Scaling() - _game.GraphicsDevice.Viewport.Width) *-1)
 			{
 				//_position -= new Vector2 (3, 0);
 				_position -= new Vector2 (3, 0);
 			}
 
-			if (_world.GetPidgyPosition().X < _game.GraphicsDevice.Viewport.Width/8 && _keyboard.IsKeyDown (Keys.Left) && _position.X > 0)
+			if (_level.GetPidgyPosition().X < _game.GraphicsDevice.Viewport.Width/8 && _keyboard.IsKeyDown (Keys.Left) && _position.X > 0)
 			{
 				_position += new Vector2 (3, 0);
 			}
 
 
-			if(pidgy.PigeonPosition().Intersects(EnemyPosition()))
+			if(_pidgy.PigeonPosition().Intersects(EnemyPosition()))
 			{
 				_world.paused = true;
 				Console.WriteLine ("Collission!");

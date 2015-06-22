@@ -7,30 +7,47 @@ namespace PigeonGame
 {
 	public class Flag
 	{
+		private Game1		_game;
 		private World 		_world;
 		private Level 		_level;
 		private Texture2D 	_texture = Assets.Flag;
 		private Vector2 	_position;
 		private float		_scale;
+		KeyboardState _keyboard;
 
-		public Flag (World world, Vector2 position)
+		public Flag (Game1 game, World world, Level level, Vector2 position)
 		{
+			_game 		= game;
 			_world 		= world;
+			_level 		= level;
 			_position 	= position;
 			_scale 		= 0.2f;
 		}
 
 		public Rectangle FlagPosition()
 		{
-			return new Rectangle ((int)_position.X, (int)_position.Y, _texture.Width, _texture.Height);
+			return new Rectangle ((int)_position.X, (int)_position.Y, _texture.Width / 5, _texture.Height / 5);
 		}
 
 		public void Update (GameTime gameTime, Pidgy _pidgy)
 		{
+
+			_keyboard = Keyboard.GetState ();
+			if (_level.GetPidgyPosition().X > _game.GraphicsDevice.Viewport.Width/2 && _keyboard.IsKeyDown (Keys.Right))
+			{
+				//_position -= new Vector2 (3, 0);
+				_position -= new Vector2 (3, 0);
+			}
+
+			if (_level.GetPidgyPosition().X < _game.GraphicsDevice.Viewport.Width/8 && _keyboard.IsKeyDown (Keys.Left) && _position.X > 0)
+			{
+				_position += new Vector2 (3, 0);
+			}
+
 			if(_pidgy.PigeonPosition().Intersects(FlagPosition()))
 			{
 				Assets.LevelComplete = true;
-				Assets.IntervalNewLevel = gameTime.TotalGameTime + TimeSpan.FromMilliseconds (3000);
+				Assets.IntervalNewLevel = gameTime.TotalGameTime + TimeSpan.FromMilliseconds (1000);
 
 				this._position.X += 100; // Tijdelijk gebruik om te testen of de levels werken //
 

@@ -11,21 +11,13 @@ namespace PigeonGame
 {
 	public class World
 	{
-		Pidgy _pidgy;
-		Vector2 _pidgyPosition;
-		float _pidgyHeight;
-		float _scale;
-		float _gameh;
-		float _texh;
-
 		Game1 _game;
+		Pidgy _pidgy;
 		KeyboardState _keyboard;
 		Menu _menu;
 		bool _menuCheck;
 		FontRenderer _fontRenderer;
-		Flag _flag;
 
-		List<Lives> _lives = new List <Lives>();
 		public bool	RemoveLife = false;
 
 		public Level level;
@@ -38,22 +30,8 @@ namespace PigeonGame
 			 * CLASSES
 			 **/
 			_game = g;
-
-			_flag = new Flag (this, new Vector2 (300, 528));
 			level = new Level (_game, this);
 			_menu = new Menu (_game, Assets.MainScreen);
-			_lives.Add (new Lives (this, new Vector2(25, 25)));
-			_lives.Add (new Lives (this, new Vector2(75, 25)));
-			_lives.Add (new Lives (this, new Vector2(125, 25)));
-
-			/**
-			 * POSITIONS
-			 **/
-			_gameh = _game.GraphicsDevice.Viewport.Height;
-			_texh = Assets.Level1Map.Height;
-
-			_pidgyPosition = new Vector2 (_game.GraphicsDevice.Viewport.Width/8, 500);
-			_pidgy = new Pidgy (_game, this, Assets.PigeonTexture, _pidgyPosition, Scaling());
 
 			/**
 			 * GENERATE FONT FROM FNT & _0.PNG FILE
@@ -65,31 +43,11 @@ namespace PigeonGame
 			_fontRenderer = new FontRenderer(fontFile, fontTexture);
 		}
 	
-		public Vector2 GetPidgyPosition()
-		{
-			return _pidgy.GetPosition ();
-		}
-
-		public float PidgyHeight ()
-		{
-			return _pidgyHeight = 30* Scaling ();
-		}
-
-		public float Scaling()
-		{
-			return _scale = _gameh / _texh;
-		}
-
 		public void Update (GameTime gameTime)
 		{
 			_keyboard = Keyboard.GetState ();
 
-			_pidgy.Update (gameTime);
-			_flag.Update (gameTime, _pidgy);
-
-			foreach (Lives life in _lives) {
-				life.Update (gameTime, _pidgy);
-			}
+			//_background = new Background(_game, this, _background.GetMap (LevelState), new Vector2(0,0));
 
 			level.Update (gameTime, _pidgy);
 
@@ -179,18 +137,6 @@ namespace PigeonGame
 						paused = true;
 						//Console.WriteLine ("Paused is set on True");
 					}
-
-					// BACKGROUND DRAW
-					level._background.Draw (spriteBatch);
-
-					// PIGEON DRAW
-					_pidgy.Draw (spriteBatch);
-					_flag.Draw (spriteBatch);
-
-					foreach (Lives life in _lives) {
-						life.Draw (spriteBatch);
-					}
-
 					// CREATE ENEMIES
 					level.Draw (spriteBatch);
 				} else if (paused) {

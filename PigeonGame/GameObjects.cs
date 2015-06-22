@@ -10,6 +10,7 @@ namespace PigeonGame
 		protected Texture2D _texture;
 		protected Vector2 _position;
 		protected World _world;
+		protected Level _level;
 		protected float _scale;
 		protected float _rotation;
 		protected Color _color;
@@ -26,10 +27,11 @@ namespace PigeonGame
 			}
 		}
 
-		public GameObjects (Game1 g, World w, Texture2D texture, Vector2 position, float scale)
+		public GameObjects (Game1 g, World w, Level l, Texture2D texture, Vector2 position, float scale)
 		{
 			_game = g;
 			_world = w;
+			_level = l;
 			_texture = texture;
 			_position = position;
 
@@ -42,10 +44,11 @@ namespace PigeonGame
 			_sourceRectangle = new Rectangle (0, 0, _texture.Width, _texture.Height);
 		}
 
-		public GameObjects (Game1 g, World w, Texture2D texture, Vector2 position)
+		public GameObjects (Game1 g, World w, Level l,Texture2D texture, Vector2 position)
 		{
 			_game = g;
 			_world = w;
+			_level = l;
 			_texture = texture;
 			_position = position;
 
