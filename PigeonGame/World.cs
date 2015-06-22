@@ -94,7 +94,7 @@ namespace PigeonGame
 			level.Update (gameTime, _pidgy);
 
 			if (_keyboard.IsKeyDown (Keys.Space)) {
-				Assets.IntervalNewLevel = gameTime.TotalGameTime + TimeSpan.FromMilliseconds (3000);
+				Assets.IntervalNewLevel = gameTime.TotalGameTime + TimeSpan.FromMilliseconds (1000);
 			}
 
 			if (_menuCheck) {
@@ -183,9 +183,7 @@ namespace PigeonGame
 					// BACKGROUND DRAW
 					level._background.Draw (spriteBatch);
 
-					foreach (Lives life in _lives) {
-						life.Draw (spriteBatch);
-					}
+
 
 					// PIGEON DRAW
 					_pidgy.Draw (spriteBatch);
@@ -194,6 +192,9 @@ namespace PigeonGame
 					// CREATE ENEMIES
 					level.Draw (spriteBatch);
 
+					foreach (Lives life in _lives) {
+						life.Draw (spriteBatch);
+					}
 				} else if (paused) {
 					spriteBatch.Draw(Assets.PauseScreen, new Vector2(40 ,_game.GraphicsDevice.Viewport.Height/4), Color.White);
 
