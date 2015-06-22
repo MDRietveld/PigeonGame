@@ -41,7 +41,7 @@ namespace PigeonGame
 			 * CLASSES
 			 **/
 			_game = g;
-			_flag = new Flag (_game, this, new Vector2 (300, 528));
+			_flag = new Flag (_game, this, new Vector2 (6300, 528));
 			level = new Level (_game, this);
 			_menu = new Menu (_game, Assets.MainScreen);
 			_lives.Add (new Lives (this, new Vector2(25, 25)));
@@ -165,7 +165,7 @@ namespace PigeonGame
 				if (_keyboard.IsKeyDown (Keys.Space)) {
 					_menuCheck = true;
 					Assets.LevelIntro = true;
-					this.LevelState = 1;
+					this.LevelState = 2;
 				} else {
 					_menu.Draw (spriteBatch);
 				}
@@ -183,21 +183,18 @@ namespace PigeonGame
 						paused = true;
 						//Console.WriteLine ("Paused is set on True");
 					}
-					// CREATE ENEMIES
-					_drawCD += (float)_gameTime.ElapsedGameTime.TotalMilliseconds;
+
 					level.Draw (spriteBatch);
 
-					if (_drawCD >= 1200f) {
-
+					if (!Assets.LevelIntro) {
 						_pidgy.Draw (spriteBatch);
 						_flag.Draw (spriteBatch);
+
+						foreach (Lives life in _lives) {
+							life.Draw (spriteBatch);
+						}
 					}
-
-
-					foreach (Lives life in _lives) {
-						life.Draw (spriteBatch);
-					}
-
+						
 				} else if (paused) {
 					spriteBatch.Draw(Assets.PauseScreen, new Vector2(40 ,_game.GraphicsDevice.Viewport.Height/4), Color.White);
 

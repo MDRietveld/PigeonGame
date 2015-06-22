@@ -48,7 +48,7 @@ namespace PigeonGame
 				Assets.LevelComplete = true;
 				Assets.IntervalNewLevel = gameTime.TotalGameTime + TimeSpan.FromMilliseconds (3000);
 
-				this._position.X += 100; // Tijdelijk gebruik om te testen of de levels werken //
+				//this._position.X += 100; // Tijdelijk gebruik om te testen of de levels werken //
 
 				switch (_world.LevelState) {
 				case 1:
