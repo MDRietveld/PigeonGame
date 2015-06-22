@@ -10,6 +10,8 @@
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
     <AssemblyName>PigeonGame</AssemblyName>
     <SuppressXamMacUpsell>True</SuppressXamMacUpsell>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -116,7 +118,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
     <BundleResource Include="Content\Main.png" />
-    <BundleResource Include="Content\Boss_level.png" />
     <BundleResource Include="Content\Pause.png" />
     <BundleResource Include="Content\Eagle_sprites.png" />
     <BundleResource Include="Content\Pigeon_sprites.png" />
@@ -127,6 +128,10 @@
     </BundleResource>
     <BundleResource Include="Content\Food_sprite.png" />
     <BundleResource Include="Content\Gorilla_sprites.png" />
+    <BundleResource Include="Content\Boss_level_old.png" />
+    <BundleResource Include="Content\Boss_level.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />

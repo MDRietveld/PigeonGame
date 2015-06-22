@@ -15,11 +15,10 @@ namespace PigeonGame
 		private float		_scale;
 		KeyboardState _keyboard;
 
-		public Flag (Game1 game, World world, Level level, Vector2 position)
+		public Flag (Game1 game, World world, Vector2 position)
 		{
 			_game 		= game;
 			_world 		= world;
-			_level 		= level;
 			_position 	= position;
 			_scale 		= 0.2f;
 		}
@@ -33,13 +32,13 @@ namespace PigeonGame
 		{
 
 			_keyboard = Keyboard.GetState ();
-			if (_level.GetPidgyPosition().X > _game.GraphicsDevice.Viewport.Width/2 && _keyboard.IsKeyDown (Keys.Right))
+			if (_world.GetPidgyPosition().X > _game.GraphicsDevice.Viewport.Width/2 && _keyboard.IsKeyDown (Keys.Right))
 			{
 				//_position -= new Vector2 (3, 0);
 				_position -= new Vector2 (3, 0);
 			}
 
-			if (_level.GetPidgyPosition().X < _game.GraphicsDevice.Viewport.Width/8 && _keyboard.IsKeyDown (Keys.Left) && _position.X > 0)
+			if (_world.GetPidgyPosition().X < _game.GraphicsDevice.Viewport.Width/8 && _keyboard.IsKeyDown (Keys.Left) && _position.X > 0)
 			{
 				_position += new Vector2 (3, 0);
 			}
@@ -47,7 +46,7 @@ namespace PigeonGame
 			if(_pidgy.PigeonPosition().Intersects(FlagPosition()))
 			{
 				Assets.LevelComplete = true;
-				Assets.IntervalNewLevel = gameTime.TotalGameTime + TimeSpan.FromMilliseconds (1000);
+				Assets.IntervalNewLevel = gameTime.TotalGameTime + TimeSpan.FromMilliseconds (3000);
 
 				this._position.X += 100; // Tijdelijk gebruik om te testen of de levels werken //
 

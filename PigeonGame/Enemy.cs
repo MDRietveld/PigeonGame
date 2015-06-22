@@ -8,7 +8,6 @@ namespace PigeonGame
 {
 	public class Enemy : GameObjects
 	{
-		Pidgy _pidgy;
 		Level _level;
 		int _speed;
 		float _elapsed;
@@ -18,11 +17,9 @@ namespace PigeonGame
 		string _enemyClass;
 		KeyboardState _keyboard;
 
-		public Enemy (Game1 g, World w, Level l, Pidgy p, Texture2D texture, Vector2 position, int speed, float scale, int scale_x, int scale_y, string enemyclass) : base (g, w, l, texture, position, scale)
+		public Enemy (Game1 g, World w, Texture2D texture, Vector2 position, int speed, float scale, int scale_x, int scale_y, string enemyclass) : base (g, w, texture, position, scale)
 		{
 			_world = w;
-			_level = l;
-			_pidgy = p;
 			_speed = speed;
 			_enemyClass = enemyclass;
 
@@ -35,7 +32,11 @@ namespace PigeonGame
 			_rij = 1;
 			_kolom = 0;
 
-			_sourceRectangle = new Rectangle (size_hor * _kolom, size_ver* _rij, size_hor, size_ver);
+			if (_enemyClass == "Boss") {
+				_sourceRectangle = new Rectangle (0, 0, size_hor, size_ver);
+			} else {
+				_sourceRectangle = new Rectangle (size_hor * _kolom, size_ver * _rij, size_hor, size_ver);
+			}
 		}
 
 		public Rectangle EnemyPosition()
@@ -47,19 +48,19 @@ namespace PigeonGame
 		{
 
 			_keyboard = Keyboard.GetState ();
-			if (_level.GetPidgyPosition().X > _game.GraphicsDevice.Viewport.Width/2 && _keyboard.IsKeyDown (Keys.Right) && _position.X > (_texture.Width * _level.Scaling() - _game.GraphicsDevice.Viewport.Width) *-1)
+			if (_world.GetPidgyPosition().X > _game.GraphicsDevice.Viewport.Width/2 && _keyboard.IsKeyDown (Keys.Right) && _position.X > (_texture.Width * _world.Scaling() - _game.GraphicsDevice.Viewport.Width) *-1)
 			{
 				//_position -= new Vector2 (3, 0);
 				_position -= new Vector2 (3, 0);
 			}
 
-			if (_level.GetPidgyPosition().X < _game.GraphicsDevice.Viewport.Width/8 && _keyboard.IsKeyDown (Keys.Left) && _position.X > 0)
+			if (_world.GetPidgyPosition().X < _game.GraphicsDevice.Viewport.Width/8 && _keyboard.IsKeyDown (Keys.Left) && _position.X > 0)
 			{
 				_position += new Vector2 (3, 0);
 			}
 
 
-			if(_pidgy.PigeonPosition().Intersects(EnemyPosition()))
+			if(pidgy.PigeonPosition().Intersects(EnemyPosition()))
 			{
 				_world.paused = true;
 				Console.WriteLine ("Collission!");
@@ -82,36 +83,45 @@ namespace PigeonGame
 				break;
 			}
 
-			if (_elapsed >= _delay) 
-			{
-				if (_frames >= _textureFrames) {
-					_frames = 0;
-				} else {
-					_frames++;
+			if (_enemyClass == "Boss") {
+				_position.Y += _speed;
+
+				_time += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+
+				if (_time >= 3000) {
+					_speed *= -1;
+					_time = 0;
 				}
-				_elapsed = 0;
+			}else{
+				if (_elapsed >= _delay) {
+					if (_frames >= _textureFrames) {
+						_frames = 0;
+					} else {
+						_frames++;
+					}
+					_elapsed = 0;
 
-			}
-			_sourceRectangle = new Rectangle (size_hor *_frames, size_ver* _rij, size_hor, size_ver);
+				}
+				_sourceRectangle = new Rectangle (size_hor * _frames, size_ver * _rij, size_hor, size_ver);
 
 
-			_position.X += _speed;
+				_position.X += _speed;
 
-			_time += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+				_time += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
-			if (_time >= 3000) 
-			{
-				/*
+				if (_time >= 3000) {
+					/*
 				_speed*= -1;
 				_rij =1;
 				*/
-				_speed *= -1;
-				_time = 0;
+					_speed *= -1;
+					_time = 0;
 
-				if (_rij == 1) {
-					_rij = 0;
-				} else {
-					_rij = 1;
+					if (_rij == 1) {
+						_rij = 0;
+					} else {
+						_rij = 1;
+					}
 				}
 			}
 		}

@@ -11,13 +11,6 @@ namespace PigeonGame
 		Game1 _game;
 		private Vector2 _offSetIntro;
 
-		Pidgy _pidgy;
-		Vector2 _pidgyPosition;
-		float _pidgyHeight;
-		float _scale;
-		float _gameh;
-		float _texh;
-
 		List<Background> _levelBG1 = new List <Background>();
 		List<Background> _levelBG2 = new List <Background>();
 		List<Background> _levelBG3 = new List <Background>();
@@ -31,9 +24,6 @@ namespace PigeonGame
 		List<Enemy> _level5 = new List <Enemy>();
 		Vector2 _position;
 		KeyboardState _keyboard;
-
-		Flag _flag;
-		List<Lives> _lives = new List <Lives>();
 		World _world;
 
 		public Vector2 GetPosition()
@@ -41,68 +31,40 @@ namespace PigeonGame
 			return _position;
 		}
 
-		public Vector2 GetPidgyPosition()
-		{
-			return _pidgy.GetPosition ();
-		}
-
-		public float PidgyHeight ()
-		{
-			return _pidgyHeight = 30* Scaling ();
-		}
-
-		public float Scaling()
-		{
-			return _scale = _gameh / _texh;
-		}
-
-
 		public Level (Game1 g, World world)
 		{
+			//_background = new Background(_game, this, Assets.Level1Map, new Vector2(0, 0));
 			_position = new Vector2 (0, 0);
 			_offSetIntro = new Vector2 (0, -100);
 			_game = g;
 			_world = world;	
 
-			_gameh = g.GraphicsDevice.Viewport.Height;
-			_texh = Assets.Level1Map.Height;
+			_levelBG1.Add (new Background (_game, _world, Assets.Level1Map, new Vector2 (0, 0)));
+			_level1.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (150, 50), 1, 0.2f, 8, 2, "Eagle"));
+			_level1.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (30, 20), 1, 0.2f, 8, 2, "Eagle"));
+			_level1.Add (new Enemy (_game, _world, Assets.FoxTexture, new Vector2 (500, 500), 1, 0.2f, 11, 2, "Fox"));
+			_level1.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (1200, 20), 1, 0.2f, 8, 2, "Eagle"));
 
-			_pidgyPosition = new Vector2 (_game.GraphicsDevice.Viewport.Width/8, 500);
-			_pidgy = new Pidgy (_game, _world, this, Assets.PigeonTexture, _pidgyPosition, Scaling());
+			_levelBG2.Add (new Background (_game, _world, Assets.Level2Map, new Vector2 (0, 0)));
+			_level2.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (150, 50), 1, 0.2f, 8, 2, "Eagle"));
+			_level2.Add (new Enemy (_game, _world, Assets.FoxTexture, new Vector2 (500, 500), 1, 0.2f, 11, 2, "Fox"));
+			_level2.Add (new Enemy (_game, _world, Assets.GorillaTexture, new Vector2 (200, 150), 0, 0.2f, 8, 2, "Gorilla"));
+			_level2.Add (new Enemy (_game, _world, Assets.KangerooTexture, new Vector2 (300, 50), 1, 0.2f, 2, 2, "Kangeroo"));
 
-			_flag = new Flag (_game, _world, this, new Vector2 (300, 528));
+			_levelBG3.Add (new Background (_game, _world, Assets.Level3Map, new Vector2 (0, 0)));
+			_level3.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (150, 50), 1, 0.2f, 8, 2, "Eagle"));
+			_level3.Add (new Enemy (_game, _world, Assets.FoxTexture, new Vector2 (30, 20), 1, 0.2f, 11, 2, "Fox"));
+			_level3.Add (new Enemy (_game, _world, Assets.GorillaTexture, new Vector2 (200, 150), 0, 0.2f, 8, 2, "Gorilla"));
+			_level3.Add (new Enemy (_game, _world, Assets.KangerooTexture, new Vector2 (300, 50), 1, 0.2f, 2, 2, "Kangeroo"));
 
-			_lives.Add (new Lives (_world, new Vector2(25, 25)));
-			_lives.Add (new Lives (_world, new Vector2(75, 25)));
-			_lives.Add (new Lives (_world, new Vector2(125, 25)));
+			_levelBG4.Add (new Background (_game, _world, Assets.Level4Map, new Vector2 (0, 0)));
+			_level4.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (150, 50), 1, 0.2f, 8, 2, "Eagle"));
+			_level4.Add (new Enemy (_game, _world, Assets.FoxTexture, new Vector2 (30, 20), 1, 0.2f, 11, 2, "Fox"));
+			_level4.Add (new Enemy (_game, _world, Assets.GorillaTexture, new Vector2 (200, 150), 0, 0.2f, 8, 2, "Gorilla"));
+			_level4.Add (new Enemy (_game, _world, Assets.KangerooTexture, new Vector2 (300, 50), 1, 0.2f, 2, 2, "Kangeroo"));
 
-			//_background = new Background(_game, this, Assets.Level1Map, new Vector2(0, 0));
-
-			_levelBG1.Add (new Background (_game, _world, this, Assets.Level1Map, new Vector2 (0, 0)));
-			_level1.Add (new Enemy (_game, _world, this, _pidgy, Assets.EagleTexture, new Vector2 (150, 50), 1, 0.2f, 8, 2, "Eagle"));
-			_level1.Add (new Enemy (_game, _world, this, _pidgy, Assets.EagleTexture, new Vector2 (30, 20), 1, 0.2f, 8, 2, "Eagle"));
-			_level1.Add (new Enemy (_game, _world, this, _pidgy, Assets.FoxTexture, new Vector2 (500, 500), 1, 0.2f, 11, 2, "Fox"));
-			_level1.Add (new Enemy (_game, _world, this, _pidgy, Assets.EagleTexture, new Vector2 (1200, 20), 1, 0.2f, 8, 2, "Eagle"));
-
-			_levelBG2.Add (new Background (_game, _world, this, Assets.Level2Map, new Vector2 (0, 0)));
-			_level2.Add (new Enemy (_game, _world, this, _pidgy, Assets.EagleTexture, new Vector2 (150, 50), 1, 0.2f, 8, 2, "Eagle"));
-			_level2.Add (new Enemy (_game, _world, this, _pidgy, Assets.FoxTexture, new Vector2 (500, 500), 1, 0.2f, 11, 2, "Fox"));
-			_level2.Add (new Enemy (_game, _world, this, _pidgy, Assets.GorillaTexture, new Vector2 (200, 150), 0, 0.2f, 8, 2, "Gorilla"));
-			_level2.Add (new Enemy (_game, _world, this, _pidgy, Assets.KangerooTexture, new Vector2 (300, 50), 1, 0.2f, 2, 2, "Kangeroo"));
-
-			_levelBG3.Add (new Background (_game, _world, this, Assets.Level3Map, new Vector2 (0, 0)));
-			_level3.Add (new Enemy (_game, _world, this, _pidgy, Assets.EagleTexture, new Vector2 (150, 50), 1, 0.2f, 8, 2, "Eagle"));
-			_level3.Add (new Enemy (_game, _world, this, _pidgy, Assets.FoxTexture, new Vector2 (30, 20), 1, 0.2f, 11, 2, "Fox"));
-			_level3.Add (new Enemy (_game, _world, this, _pidgy, Assets.GorillaTexture, new Vector2 (200, 150), 0, 0.2f, 8, 2, "Gorilla"));
-			_level3.Add (new Enemy (_game, _world, this, _pidgy, Assets.KangerooTexture, new Vector2 (300, 50), 1, 0.2f, 2, 2, "Kangeroo"));
-
-			_levelBG4.Add (new Background (_game, _world, this, Assets.Level4Map, new Vector2 (0, 0)));
-			_level4.Add (new Enemy (_game, _world, this, _pidgy, Assets.EagleTexture, new Vector2 (150, 50), 1, 0.2f, 8, 2, "Eagle"));
-			_level4.Add (new Enemy (_game, _world, this, _pidgy, Assets.FoxTexture, new Vector2 (30, 20), 1, 0.2f, 11, 2, "Fox"));
-			_level4.Add (new Enemy (_game, _world, this, _pidgy, Assets.GorillaTexture, new Vector2 (200, 150), 0, 0.2f, 8, 2, "Gorilla"));
-			_level4.Add (new Enemy (_game, _world, this, _pidgy, Assets.KangerooTexture, new Vector2 (300, 50), 1, 0.2f, 2, 2, "Kangeroo"));
-
-			_levelBG5.Add (new Background (_game, _world, this, Assets.Level5Map, new Vector2 (0, 0)));
+			_levelBG5.Add (new Background (_game, _world, Assets.Level5Map, new Vector2 (0, 0)));
+			_level5.Add (new Enemy (_game, _world, Assets.BossTexture, new Vector2 (385, 30), 1, 0.4f, 1, 1, "Boss"));
 		}
 
 
@@ -126,13 +88,6 @@ namespace PigeonGame
 						bg.Update (gameTime);
 					}
 
-					_pidgy.Update (gameTime);
-					_flag.Update (gameTime, _pidgy);
-
-					foreach (Lives life in _lives) {
-						life.Update (gameTime, _pidgy);
-					}
-
 					foreach (Enemy e in _level1) {
 						e.Update (gameTime, pidgy);
 					}
@@ -140,13 +95,6 @@ namespace PigeonGame
 				case 2:
 					foreach (Background bg in _levelBG2) {
 						bg.Update (gameTime);
-					}
-
-					_pidgy.Update (gameTime);
-					_flag.Update (gameTime, _pidgy);
-
-					foreach (Lives life in _lives) {
-						life.Update (gameTime, _pidgy);
 					}
 
 					foreach (Enemy e in _level2) {
@@ -158,13 +106,6 @@ namespace PigeonGame
 						bg.Update (gameTime);
 					}
 
-					_pidgy.Update (gameTime);
-					_flag.Update (gameTime, _pidgy);
-
-					foreach (Lives life in _lives) {
-						life.Update (gameTime, _pidgy);
-					}
-
 					foreach (Enemy e in _level3) {
 						e.Update (gameTime, pidgy);
 					}
@@ -174,13 +115,6 @@ namespace PigeonGame
 						bg.Update (gameTime);
 					}
 
-					_pidgy.Update (gameTime);
-					_flag.Update (gameTime, _pidgy);
-
-					foreach (Lives life in _lives) {
-						life.Update (gameTime, _pidgy);
-					}
-
 					foreach (Enemy e in _level4) {
 						e.Update (gameTime, pidgy);
 					}
@@ -188,13 +122,6 @@ namespace PigeonGame
 				case 5:
 					foreach (Background bg in _levelBG5) {
 						bg.Update (gameTime);
-					}
-
-					_pidgy.Update (gameTime);
-					_flag.Update (gameTime, _pidgy);
-
-					foreach (Lives life in _lives) {
-						life.Update (gameTime, _pidgy);
 					}
 
 					foreach (Enemy e in _level5) {
@@ -247,14 +174,6 @@ namespace PigeonGame
 						bg.Draw (spriteBatch);
 					}
 
-					// PIGEON DRAW
-					_pidgy.Draw (spriteBatch);
-					_flag.Draw (spriteBatch);
-
-					foreach (Lives life in _lives) {
-						life.Draw (spriteBatch);
-					}
-
 					foreach (Enemy e in _level1) {
 						e.Draw (spriteBatch);
 					}
@@ -263,14 +182,6 @@ namespace PigeonGame
 					// _background = new Background (_game, _world, Assets.Level2Map, new Vector2 (0, 0));
 					foreach (Background bg in _levelBG2) {
 						bg.Draw (spriteBatch);
-					}
-
-					// PIGEON DRAW
-					_pidgy.Draw (spriteBatch);
-					_flag.Draw (spriteBatch);
-
-					foreach (Lives life in _lives) {
-						life.Draw (spriteBatch);
 					}
 
 					foreach (Enemy e in _level2) {
@@ -283,14 +194,6 @@ namespace PigeonGame
 						bg.Draw (spriteBatch);
 					}
 
-					// PIGEON DRAW
-					_pidgy.Draw (spriteBatch);
-					_flag.Draw (spriteBatch);
-
-					foreach (Lives life in _lives) {
-						life.Draw (spriteBatch);
-					}
-
 					foreach (Enemy e in _level3) {
 						e.Draw (spriteBatch);
 					}
@@ -301,14 +204,6 @@ namespace PigeonGame
 						bg.Draw (spriteBatch);
 					}
 
-					// PIGEON DRAW
-					_pidgy.Draw (spriteBatch);
-					_flag.Draw (spriteBatch);
-
-					foreach (Lives life in _lives) {
-						life.Draw (spriteBatch);
-					}
-
 					foreach (Enemy e in _level4) {
 						e.Draw (spriteBatch);
 					}
@@ -317,14 +212,6 @@ namespace PigeonGame
 					// _background = new Background (_game, _world, Assets.Level5Map, new Vector2 (0, 0));
 					foreach (Background bg in _levelBG5) {
 						bg.Draw (spriteBatch);
-					}
-
-					// PIGEON DRAW
-					_pidgy.Draw (spriteBatch);
-					_flag.Draw (spriteBatch);
-
-					foreach (Lives life in _lives) {
-						life.Draw (spriteBatch);
 					}
 
 					foreach (Enemy e in _level5) {

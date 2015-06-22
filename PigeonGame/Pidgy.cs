@@ -29,7 +29,7 @@ namespace PigeonGame
 			return _position;
 		}
 
-		public Pidgy (Game1 g, World w, Level l, Texture2D texture, Vector2 position, float scale) : base (g, w, l, texture, position, scale)
+		public Pidgy (Game1 g, World w, Texture2D texture, Vector2 position, float scale) : base (g, w, texture, position, scale)
 		{
 
 			_fly = new Vector2 (0, 1.5f);
