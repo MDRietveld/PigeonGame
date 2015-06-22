@@ -183,18 +183,16 @@ namespace PigeonGame
 					// BACKGROUND DRAW
 					level._background.Draw (spriteBatch);
 
-
-
 					// PIGEON DRAW
 					_pidgy.Draw (spriteBatch);
 					_flag.Draw (spriteBatch);
 
-					// CREATE ENEMIES
-					level.Draw (spriteBatch);
-
 					foreach (Lives life in _lives) {
 						life.Draw (spriteBatch);
 					}
+
+					// CREATE ENEMIES
+					level.Draw (spriteBatch);
 				} else if (paused) {
 					spriteBatch.Draw(Assets.PauseScreen, new Vector2(40 ,_game.GraphicsDevice.Viewport.Height/4), Color.White);
 
