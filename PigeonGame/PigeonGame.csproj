@@ -80,6 +80,7 @@
     <Compile Include="Level.cs" />
     <Compile Include="Lives.cs" />
     <Compile Include="Questions.cs" />
+    <Compile Include="Worm.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -88,6 +89,7 @@
     <None Include="Content\2.mp3" />
     <None Include="Content\3.mp3" />
     <None Include="Content\4.mp3" />
+    <None Include="Content\Boss_music.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -136,6 +138,8 @@
     <BundleResource Include="Content\Verdana.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
+    <BundleResource Include="Content\Game_over.png" />
+    <BundleResource Include="Content\Questions.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />

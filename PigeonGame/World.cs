@@ -12,6 +12,7 @@ namespace PigeonGame
 	public class World
 	{
 		Pidgy _pidgy;
+
 		Vector2 _pidgyPosition;
 		float _pidgyHeight;
 		float _scale;
@@ -48,8 +49,8 @@ namespace PigeonGame
 			 **/
 
 			_game = g;
-			_flag = new Flag (_game, this, new Vector2 (6300, 528));
 			_questions = new Questions (this);
+			_flag = new Flag (_game, this, new Vector2 (6400, 528));
 			level = new Level (_game, this);
 			_menu = new Menu (_game, Assets.MainScreen);
 			_lives1 = new Lives (this, new Vector2(25, 25));
@@ -185,7 +186,7 @@ namespace PigeonGame
 				} else {
 					_menu.Draw (spriteBatch);
 				}
-			// Check if menuCheck is true 
+			// Check if menuCheck is true
 			} else if (_menuCheck) {
 				// Put all the drawings here...
 
@@ -224,7 +225,6 @@ namespace PigeonGame
 					}
 				} else if (paused) {
 					spriteBatch.Draw (Assets.PauseScreen, new Vector2 (40, _game.GraphicsDevice.Viewport.Height / 4), Color.White);
-
 					if (_keyboard.IsKeyDown (Keys.Escape)) {
 						paused = false;
 						//Console.WriteLine ("Paused is set on False");

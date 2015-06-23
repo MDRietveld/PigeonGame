@@ -28,8 +28,15 @@ namespace PigeonGame
 			return new Rectangle ((int)_position.X, (int)_position.Y, _texture.Width / 5, _texture.Height / 5);
 		}
 
+		public void ResetPosition() {
+			_position = new Vector2 (6400, 528);
+		}
+
 		public void Update (GameTime gameTime, Pidgy _pidgy)
 		{
+			if (Assets.LevelComplete) {
+				ResetPosition ();
+			}
 
 			_keyboard = Keyboard.GetState ();
 			if (_world.GetPidgyPosition().X > _game.GraphicsDevice.Viewport.Width/2 && _keyboard.IsKeyDown (Keys.Right))

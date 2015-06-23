@@ -12,7 +12,7 @@ namespace PigeonGame
 	{
 		public static Texture2D 	MainScreen, PauseScreen, FontTexture, 
 									NestTexture, PigeonTexture, EagleTexture, FoxTexture, GorillaTexture, KangerooTexture, BossTexture,
-									Heart, Flag,
+									Heart, Flag, FoodTexture,
 									Level1Intro, Level1Map, Level2Intro, Level2Map, Level3Intro, Level3Map, Level4Intro, Level4Map, Level5Intro, Level5Map;
 
 		public static SoundEffect	Level1Song, Level2Song, Level3Song, Level4Song, Level5Song;
@@ -40,6 +40,7 @@ namespace PigeonGame
 			KangerooTexture		= game.Content.Load<Texture2D> ("Kangeroo_sprites");
 			BossTexture 		= game.Content.Load<Texture2D> ("Boss");
 
+			FoodTexture			= game.Content.Load<Texture2D> ("Food_sprite");
 			Heart				= game.Content.Load<Texture2D> ("Hearth");
 			Flag 				= game.Content.Load<Texture2D> ("Flag");
 
