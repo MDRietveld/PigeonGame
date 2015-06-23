@@ -22,6 +22,11 @@ namespace PigeonGame
 		List<Enemy> _level3 = new List <Enemy>();
 		List<Enemy> _level4 = new List <Enemy>();
 		List<Enemy> _level5 = new List <Enemy>();
+
+		List<Worm> _levelW2 = new List <Worm> ();
+		List<Worm> _levelW3 = new List <Worm> ();
+		List<Worm> _levelW4 = new List <Worm> ();
+
 		Vector2 _position;
 //		KeyboardState _keyboard;
 		World _world;
@@ -58,6 +63,12 @@ namespace PigeonGame
 			_level2.Add (new Enemy (_game, _world, Assets.FoxTexture, new Vector2 (3000, 500), 1, 0.2f, 11, 2, "Fox"));
 			_level2.Add (new Enemy (_game, _world, Assets.GorillaTexture, new Vector2 (900, 450), 0, 0.2f, 8, 2, "Gorilla"));
 			_level2.Add (new Enemy (_game, _world, Assets.KangerooTexture, new Vector2 (1300, 450), 1, 0.2f, 2, 2, "Kangeroo"));
+			_levelW2.Add (new Worm (_game, _world, Assets.FoodTexture, new Vector2 (300, 560), 0.2f));
+			_levelW2.Add (new Worm (_game, _world, Assets.FoodTexture, new Vector2 (400, 560), 0.2f));
+			_levelW2.Add (new Worm (_game, _world, Assets.FoodTexture, new Vector2 (500, 560), 0.2f));
+			_levelW2.Add (new Worm (_game, _world, Assets.FoodTexture, new Vector2 (600, 560), 0.2f));
+			_levelW2.Add (new Worm (_game, _world, Assets.FoodTexture, new Vector2 (700, 560), 0.2f));
+			_levelW2.Add (new Worm (_game, _world, Assets.FoodTexture, new Vector2 (800, 560), 0.2f));
 
 			_levelBG3.Add (new Background (_game, _world, Assets.Level3Map, new Vector2 (0, 0)));
 			_level3.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (150, 50), 1, 0.2f, 8, 2, "Eagle"));
@@ -78,7 +89,6 @@ namespace PigeonGame
 
 		public void Update(GameTime gameTime, Pidgy pidgy) 
 		{
-			//_background.Update (gameTime);
 
 			if (Assets.LevelComplete) {
 				Assets.LevelIntro = true;
@@ -103,6 +113,10 @@ namespace PigeonGame
 				case 2:
 					foreach (Background bg in _levelBG2) {
 						bg.Update (gameTime);
+					}
+
+					foreach (Worm w in _levelW2) {
+						w.Update (gameTime, pidgy);
 					}
 
 					foreach (Enemy e in _level2) {
@@ -190,6 +204,10 @@ namespace PigeonGame
 					// _background = new Background (_game, _world, Assets.Level2Map, new Vector2 (0, 0));
 					foreach (Background bg in _levelBG2) {
 						bg.Draw (spriteBatch);
+					}
+
+					foreach (Worm w in _levelW2) {
+						w.Draw (spriteBatch);
 					}
 
 					foreach (Enemy e in _level2) {

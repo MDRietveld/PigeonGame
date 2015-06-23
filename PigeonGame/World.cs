@@ -12,6 +12,7 @@ namespace PigeonGame
 	public class World
 	{
 		Pidgy _pidgy;
+
 		Vector2 _pidgyPosition;
 		float _pidgyHeight;
 		float _scale;
@@ -43,7 +44,7 @@ namespace PigeonGame
 			 **/
 
 			_game = g;
-			_flag = new Flag (_game, this, new Vector2 (6300, 528));
+			_flag = new Flag (_game, this, new Vector2 (6400, 528));
 			level = new Level (_game, this);
 			_menu = new Menu (_game, Assets.MainScreen);
 			_lives.Add (new Lives (this, new Vector2(25, 25)));
@@ -167,11 +168,11 @@ namespace PigeonGame
 				if (_keyboard.IsKeyDown (Keys.Space)) {
 					_menuCheck = true;
 					Assets.LevelIntro = true;
-					this.LevelState = 5;
+					this.LevelState = 2;
 				} else {
 					_menu.Draw (spriteBatch);
 				}
-			// Check if menuCheck is true 
+			// Check if menuCheck is true
 			} else if (_menuCheck) {
 				// Put all the drawings here...
 
@@ -199,10 +200,6 @@ namespace PigeonGame
 						
 				} else if (paused) {
 					spriteBatch.Draw(Assets.PauseScreen, new Vector2(40 ,_game.GraphicsDevice.Viewport.Height/4), Color.White);
-					_fontRenderer.DrawText(spriteBatch,500,500,"Het is 8 uur ’s ochtends, \n tijd om op te staan. Kraaltje en Knoopje zijn al een tijdje wakker. " +
-						"\n\nHun favoriete ochtendshow is op televisie. Pareltje haast zich snel naar de keuken om \n\nwormenpap te maken. " +
-						"De kinderen hebben namelijk nog een half uur voordat school begint. \n\nNa een aantal keren te hebben gesnouzed " +
-						"staat ook pidgey eindelijk op. Hij poetst snel zijn \n\nsnavel, eet zijn ontbijt en vertrekt dan naar zijn werk.");
 					if (_keyboard.IsKeyDown (Keys.Escape)) {
 						paused = false;
 						//Console.WriteLine ("Paused is set on False");
