@@ -22,6 +22,7 @@ namespace PigeonGame
 		{
 			if (pidgy.PigeonPosition ().Intersects (WormPosition ())) {
 				_position = new Vector2 (-100, -100);
+				_world.MyScore.Update (gameTime);
 			}
 
 			_keyboard = Keyboard.GetState ();

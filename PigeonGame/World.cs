@@ -41,6 +41,7 @@ namespace PigeonGame
 
 		public bool paused = false;
 		public bool PidgyHitEnemy = false;
+		public Score MyScore;
 
 		public World (Game1 g)
 		{
@@ -56,6 +57,7 @@ namespace PigeonGame
 			_lives1 = new Lives (this, new Vector2(25, 25));
 			_lives2 = new Lives (this, new Vector2(75, 25));
 			_lives3 = new Lives (this, new Vector2(125, 25));
+			MyScore = new Score (_game);
 
 			/**
 			 * POSITIONS
@@ -199,13 +201,14 @@ namespace PigeonGame
 						paused = true;
 						//Console.WriteLine ("Paused is set on True");
 					}
-
+						
 					if (!PidgyHitEnemy) {
 						level.Draw (spriteBatch);
 
 						if (!Assets.LevelIntro) {
 							_pidgy.Draw (spriteBatch);
 							_flag.Draw (spriteBatch);
+							MyScore.Draw (spriteBatch);
 
 							switch (TotalLife) {
 							case 1:
@@ -240,4 +243,3 @@ namespace PigeonGame
 		}
 	}
 }
-
