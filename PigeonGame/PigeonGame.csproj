@@ -77,6 +77,8 @@
     <Compile Include="Flag.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="Lives.cs" />
+    <Compile Include="Worm.cs" />
+    <Compile Include="Score.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

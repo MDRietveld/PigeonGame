@@ -36,6 +36,7 @@ namespace PigeonGame
 		public int LevelState = 0;
 		public bool paused = false;
 
+		public Score MyScore;
 
 		public World (Game1 g)
 		{
@@ -47,6 +48,7 @@ namespace PigeonGame
 			_flag = new Flag (_game, this, new Vector2 (6400, 528));
 			level = new Level (_game, this);
 			_menu = new Menu (_game, Assets.MainScreen);
+			MyScore = new Score (_game);
 			_lives.Add (new Lives (this, new Vector2(25, 25)));
 			_lives.Add (new Lives (this, new Vector2(75, 25)));
 			_lives.Add (new Lives (this, new Vector2(125, 25)));
@@ -192,6 +194,7 @@ namespace PigeonGame
 					if (!Assets.LevelIntro) {
 						_pidgy.Draw (spriteBatch);
 						_flag.Draw (spriteBatch);
+						MyScore.Draw (spriteBatch);
 
 						foreach (Lives life in _lives) {
 							life.Draw (spriteBatch);
