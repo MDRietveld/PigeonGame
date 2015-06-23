@@ -18,6 +18,7 @@ namespace PigeonGame
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 		World _world;
+		private KeyboardState _keyboard;
 
 		public Game1 ()
 		{
@@ -46,7 +47,16 @@ namespace PigeonGame
 
 		protected override void Update (GameTime gameTime)
 		{
-			_world.Update (gameTime);
+			if (_world.TotalLife == 0) {
+				_keyboard = Keyboard.GetState ();
+
+				if(_keyboard.IsKeyDown(Keys.Q)) {
+					Quit();
+				}
+					
+			} else {
+				_world.Update (gameTime);
+			}
 		}
 
 
@@ -54,8 +64,18 @@ namespace PigeonGame
 		{
 			graphics.GraphicsDevice.Clear (Color.Black);
 			spriteBatch.Begin ();
-			_world.Draw (spriteBatch);
+			if (_world.TotalLife == 0) {
+				spriteBatch.Draw(Assets.GameOverScreen, new Vector2(0,0), Color.White);
+				spriteBatch.DrawString (Assets.Font, "Druk op Q om het spel te sluiten.", new Vector2 (325, 400), Color.White);
+			} else {
+				_world.Draw (spriteBatch);
+			}
 			spriteBatch.End ();
+		}
+
+		public void Quit()
+		{
+			this.Exit ();
 		}
 	}
 }
