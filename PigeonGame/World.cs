@@ -35,11 +35,13 @@ namespace PigeonGame
 		public int LevelState = 0;
 		public bool paused = false;
 
+
 		public World (Game1 g)
 		{
 			/**
 			 * CLASSES
 			 **/
+
 			_game = g;
 			_flag = new Flag (_game, this, new Vector2 (6300, 528));
 			level = new Level (_game, this);
