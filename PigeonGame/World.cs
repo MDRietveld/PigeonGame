@@ -171,7 +171,7 @@ namespace PigeonGame
 				} else {
 					_menu.Draw (spriteBatch);
 				}
-			// Check if menuCheck is true
+			// Check if menuCheck is true 
 			} else if (_menuCheck) {
 				// Put all the drawings here...
 
