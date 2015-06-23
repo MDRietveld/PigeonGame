@@ -47,9 +47,17 @@ namespace PigeonGame
 
 			_levelBG2.Add (new Background (_game, _world, Assets.Level2Map, new Vector2 (0, 0)));
 			_level2.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (150, 50), 1, 0.2f, 8, 2, "Eagle"));
+			_level2.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (900, 90), 1, 0.2f, 8, 2, "Eagle"));
+			_level2.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (500, 120), 1, 0.2f, 8, 2, "Eagle"));
+			_level2.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (1400, 60), 1, 0.2f, 8, 2, "Eagle"));
+			_level2.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (1800, 200), 1, 0.2f, 8, 2, "Eagle"));
 			_level2.Add (new Enemy (_game, _world, Assets.FoxTexture, new Vector2 (500, 500), 1, 0.2f, 11, 2, "Fox"));
-			_level2.Add (new Enemy (_game, _world, Assets.GorillaTexture, new Vector2 (200, 150), 0, 0.2f, 8, 2, "Gorilla"));
-			_level2.Add (new Enemy (_game, _world, Assets.KangerooTexture, new Vector2 (300, 50), 1, 0.2f, 2, 2, "Kangeroo"));
+			_level2.Add (new Enemy (_game, _world, Assets.FoxTexture, new Vector2 (2000, 500), 1, 0.2f, 11, 2, "Fox"));
+			_level2.Add (new Enemy (_game, _world, Assets.FoxTexture, new Vector2 (5500, 500), 1, 0.2f, 11, 2, "Fox"));
+			_level2.Add (new Enemy (_game, _world, Assets.FoxTexture, new Vector2 (4300, 500), 1, 0.2f, 11, 2, "Fox"));
+			_level2.Add (new Enemy (_game, _world, Assets.FoxTexture, new Vector2 (3000, 500), 1, 0.2f, 11, 2, "Fox"));
+			_level2.Add (new Enemy (_game, _world, Assets.GorillaTexture, new Vector2 (900, 450), 0, 0.2f, 8, 2, "Gorilla"));
+			_level2.Add (new Enemy (_game, _world, Assets.KangerooTexture, new Vector2 (1300, 450), 1, 0.2f, 2, 2, "Kangeroo"));
 
 			_levelBG3.Add (new Background (_game, _world, Assets.Level3Map, new Vector2 (0, 0)));
 			_level3.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (150, 50), 1, 0.2f, 8, 2, "Eagle"));

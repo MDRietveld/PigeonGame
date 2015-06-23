@@ -9,7 +9,7 @@ namespace PigeonGame
 	public class Enemy : GameObjects
 	{
 		Level _level;
-		int _speed;
+		float _speed;
 		float _elapsed;
 		float _delay = 100;
 		int _frames, _textureFrames, _rij, size_hor, size_ver, _kolom, _scaleX, _scaleY;
@@ -17,7 +17,7 @@ namespace PigeonGame
 		string _enemyClass;
 		KeyboardState _keyboard;
 
-		public Enemy (Game1 g, World w, Texture2D texture, Vector2 position, int speed, float scale, int scale_x, int scale_y, string enemyclass) : base (g, w, texture, position, scale)
+		public Enemy (Game1 g, World w, Texture2D texture, Vector2 position, float speed, float scale, int scale_x, int scale_y, string enemyclass) : base (g, w, texture, position, scale)
 		{
 			_world = w;
 			_speed = speed;
