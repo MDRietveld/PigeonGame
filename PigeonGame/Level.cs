@@ -45,24 +45,28 @@ namespace PigeonGame
 			_world = world;	
 
 			_levelBG1.Add (new Background (_game, _world, Assets.Level1Map, new Vector2 (0, 0)));
-			_level1.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (150, 50), 1, 0.2f, 8, 2, "Eagle"));
-			_level1.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (30, 20), 1, 0.2f, 8, 2, "Eagle"));
-			_level1.Add (new Enemy (_game, _world, Assets.FoxTexture, new Vector2 (500, 500), 1, 0.2f, 11, 2, "Fox"));
-			_level1.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (1200, 20), 1, 0.2f, 8, 2, "Eagle"));
+			_level1.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (150, 50), 1, 0.2f, 8, 2, "Eagle", Assets.GenerateTime = Assets.Random.Next (60,65)));
+			_level1.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (30, 20), 1, 0.2f, 8, 2, "Eagle", Assets.GenerateTime = Assets.Random.Next (60,65)));
+			_level1.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (1200, 20), 1, 0.2f, 8, 2, "Eagle", Assets.GenerateTime = Assets.Random.Next (60,65)));
+			_level1.Add (new Enemy (_game, _world, Assets.FoxTexture, new Vector2 (500, 500), 1, 0.2f, 11, 2, "Fox", Assets.GenerateTime = Assets.Random.Next (30,40)));
 
 			_levelBG2.Add (new Background (_game, _world, Assets.Level2Map, new Vector2 (0, 0)));
-			_level2.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (150, 50), 1, 0.2f, 8, 2, "Eagle"));
-			_level2.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (900, 90), 1, 0.2f, 8, 2, "Eagle"));
-			_level2.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (500, 120), 1, 0.2f, 8, 2, "Eagle"));
-			_level2.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (1400, 60), 1, 0.2f, 8, 2, "Eagle"));
-			_level2.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (1800, 200), 1, 0.2f, 8, 2, "Eagle"));
-			_level2.Add (new Enemy (_game, _world, Assets.FoxTexture, new Vector2 (500, 500), 1, 0.2f, 11, 2, "Fox"));
-			_level2.Add (new Enemy (_game, _world, Assets.FoxTexture, new Vector2 (2000, 500), 1, 0.2f, 11, 2, "Fox"));
-			_level2.Add (new Enemy (_game, _world, Assets.FoxTexture, new Vector2 (5500, 500), 1, 0.2f, 11, 2, "Fox"));
-			_level2.Add (new Enemy (_game, _world, Assets.FoxTexture, new Vector2 (4300, 500), 1, 0.2f, 11, 2, "Fox"));
-			_level2.Add (new Enemy (_game, _world, Assets.FoxTexture, new Vector2 (3000, 500), 1, 0.2f, 11, 2, "Fox"));
-			_level2.Add (new Enemy (_game, _world, Assets.GorillaTexture, new Vector2 (900, 450), 0, 0.2f, 8, 2, "Gorilla"));
-			_level2.Add (new Enemy (_game, _world, Assets.KangerooTexture, new Vector2 (1300, 450), 1, 0.2f, 2, 2, "Kangeroo"));
+			_level2.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (150, 200), 0.5f, 0.2f, 8, 2, "Eagle", Assets.GenerateTime = Assets.Random.Next (60,65)));
+			_level2.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (500, 120), 1.5f, 0.2f, 8, 2, "Eagle", Assets.GenerateTime = Assets.Random.Next (60,65)));
+			_level2.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (900, 220), 0.5f, 0.2f, 8, 2, "Eagle", Assets.GenerateTime = Assets.Random.Next (60,65)));
+			_level2.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (1400, 150), 1.5f, 0.2f, 8, 2, "Eagle", Assets.GenerateTime = Assets.Random.Next (60,65)));
+			_level2.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (1800, 250), 0.5f, 0.2f, 8, 2, "Eagle", Assets.GenerateTime = Assets.Random.Next (60,65)));
+			_level2.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (2200, 250), 1.5f, 0.2f, 8, 2, "Eagle", Assets.GenerateTime = Assets.Random.Next (60,65)));
+			_level2.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (2700, 250), 0.5f, 0.2f, 8, 2, "Eagle", Assets.GenerateTime = Assets.Random.Next (60,65)));
+			_level2.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (3000, 250), 1.5f, 0.2f, 8, 2, "Eagle", Assets.GenerateTime = Assets.Random.Next (60,65)));
+			_level2.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (3500, 250), 0.5f, 0.2f, 8, 2, "Eagle", Assets.GenerateTime = Assets.Random.Next (60,65)));
+			_level2.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (4000, 250), 1.5f, 0.2f, 8, 2, "Eagle", Assets.GenerateTime = Assets.Random.Next (60,65)));
+			_level2.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (4200, 250), 0.5f, 0.2f, 8, 2, "Eagle", Assets.GenerateTime = Assets.Random.Next (60,65)));
+			_level2.Add (new Enemy (_game, _world, Assets.FoxTexture, new Vector2 (500, 500), 2f, 0.2f, 11, 2, "Fox", Assets.GenerateTime = Assets.Random.Next (30,40)));
+			_level2.Add (new Enemy (_game, _world, Assets.FoxTexture, new Vector2 (1500, 500), 3f, 0.2f, 11, 2, "Fox", Assets.GenerateTime = Assets.Random.Next (30,40)));
+			_level2.Add (new Enemy (_game, _world, Assets.FoxTexture, new Vector2 (3000, 500), 2f, 0.2f, 11, 2, "Fox", Assets.GenerateTime = Assets.Random.Next (30,40)));
+			_level2.Add (new Enemy (_game, _world, Assets.FoxTexture, new Vector2 (4300, 500), 3f, 0.2f, 11, 2, "Fox", Assets.GenerateTime = Assets.Random.Next (30,40)));
+			_level2.Add (new Enemy (_game, _world, Assets.FoxTexture, new Vector2 (5400, 500), 2f, 0.2f, 11, 2, "Fox", Assets.GenerateTime = Assets.Random.Next (30,40)));
 			_levelW2.Add (new Worm (_game, _world, Assets.FoodTexture, new Vector2 (300, 560), 0.2f));
 			_levelW2.Add (new Worm (_game, _world, Assets.FoodTexture, new Vector2 (400, 560), 0.2f));
 			_levelW2.Add (new Worm (_game, _world, Assets.FoodTexture, new Vector2 (500, 560), 0.2f));
@@ -71,19 +75,33 @@ namespace PigeonGame
 			_levelW2.Add (new Worm (_game, _world, Assets.FoodTexture, new Vector2 (800, 560), 0.2f));
 
 			_levelBG3.Add (new Background (_game, _world, Assets.Level3Map, new Vector2 (0, 0)));
-			_level3.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (150, 50), 1, 0.2f, 8, 2, "Eagle"));
-			_level3.Add (new Enemy (_game, _world, Assets.FoxTexture, new Vector2 (30, 20), 1, 0.2f, 11, 2, "Fox"));
-			_level3.Add (new Enemy (_game, _world, Assets.GorillaTexture, new Vector2 (200, 150), 0, 0.2f, 8, 2, "Gorilla"));
-			_level3.Add (new Enemy (_game, _world, Assets.KangerooTexture, new Vector2 (300, 50), 1, 0.2f, 2, 2, "Kangeroo"));
+			_level3.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (150, 50), 1, 0.2f, 8, 2, "Eagle", Assets.GenerateTime = Assets.Random.Next (60,65)));
+			_level3.Add (new Enemy (_game, _world, Assets.FoxTexture, new Vector2 (30, 20), 1, 0.2f, 11, 2, "Fox", Assets.GenerateTime = Assets.Random.Next (30,40)));
+			_level3.Add (new Enemy (_game, _world, Assets.KangerooTexture, new Vector2 (300, 50), 1, 0.2f, 2, 2, "Kangeroo", Assets.GenerateTime = Assets.Random.Next (45,55)));
+			_level3.Add (new Enemy (_game, _world, Assets.KangerooTexture, new Vector2 (1300, 50), 0.5f, 0.2f, 2, 2, "Kangeroo", Assets.GenerateTime = Assets.Random.Next (45,55)));
+			_level3.Add (new Enemy (_game, _world, Assets.KangerooTexture, new Vector2 (3200, 50), 1, 0.2f, 2, 2, "Kangeroo", Assets.GenerateTime = Assets.Random.Next (45,55)));
+			_level3.Add (new Enemy (_game, _world, Assets.KangerooTexture, new Vector2 (4500, 50), 1, 0.2f, 2, 2, "Kangeroo", Assets.GenerateTime = Assets.Random.Next (45,55)));
+			_levelW3.Add (new Worm (_game, _world, Assets.FoodTexture, new Vector2 (300, 560), 0.2f));
+			_levelW3.Add (new Worm (_game, _world, Assets.FoodTexture, new Vector2 (400, 560), 0.2f));
+			_levelW3.Add (new Worm (_game, _world, Assets.FoodTexture, new Vector2 (500, 560), 0.2f));
+			_levelW3.Add (new Worm (_game, _world, Assets.FoodTexture, new Vector2 (600, 560), 0.2f));
+			_levelW3.Add (new Worm (_game, _world, Assets.FoodTexture, new Vector2 (700, 560), 0.2f));
+			_levelW3.Add (new Worm (_game, _world, Assets.FoodTexture, new Vector2 (800, 560), 0.2f));
 
 			_levelBG4.Add (new Background (_game, _world, Assets.Level4Map, new Vector2 (0, 0)));
-			_level4.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (150, 50), 1, 0.2f, 8, 2, "Eagle"));
-			_level4.Add (new Enemy (_game, _world, Assets.FoxTexture, new Vector2 (30, 20), 1, 0.2f, 11, 2, "Fox"));
-			_level4.Add (new Enemy (_game, _world, Assets.GorillaTexture, new Vector2 (200, 150), 0, 0.2f, 8, 2, "Gorilla"));
-			_level4.Add (new Enemy (_game, _world, Assets.KangerooTexture, new Vector2 (300, 50), 1, 0.2f, 2, 2, "Kangeroo"));
+			_level4.Add (new Enemy (_game, _world, Assets.EagleTexture, new Vector2 (150, 50), 1, 0.2f, 8, 2, "Eagle", Assets.GenerateTime = Assets.Random.Next (60,65)));
+			_level4.Add (new Enemy (_game, _world, Assets.FoxTexture, new Vector2 (30, 20), 1, 0.2f, 11, 2, "Fox", Assets.GenerateTime = Assets.Random.Next (30,40)));
+			_level4.Add (new Enemy (_game, _world, Assets.GorillaTexture, new Vector2 (200, 450), 0, 0.2f, 8, 2, "Gorilla", 0));
+			_level4.Add (new Enemy (_game, _world, Assets.KangerooTexture, new Vector2 (300, 50), 1, 0.2f, 2, 2, "Kangeroo", Assets.GenerateTime = Assets.Random.Next (45,55)));
+			_levelW4.Add (new Worm (_game, _world, Assets.FoodTexture, new Vector2 (300, 560), 0.2f));
+			_levelW4.Add (new Worm (_game, _world, Assets.FoodTexture, new Vector2 (400, 560), 0.2f));
+			_levelW4.Add (new Worm (_game, _world, Assets.FoodTexture, new Vector2 (500, 560), 0.2f));
+			_levelW4.Add (new Worm (_game, _world, Assets.FoodTexture, new Vector2 (600, 560), 0.2f));
+			_levelW4.Add (new Worm (_game, _world, Assets.FoodTexture, new Vector2 (700, 560), 0.2f));
+			_levelW4.Add (new Worm (_game, _world, Assets.FoodTexture, new Vector2 (800, 560), 0.2f));
 
 			_levelBG5.Add (new Background (_game, _world, Assets.Level5Map, new Vector2 (0, 0)));
-			_level5.Add (new Enemy (_game, _world, Assets.BossTexture, new Vector2 (385, 30), 1, 0.4f, 1, 1, "Boss"));
+			_level5.Add (new Enemy (_game, _world, Assets.BossTexture, new Vector2 (385, 30), 1, 0.4f, 1, 1, "Boss", 0));
 		}
 
 
@@ -128,6 +146,10 @@ namespace PigeonGame
 						bg.Update (gameTime);
 					}
 
+					foreach (Worm w in _levelW3) {
+						w.Update (gameTime, pidgy);
+					}
+
 					foreach (Enemy e in _level3) {
 						e.Update (gameTime, pidgy);
 					}
@@ -135,6 +157,10 @@ namespace PigeonGame
 				case 4:
 					foreach (Background bg in _levelBG4) {
 						bg.Update (gameTime);
+					}
+
+					foreach (Worm w in _levelW4) {
+						w.Update (gameTime, pidgy);
 					}
 
 					foreach (Enemy e in _level4) {
@@ -220,6 +246,10 @@ namespace PigeonGame
 						bg.Draw (spriteBatch);
 					}
 
+					foreach (Worm w in _levelW3) {
+						w.Draw (spriteBatch);
+					}
+
 					foreach (Enemy e in _level3) {
 						e.Draw (spriteBatch);
 					}
@@ -228,6 +258,10 @@ namespace PigeonGame
 					// _background = new Background (_game, _world, Assets.Level4Map, new Vector2 (0, 0));
 					foreach (Background bg in _levelBG4) {
 						bg.Draw (spriteBatch);
+					}
+
+					foreach (Worm w in _levelW4) {
+						w.Draw (spriteBatch);
 					}
 
 					foreach (Enemy e in _level4) {

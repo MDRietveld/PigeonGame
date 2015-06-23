@@ -14,16 +14,16 @@ namespace PigeonGame
 		public Score (Game1 game)
 		{
 			Font1 = game.Content.Load<SpriteFont> ("Verdana");
-			_position = new Vector2 (200, 50);
+			_position = new Vector2 (800, 25);
 			_game = game;
 		}
 
 		public void Update(GameTime gameTime){
-			_score += 1;
+			_score += 15;
 		}
 
 		public void Draw(SpriteBatch spriteBatch){
-			spriteBatch.DrawString (Font1, "Score: "+_score.ToString(), _position, Color.White);
+			spriteBatch.DrawString (Font1, "Score: "+_score.ToString(), _position, Color.Black);
 		}
 	}
 }

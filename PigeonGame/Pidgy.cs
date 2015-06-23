@@ -58,9 +58,6 @@ namespace PigeonGame
 				ResetPosition ();
 			}
 
-			if (_world.PidgyHitEnemy) {
-				ResetPosition ();
-			}
 
 			int size = _texture.Width/12;
 

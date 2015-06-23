@@ -12,16 +12,18 @@ namespace PigeonGame
 		float _speed;
 		float _elapsed;
 		float _delay = 100;
-		int _frames, _textureFrames, _rij, size_hor, size_ver, _kolom, _scaleX, _scaleY;
+		int _frames, _textureFrames, _rij, size_hor, size_ver, _kolom, _scaleX, _scaleY, _enemyMovement;
 		float _time = 0;
 		string _enemyClass;
 		KeyboardState _keyboard;
 
-		public Enemy (Game1 g, World w, Texture2D texture, Vector2 position, float speed, float scale, int scale_x, int scale_y, string enemyclass) : base (g, w, texture, position, scale)
+
+		public Enemy (Game1 g, World w, Texture2D texture, Vector2 position, float speed, float scale, int scale_x, int scale_y, string enemyclass, int enemyMovement) : base (g, w, texture, position, scale)
 		{
 			_world = w;
 			_speed = speed;
 			_enemyClass = enemyclass;
+			_enemyMovement = enemyMovement;
 
 			_scaleX = scale_x;
 			_scaleY = scale_y;
@@ -64,6 +66,7 @@ namespace PigeonGame
 			{
 				_world.PidgyHitEnemy = true;
 				Assets.GenerateNumber = Assets.Random.Next (1, 10);
+				_position = new Vector2 (-100, -100);
 				Console.WriteLine ("Collission!");
 			}
 				
@@ -74,13 +77,14 @@ namespace PigeonGame
 				_textureFrames = 10;
 				break;
 			case "Eagle":
-				_textureFrames = 7;	
+				_textureFrames = 7;
 				break;
 			case "Gorilla":
 				_textureFrames = 7;
 				break;
 			case "Kangeroo":
 				_textureFrames = 1;
+
 				break;
 			}
 
@@ -110,7 +114,7 @@ namespace PigeonGame
 
 				_time += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
-				if (_time >= 3000) {
+				if (_time >= _enemyMovement*100) {
 					/*
 				_speed*= -1;
 				_rij =1;
