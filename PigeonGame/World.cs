@@ -25,16 +25,21 @@ namespace PigeonGame
 		Menu _menu;
 		bool _menuCheck;
 		FontRenderer _fontRenderer;
-		Flag _flag;
+		public Flag _flag;
 
 
-		List<Lives> _lives = new List <Lives>();
+		//List<Lives> _lives = new List <Lives>();
+		private Lives _lives1, _lives2, _lives3;
+		public int TotalLife = 3;
 		public bool	RemoveLife = false;
 
 		public Level level;
 		public int LevelState = 0;
-		public bool paused = false;
 
+		private Questions _questions;
+
+		public bool paused = false;
+		public bool PidgyHitEnemy = false;
 
 		public World (Game1 g)
 		{
@@ -44,11 +49,12 @@ namespace PigeonGame
 
 			_game = g;
 			_flag = new Flag (_game, this, new Vector2 (6300, 528));
+			_questions = new Questions (this);
 			level = new Level (_game, this);
 			_menu = new Menu (_game, Assets.MainScreen);
-			_lives.Add (new Lives (this, new Vector2(25, 25)));
-			_lives.Add (new Lives (this, new Vector2(75, 25)));
-			_lives.Add (new Lives (this, new Vector2(125, 25)));
+			_lives1 = new Lives (this, new Vector2(25, 25));
+			_lives2 = new Lives (this, new Vector2(75, 25));
+			_lives3 = new Lives (this, new Vector2(125, 25));
 
 			/**
 			 * POSITIONS
@@ -89,15 +95,23 @@ namespace PigeonGame
 			_keyboard = Keyboard.GetState ();
 			_gameTime = gameTime;
 
-			//_background = new Background(_game, this, _background.GetMap (LevelState), new Vector2(0,0));
-			level.Update (gameTime, _pidgy);
+			if (!paused) {
+				level.Update (gameTime, _pidgy);
+				_pidgy.Update (gameTime);
+			}
 
-			_pidgy.Update (gameTime);
 			_flag.Update (gameTime, _pidgy);
+			_questions.Update (gameTime);
 
+			/*
 			foreach (Lives life in _lives) {
 				life.Update (gameTime, _pidgy);
 			}
+			*/
+
+			_lives1.Update (gameTime, _pidgy);
+			_lives2.Update (gameTime, _pidgy);
+			_lives3.Update (gameTime, _pidgy);
 
 			if (_keyboard.IsKeyDown (Keys.Space)) {
 				Assets.IntervalNewLevel = gameTime.TotalGameTime + TimeSpan.FromMilliseconds (1000);
@@ -167,7 +181,7 @@ namespace PigeonGame
 				if (_keyboard.IsKeyDown (Keys.Space)) {
 					_menuCheck = true;
 					Assets.LevelIntro = true;
-					this.LevelState = 5;
+					this.LevelState = 2;
 				} else {
 					_menu.Draw (spriteBatch);
 				}
@@ -175,9 +189,8 @@ namespace PigeonGame
 			} else if (_menuCheck) {
 				// Put all the drawings here...
 
-				/**
-				 * Pause function
-				 */
+
+				// Pause function
 				_keyboard = Keyboard.GetState ();
 				if (!paused) {
 					//Console.WriteLine ("It's not Paused");
@@ -186,28 +199,42 @@ namespace PigeonGame
 						//Console.WriteLine ("Paused is set on True");
 					}
 
-					level.Draw (spriteBatch);
+					if (!PidgyHitEnemy) {
+						level.Draw (spriteBatch);
 
-					if (!Assets.LevelIntro) {
-						_pidgy.Draw (spriteBatch);
-						_flag.Draw (spriteBatch);
+						if (!Assets.LevelIntro) {
+							_pidgy.Draw (spriteBatch);
+							_flag.Draw (spriteBatch);
 
-						foreach (Lives life in _lives) {
-							life.Draw (spriteBatch);
+							switch (TotalLife) {
+							case 1:
+								_lives1.Draw (spriteBatch);
+								break;
+							case 2:
+								_lives1.Draw (spriteBatch);
+								_lives2.Draw (spriteBatch);
+								break;
+							case 3:
+								_lives1.Draw (spriteBatch);
+								_lives2.Draw (spriteBatch);
+								_lives3.Draw (spriteBatch);
+								break;
+							}
 						}
 					}
-						
 				} else if (paused) {
-					spriteBatch.Draw(Assets.PauseScreen, new Vector2(40 ,_game.GraphicsDevice.Viewport.Height/4), Color.White);
-					_fontRenderer.DrawText(spriteBatch,500,500,"Het is 8 uur ’s ochtends, \n tijd om op te staan. Kraaltje en Knoopje zijn al een tijdje wakker. " +
-						"\n\nHun favoriete ochtendshow is op televisie. Pareltje haast zich snel naar de keuken om \n\nwormenpap te maken. " +
-						"De kinderen hebben namelijk nog een half uur voordat school begint. \n\nNa een aantal keren te hebben gesnouzed " +
-						"staat ook pidgey eindelijk op. Hij poetst snel zijn \n\nsnavel, eet zijn ontbijt en vertrekt dan naar zijn werk.");
+					spriteBatch.Draw (Assets.PauseScreen, new Vector2 (40, _game.GraphicsDevice.Viewport.Height / 4), Color.White);
+
 					if (_keyboard.IsKeyDown (Keys.Escape)) {
 						paused = false;
 						//Console.WriteLine ("Paused is set on False");
 					}
 					//Console.WriteLine ("Paused is true");
+				}
+
+				if (PidgyHitEnemy) {
+					//Console.WriteLine ("PIDGY HIT ENEMY");
+					_questions.Draw(spriteBatch);
 				}
 			}
 		}

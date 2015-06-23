@@ -62,9 +62,9 @@ namespace PigeonGame
 
 			if(pidgy.PigeonPosition().Intersects(EnemyPosition()))
 			{
-				_world.paused = true;
+				_world.PidgyHitEnemy = true;
+				Assets.GenerateNumber = Assets.Random.Next (1, 10);
 				Console.WriteLine ("Collission!");
-
 			}
 				
 			_elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;

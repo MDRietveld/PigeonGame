@@ -19,10 +19,15 @@ namespace PigeonGame
 		public static SoundEffectInstance Level1SongInstance, Level2SongInstance, Level3SongInstance, Level4SongInstance, Level5SongInstance;
 		private static bool 		_songLoop = true;
 		public static bool 			LevelComplete = false;
-		public static bool			LevelIntro = false;
-		public static TimeSpan 		IntervalNewLevel;
+		public static bool 			LevelIntro = false, BackToLevel = false;
+		public static TimeSpan 		IntervalNewLevel, IntervalFromQuestion;
+		public static SpriteFont 	Font;
+		public static Random Random = new Random ();
+		public static int GenerateNumber;
 
 		public static void LoadContent(Game1 game){
+			Font 				= game.Content.Load<SpriteFont> ("Verdana");
+
 			MainScreen 			= game.Content.Load<Texture2D> ("Main");
 			PauseScreen 		= game.Content.Load<Texture2D> ("Pause");
 			FontTexture 		= game.Content.Load<Texture2D> ("minecrafter_0.png");

@@ -27,7 +27,7 @@ namespace PigeonGame
 			graphics.PreferredBackBufferHeight = 595;
 			graphics.PreferredBackBufferWidth = 1000;
 
-			IsMouseVisible = true;
+			IsMouseVisible = false;
 		}
 
 
