@@ -15,10 +15,10 @@ namespace PigeonGame
 		float _elapsed;
 		float _delay = 100;
 		int _frames;
-		int _frames2;
+//		int _frames2;
 		int _rij;
 
-		float _cooldowntime = 0;
+//		float _cooldowntime = 0;
 		float _flying = 0;
 		float _regen = 0;
 		bool _flyup = true;

@@ -64,6 +64,7 @@ namespace PigeonGame
 			{
 				_world.paused = true;
 				Console.WriteLine ("Collission!");
+
 			}
 				
 			_elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;

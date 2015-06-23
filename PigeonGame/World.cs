@@ -199,7 +199,10 @@ namespace PigeonGame
 						
 				} else if (paused) {
 					spriteBatch.Draw(Assets.PauseScreen, new Vector2(40 ,_game.GraphicsDevice.Viewport.Height/4), Color.White);
-
+					_fontRenderer.DrawText(spriteBatch,500,500,"Het is 8 uur ’s ochtends, \n tijd om op te staan. Kraaltje en Knoopje zijn al een tijdje wakker. " +
+						"\n\nHun favoriete ochtendshow is op televisie. Pareltje haast zich snel naar de keuken om \n\nwormenpap te maken. " +
+						"De kinderen hebben namelijk nog een half uur voordat school begint. \n\nNa een aantal keren te hebben gesnouzed " +
+						"staat ook pidgey eindelijk op. Hij poetst snel zijn \n\nsnavel, eet zijn ontbijt en vertrekt dan naar zijn werk.");
 					if (_keyboard.IsKeyDown (Keys.Escape)) {
 						paused = false;
 						//Console.WriteLine ("Paused is set on False");

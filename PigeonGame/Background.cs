@@ -10,7 +10,6 @@ namespace PigeonGame
 	{
 		// Vector2 _gameEnd;
 		KeyboardState _keyboard;
-		private Texture2D _return;
 
 		public Background (Game1 game, World w, Texture2D texture, Vector2 position) : base (game, w, texture, position)
 		{

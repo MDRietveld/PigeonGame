@@ -23,7 +23,7 @@ namespace PigeonGame
 		List<Enemy> _level4 = new List <Enemy>();
 		List<Enemy> _level5 = new List <Enemy>();
 		Vector2 _position;
-		KeyboardState _keyboard;
+//		KeyboardState _keyboard;
 		World _world;
 
 		public Vector2 GetPosition()
