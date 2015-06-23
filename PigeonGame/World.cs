@@ -98,7 +98,7 @@ namespace PigeonGame
 			_keyboard = Keyboard.GetState ();
 			_gameTime = gameTime;
 
-			if (!paused) {
+			if (!paused || !PidgyHitEnemy || !Assets.QuestionGivenWaiting) {
 				level.Update (gameTime, _pidgy);
 				_pidgy.Update (gameTime);
 			}
@@ -127,7 +127,7 @@ namespace PigeonGame
 				}	
 			}
 
-			if (paused) {
+			if (paused || PidgyHitEnemy || Assets.QuestionGivenWaiting) {
 				switch (LevelState) {
 				case 1:
 					Assets.Level1SongInstance.Pause ();
@@ -202,27 +202,28 @@ namespace PigeonGame
 						//Console.WriteLine ("Paused is set on True");
 					}
 						
+					// PidgyHitEnemy = false
 					if (!PidgyHitEnemy) {
-						level.Draw (spriteBatch);
+							level.Draw (spriteBatch);
 
-						if (!Assets.LevelIntro) {
-							_pidgy.Draw (spriteBatch);
-							_flag.Draw (spriteBatch);
-							MyScore.Draw (spriteBatch);
+							if (!Assets.LevelIntro) {
+								_pidgy.Draw (spriteBatch);
+								_flag.Draw (spriteBatch);
+								MyScore.Draw (spriteBatch);
 
-							switch (TotalLife) {
-							case 1:
-								_lives1.Draw (spriteBatch);
-								break;
-							case 2:
-								_lives1.Draw (spriteBatch);
-								_lives2.Draw (spriteBatch);
-								break;
-							case 3:
-								_lives1.Draw (spriteBatch);
-								_lives2.Draw (spriteBatch);
-								_lives3.Draw (spriteBatch);
-								break;
+								switch (TotalLife) {
+								case 1:
+									_lives1.Draw (spriteBatch);
+									break;
+								case 2:
+									_lives1.Draw (spriteBatch);
+									_lives2.Draw (spriteBatch);
+									break;
+								case 3:
+									_lives1.Draw (spriteBatch);
+									_lives2.Draw (spriteBatch);
+									_lives3.Draw (spriteBatch);
+									break;
 							}
 						}
 					}
@@ -237,7 +238,9 @@ namespace PigeonGame
 
 				if (PidgyHitEnemy) {
 					//Console.WriteLine ("PIDGY HIT ENEMY");
-					_questions.Draw(spriteBatch);
+					_questions.Draw (spriteBatch);
+				} else if (Assets.QuestionGivenWaiting) {
+					_questions.Draw (spriteBatch);
 				}
 			}
 		}

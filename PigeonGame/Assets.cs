@@ -12,14 +12,14 @@ namespace PigeonGame
 	{
 		public static Texture2D 	MainScreen, PauseScreen, FontTexture, 
 									NestTexture, PigeonTexture, EagleTexture, FoxTexture, GorillaTexture, KangerooTexture, BossTexture,
-									Heart, Flag, FoodTexture,
+									Heart, Flag, FoodTexture, QuestionScreen, GameOverScreen,
 									Level1Intro, Level1Map, Level2Intro, Level2Map, Level3Intro, Level3Map, Level4Intro, Level4Map, Level5Intro, Level5Map;
 
 		public static SoundEffect	Level1Song, Level2Song, Level3Song, Level4Song, Level5Song;
 		public static SoundEffectInstance Level1SongInstance, Level2SongInstance, Level3SongInstance, Level4SongInstance, Level5SongInstance;
 		private static bool 		_songLoop = true;
 		public static bool 			LevelComplete = false;
-		public static bool 			LevelIntro = false, BackToLevel = false;
+		public static bool 			LevelIntro = false, QuestionGivenWaiting = false;
 		public static TimeSpan 		IntervalNewLevel, IntervalFromQuestion;
 		public static SpriteFont 	Font;
 		public static Random Random = new Random ();
@@ -30,6 +30,8 @@ namespace PigeonGame
 
 			MainScreen 			= game.Content.Load<Texture2D> ("Main");
 			PauseScreen 		= game.Content.Load<Texture2D> ("Pause");
+			QuestionScreen 		= game.Content.Load<Texture2D> ("Questions");
+			GameOverScreen 		= game.Content.Load<Texture2D> ("Game_over");
 			FontTexture 		= game.Content.Load<Texture2D> ("minecrafter_0.png");
 
 			NestTexture 		= game.Content.Load<Texture2D> ("Nest_sprites");
@@ -70,7 +72,7 @@ namespace PigeonGame
 
 			Level5Intro 		= game.Content.Load<Texture2D> ("IntroLevel5");
 			Level5Map 			= game.Content.Load<Texture2D> ("Boss_level");
-			Level5Song 			= game.Content.Load<SoundEffect>("Song4");
+			Level5Song 			= game.Content.Load<SoundEffect>("Boss_music");
 			Level5SongInstance 	= Level5Song.CreateInstance ();
 			Level5SongInstance.IsLooped = _songLoop;
 		}
