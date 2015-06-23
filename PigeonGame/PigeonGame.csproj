@@ -128,8 +128,8 @@
     <BundleResource Include="Content\Boss_level.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
-    <BundleResource Include="Content\Kangeroo_sprites.png" />
     <BundleResource Include="Content\Gorilla_sprites.png" />
+    <BundleResource Include="Content\Kangeroo_sprites.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
