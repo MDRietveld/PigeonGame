@@ -167,11 +167,11 @@ namespace PigeonGame
 				if (_keyboard.IsKeyDown (Keys.Space)) {
 					_menuCheck = true;
 					Assets.LevelIntro = true;
-					this.LevelState = 2;
+					this.LevelState = 5;
 				} else {
 					_menu.Draw (spriteBatch);
 				}
-			// Check if menuCheck is true
+			// Check if menuCheck is true 
 			} else if (_menuCheck) {
 				// Put all the drawings here...
 
