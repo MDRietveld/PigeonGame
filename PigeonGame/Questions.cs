@@ -107,10 +107,20 @@ namespace PigeonGame
 
 			if (gameTime.TotalGameTime >= Assets.IntervalFromQuestion) {
 				Assets.QuestionGivenWaiting = false;
+				_CorrectAnswer = false;
+				_WrongAnswer = false;
 			}
+<<<<<<< HEAD
 
 //			Console.WriteLine ("LevelState = " + _world.LevelState);
 //			Console.WriteLine ("TotalLife = " + _world.TotalLife);
+=======
+				
+			//Console.WriteLine ("CORRECT ANSWER BOOLEAN " + _CorrectAnswer);
+			//Console.WriteLine ("WRONG ANSWER BOOLEAN " + _WrongAnswer);
+			Console.WriteLine ("LevelState = " + _world.LevelState);
+			Console.WriteLine ("TotalLife = " + _world.TotalLife);
+>>>>>>> origin/master
 		}
 
 		public void LoseLife()
@@ -131,7 +141,7 @@ namespace PigeonGame
 				break;
 			}
 
-			Assets.IntervalFromQuestion = gameTime.TotalGameTime + TimeSpan.FromMilliseconds (3000);
+			Assets.IntervalFromQuestion = gameTime.TotalGameTime + TimeSpan.FromMilliseconds (2000);
 			Assets.QuestionGivenWaiting = true;
 		}
 
@@ -141,15 +151,15 @@ namespace PigeonGame
 
 			if (Assets.QuestionGivenWaiting) {
 				if (_CorrectAnswer) {
-					spriteBatch.DrawString (Assets.Font, "Goedzo! Je hebt het juiste antwoord gegeven.", new Vector2 (50, 350), Color.LightGreen);
+					spriteBatch.DrawString (_font, "Goedzo! Je hebt het juiste antwoord gegeven.", new Vector2 (50, 350), Color.LightGreen);
 				} else if (_WrongAnswer) {
-					spriteBatch.DrawString (Assets.Font, "Jammer! Je antwoord was niet juist, je verliest een leven.", new Vector2 (50, 350), Color.OrangeRed);
+					spriteBatch.DrawString (_font, "Jammer! Je antwoord was niet juist, je verliest een leven.", new Vector2 (50, 350), Color.OrangeRed);
 				}
 			}
 
 			switch (Assets.GenerateNumber) {
 			case 1:
-				spriteBatch.DrawString (Assets.Font, 
+				spriteBatch.DrawString (_font, 
 					"Het is 8 uur 's ochtends, tijd om op te staan. Kraaltje en Knoopje zijn al een tijdje \n" +
 					"wakker. Hun favoriete ochtendshow is op televisie. Pareltje haast zich snel \n" +
 					"naar de keuken om wormenpap te maken. De kinderen hebben namelijk nog een \n" +
@@ -166,7 +176,7 @@ namespace PigeonGame
 				Console.WriteLine ("VRAAG 1");
 				break;
 			case 2:
-				spriteBatch.DrawString (Assets.Font, 
+				spriteBatch.DrawString (_font, 
 					"Lang geleden toen Pidgey nog op de conducteursopleiding zat kwam hij een meisje \n" +
 					"genaamd Pareltje tegen. Pareltje zat op de stewardessenopleiding en tijdens een \n" +
 					"uitwisseling tussen beide opleidingen moesten Pidgey en Pareltje achterhalen wat \n" +
@@ -184,7 +194,7 @@ namespace PigeonGame
 				Console.WriteLine ("VRAAG 2");
 				break;
 			case 3:
-				spriteBatch.DrawString (Assets.Font, 
+				spriteBatch.DrawString (_font, 
 					"Pidgey is een hardwerkende conducteur die elke dag naar zijn werk vliegt. \n" +
 					"Dit lukt niet altijd, helaas zijn er veel dieren ontsnapt uit het \n" +
 					"dierentuin die Pidgey moet ontwijken tijdens zijn reis naar het station. \n" +
@@ -200,7 +210,7 @@ namespace PigeonGame
 				Console.WriteLine ("VRAAG 3");
 				break;
 			case 4:
-				spriteBatch.DrawString (Assets.Font, 
+				spriteBatch.DrawString (_font, 
 					"Nadat Pidgey en Pareltje getrouwd waren hebben zij een meisje gekregen. \n" +
 					"Dit meisje werd Kraaltje genoemd. Twee jaar later kregen zij er nog een \n" +
 					"jongetje bij, deze noemden zij Knoopje. Knoopje zit nog in de peuterklas \n" +
@@ -215,7 +225,7 @@ namespace PigeonGame
 				Console.WriteLine ("VRAAG 4");
 				break;
 			case 5:
-				spriteBatch.DrawString (Assets.Font, 
+				spriteBatch.DrawString (_font, 
 					"Nadat Pidgey thuis is aangekomen merkt Pidgey iets merkwaardigs op. \n" +
 					"Zijn gezin is nergens te bekennen. Hij vindt een briefje waarop staat \n" +
 					"dat zijn gezin is ontvoerd door de draak, de boze draak die al jaren \n" +
@@ -232,7 +242,7 @@ namespace PigeonGame
 				Console.WriteLine ("VRAAG 5");
 				break;
 			case 6:
-				spriteBatch.DrawString (Assets.Font, 
+				spriteBatch.DrawString (_font, 
 					"De draak en Pidgey hadden 15 jaar geleden veel gemeen zo veel gemeen \n" +
 					"dat ze beste vrienden waren, ze hielden beiden van treinen de draak \n" +
 					"droomde er altijd van om zelf ooit een trein te mogen besturen. Helaas \n" +
@@ -249,7 +259,7 @@ namespace PigeonGame
 				Console.WriteLine ("VRAAG 6");
 				break;
 			case 7:
-				spriteBatch.DrawString (Assets.Font, 
+				spriteBatch.DrawString (_font, 
 					"De draak nam Pidgey zijn kinderen en vrouw mee naar zijn kasteel, \n" +
 					"in het kasteel bevonden zich erg veel dieren, dit kasteel had ook \n" +
 					"een 12 meter hoge toren. Ook had het kasteel 1001 kamers. Pidgey \n" +
@@ -264,7 +274,7 @@ namespace PigeonGame
 				Console.WriteLine ("VRAAG 7");
 				break;
 			case 8:
-				spriteBatch.DrawString (Assets.Font, 
+				spriteBatch.DrawString (_font, 
 					"De zomer begint over een week en de zomervakantie nadert. \n" +
 					"Pidgey heeft daarom een vakantie geboekt naar de Maldiven. \n" +
 					"Hij heeft van vrienden en collega's gehoord dat het daar erg mooi \n" +
@@ -280,7 +290,7 @@ namespace PigeonGame
 				Console.WriteLine ("VRAAG 8");
 				break;
 			case 9:
-				spriteBatch.DrawString (Assets.Font, 
+				spriteBatch.DrawString (_font, 
 					"Pareltje is stewardess en werkt bij het vliegmaatschappij Pidgairway. \n" +
 					"Door haar werk vliegt Pareltje de hele wereld rond. Helaas verblijft \n" +
 					"Pareltje niet lang in het land waar zij zich op dat moment bevindt. \n" +
@@ -298,7 +308,7 @@ namespace PigeonGame
 				break;
 			case 10:
 
-				spriteBatch.DrawString (Assets.Font, 
+				spriteBatch.DrawString (_font, 
 					"Pareltje werkt als stewardess en kan hierdoor soms dagen van huis \n" +
 					"zijn. Als Pareltje soms drie dagen van huis is missen Knoopje en \n" +
 					"Kraaltje hun moeder. Gelukkig is papa minder streng en mogen zij \n" +

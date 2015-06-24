@@ -31,7 +31,7 @@ namespace PigeonGame
 			MainScreen 			= game.Content.Load<Texture2D> ("Main");
 			PauseScreen 		= game.Content.Load<Texture2D> ("Pause");
 			QuestionScreen 		= game.Content.Load<Texture2D> ("Questions");
-			GameOverScreen 		= game.Content.Load<Texture2D> ("Game_over");
+			GameOverScreen 		= game.Content.Load<Texture2D> ("GameOver");
 			FontTexture 		= game.Content.Load<Texture2D> ("minecrafter_0.png");
 
 			NestTexture 		= game.Content.Load<Texture2D> ("Nest_sprites");
