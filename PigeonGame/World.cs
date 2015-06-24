@@ -112,6 +112,8 @@ namespace PigeonGame
 			_keyboard = Keyboard.GetState ();
 			_gameTime = gameTime;
 
+
+
 			if (!paused || !PidgyHitEnemy || !Assets.QuestionGivenWaiting) {
 				level.Update (gameTime, _pidgy);
 				_pidgy.Update (gameTime);

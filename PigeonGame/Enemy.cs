@@ -109,15 +109,13 @@ namespace PigeonGame
 				_textureFrames = 1;
 				break;
 			}
-
+				
 			if (_enemyClass == "Boss") {
 				_sourceRectangle = new Rectangle (0, 0, size_hor, size_ver);
 			} else {
 				//_sourceRectangle = new Rectangle (size_hor * _kolom, size_ver * _rij, size_hor, size_ver);
 				_sourceRectangle = new Rectangle (size_hor * _frames, size_ver * _rij, size_hor, size_ver);
 			}
-
-			//_sourceRectangle = new Rectangle (size_hor * _frames, size_ver * _rij, size_hor, size_ver);
 
 //			rectangle = new Rectangle (size_hor * _frames, size_ver * _rij, _texture.Width/_textureFrames/5, _texture.Height/2/5);
 //
