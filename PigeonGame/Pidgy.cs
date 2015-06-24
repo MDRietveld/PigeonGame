@@ -11,7 +11,8 @@ namespace PigeonGame
 		Vector2 _gravity;
 		Vector2 _fly;
 		KeyboardState _keyboard;
-//		public Rectangle rectangle;
+		public Rectangle rectangle;
+//		public Rectangle collisionRect;
 
 		float _elapsed;
 		float _delay = 100;
@@ -147,12 +148,19 @@ namespace PigeonGame
 
 					if (_flying <= 0) {
 						_flying = 0;
-					}
-
-
-				} else {
+					} 
+				}else {
 					_fly = new Vector2 (0, 1.5f);
 				}
+
+
+//			rectangle = new Rectangle (size * _frames, size * _rij, _texture.Width/12, _texture.Height/4);
+//			rectangle = new Rectangle (size * _frames, size * _rij, size, size);
+//			collisionRect = new Rectangle (rectangle.X, rectangle.Y, rectangle.Width, rectangle.Height);
+//			collisionRect.X += (int)_position.X;
+//			collisionRect.Y += (int)_position.Y;
+
+				
 //			rectangle = new Rectangle (size * _frames, size * _rij, _texture.Width/12/5, _texture.Height/4/5);
 
 				
