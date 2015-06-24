@@ -218,7 +218,7 @@ namespace PigeonGame
 				if (_keyboard.IsKeyDown (Keys.Space)) {
 					_menuCheck = true;
 					Assets.LevelIntro = true;
-					this.LevelState = 5;
+					this.LevelState = 1;
 				} else {
 					_menu.Draw (spriteBatch);
 				}
