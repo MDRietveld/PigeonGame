@@ -18,6 +18,7 @@ namespace PigeonGame
 		KeyboardState _keyboard;
 //		Color[] textureData;
 //		Rectangle rectangle;
+//		Rectangle collisionRect;
 
 		public Enemy (Game1 g, World w, Texture2D texture, Vector2 position, float speed, float scale, int scale_x, int scale_y, string enemyclass, int enemyMovement) : base (g, w, texture, position, scale)
 		{
@@ -41,7 +42,7 @@ namespace PigeonGame
 				_sourceRectangle = new Rectangle (size_hor * _kolom, size_ver * _rij, size_hor, size_ver);
 			}
 
-//			textureData = new Color[_texture.Width *_texture.Height];
+//			textureData = new Color[_texture.Width * _texture.Height];
 //			_texture.GetData (textureData);
 		}
 
@@ -114,7 +115,24 @@ namespace PigeonGame
 				break;
 			}
 
+			_sourceRectangle = new Rectangle (size_hor * _frames, size_ver * _rij, size_hor, size_ver);
 
+//			rectangle = new Rectangle (size_hor * _frames, size_ver * _rij, _texture.Width/_textureFrames/5, _texture.Height/2/5);
+//
+//			int size = _texture.Width / _textureFrames;
+//
+//			rectangle = new Rectangle (size * _frames, size * _rij, size, size);
+//			collisionRect = new Rectangle (rectangle.X, rectangle.Y, rectangle.Width, rectangle.Height);
+//			collisionRect.X += (int)_position.X;
+//			collisionRect.Y += (int)_position.Y;
+//			//			Console.WriteLine (rectangle);
+//			if (IntersectPixel (pidgy.collisionRect, pidgy.textureData, collisionRect, textureData))
+//			{
+//				//				_world.PidgyHitEnemy = true;
+//				//				Assets.GenerateNumber = Assets.Random.Next (1, 10);
+//				//				_position = new Vector2 (-100, -100);
+//				Console.WriteLine ("Collission!");
+//			}
 
 			if (_enemyClass == "Boss") {
 				_position.Y += _speed;
@@ -135,17 +153,7 @@ namespace PigeonGame
 					_elapsed = 0;
 
 				}
-				_sourceRectangle = new Rectangle (size_hor * _frames, size_ver * _rij, size_hor, size_ver);
 
-//				rectangle = new Rectangle (size_hor * _frames, size_ver * _rij, _texture.Width/_textureFrames/5, _texture.Height/2/5);
-//				//			Console.WriteLine (rectangle);
-//				if (IntersectPixel (pidgy.rectangle, pidgy.textureData, rectangle, textureData))
-//				{
-//					//				_world.PidgyHitEnemy = true;
-//					//				Assets.GenerateNumber = Assets.Random.Next (1, 10);
-//					//				_position = new Vector2 (-100, -100);
-//					Console.WriteLine ("Collission!");
-//				}
 
 
 				_position.X += _speed;
