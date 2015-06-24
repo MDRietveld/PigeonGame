@@ -36,12 +36,6 @@ namespace PigeonGame
 			_rij = 1;
 			_kolom = 0;
 
-			if (_enemyClass == "Boss") {
-				_sourceRectangle = new Rectangle (0, 0, size_hor, size_ver);
-			} else {
-				_sourceRectangle = new Rectangle (size_hor * _kolom, size_ver * _rij, size_hor, size_ver);
-			}
-
 //			textureData = new Color[_texture.Width * _texture.Height];
 //			_texture.GetData (textureData);
 		}
@@ -114,6 +108,13 @@ namespace PigeonGame
 			case "Kangeroo":
 				_textureFrames = 1;
 				break;
+			}
+
+			if (_enemyClass == "Boss") {
+				_sourceRectangle = new Rectangle (0, 0, size_hor, size_ver);
+			} else {
+				//_sourceRectangle = new Rectangle (size_hor * _kolom, size_ver * _rij, size_hor, size_ver);
+				_sourceRectangle = new Rectangle (size_hor * _frames, size_ver * _rij, size_hor, size_ver);
 			}
 
 			//_sourceRectangle = new Rectangle (size_hor * _frames, size_ver * _rij, size_hor, size_ver);
