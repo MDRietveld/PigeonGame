@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
@@ -16,9 +15,9 @@ namespace PigeonGame
 		float _time = 0;
 		string _enemyClass;
 		KeyboardState _keyboard;
-//		Color[] textureData;
-//		Rectangle rectangle;
-//		Rectangle collisionRect;
+		//		Color[] textureData;
+		//		Rectangle rectangle;
+		//		Rectangle collisionRect;
 
 		public Enemy (Game1 g, World w, Texture2D texture, Vector2 position, float speed, float scale, int scale_x, int scale_y, string enemyclass, int enemyMovement) : base (g, w, texture, position, scale)
 		{
@@ -42,8 +41,8 @@ namespace PigeonGame
 				_sourceRectangle = new Rectangle (size_hor * _kolom, size_ver * _rij, size_hor, size_ver);
 			}
 
-//			textureData = new Color[_texture.Width * _texture.Height];
-//			_texture.GetData (textureData);
+			//			textureData = new Color[_texture.Width * _texture.Height];
+			//			_texture.GetData (textureData);
 		}
 
 		public Rectangle EnemyPosition()
@@ -51,26 +50,26 @@ namespace PigeonGame
 			return new Rectangle ((int)_position.X, (int)_position.Y, _texture.Width/5/_scaleX, _texture.Height/5/_scaleY);
 		}
 
-//		static bool IntersectPixel(Rectangle rect1, Color[] data1, Rectangle rect2, Color[] data2)
-//		{
-//			int top = Math.Max (rect1.Top, rect2.Top);
-//			int bottom = Math.Min (rect1.Bottom, rect2.Bottom);
-//			int left = Math.Max (rect1.Left, rect2.Left);
-//			int right = Math.Min (rect1.Right, rect2.Right);
-//
-//			for (int y = top; y < bottom; y++)
-//				for (int x = left; x < right; x++) 
-//				{
-//					Color colour1 = data1 [(x - rect1.Left) + (y - rect1.Top) * rect1.Width];
-//					Color colour2 = data2 [(x - rect2.Left) + (y - rect2.Top) * rect2.Width];
-//
-//					if (colour1.A != 0 && colour2.A != 0)
-//						return true;
-//				}
-//
-//			return false;
-//		}
-			
+		//		static bool IntersectPixel(Rectangle rect1, Color[] data1, Rectangle rect2, Color[] data2)
+		//		{
+		//			int top = Math.Max (rect1.Top, rect2.Top);
+		//			int bottom = Math.Min (rect1.Bottom, rect2.Bottom);
+		//			int left = Math.Max (rect1.Left, rect2.Left);
+		//			int right = Math.Min (rect1.Right, rect2.Right);
+		//
+		//			for (int y = top; y < bottom; y++)
+		//				for (int x = left; x < right; x++) 
+		//				{
+		//					Color colour1 = data1 [(x - rect1.Left) + (y - rect1.Top) * rect1.Width];
+		//					Color colour2 = data2 [(x - rect2.Left) + (y - rect2.Top) * rect2.Width];
+		//
+		//					if (colour1.A != 0 && colour2.A != 0)
+		//						return true;
+		//				}
+		//
+		//			return false;
+		//		}
+
 		public virtual void Update (GameTime gameTime, Pidgy pidgy)
 		{
 
@@ -119,22 +118,22 @@ namespace PigeonGame
 
 			_sourceRectangle = new Rectangle (size_hor * _frames, size_ver * _rij, size_hor, size_ver);
 
-//			rectangle = new Rectangle (size_hor * _frames, size_ver * _rij, _texture.Width/_textureFrames/5, _texture.Height/2/5);
-//
-//			int size = _texture.Width / _textureFrames;
-//
-//			rectangle = new Rectangle (size * _frames, size * _rij, size, size);
-//			collisionRect = new Rectangle (rectangle.X, rectangle.Y, rectangle.Width, rectangle.Height);
-//			collisionRect.X += (int)_position.X;
-//			collisionRect.Y += (int)_position.Y;
-//			//			Console.WriteLine (rectangle);
-//			if (IntersectPixel (pidgy.collisionRect, pidgy.textureData, collisionRect, textureData))
-//			{
-//				//				_world.PidgyHitEnemy = true;
-//				//				Assets.GenerateNumber = Assets.Random.Next (1, 10);
-//				//				_position = new Vector2 (-100, -100);
-//				Console.WriteLine ("Collission!");
-//			}
+			//			rectangle = new Rectangle (size_hor * _frames, size_ver * _rij, _texture.Width/_textureFrames/5, _texture.Height/2/5);
+			//
+			//			int size = _texture.Width / _textureFrames;
+			//
+			//			rectangle = new Rectangle (size * _frames, size * _rij, size, size);
+			//			collisionRect = new Rectangle (rectangle.X, rectangle.Y, rectangle.Width, rectangle.Height);
+			//			collisionRect.X += (int)_position.X;
+			//			collisionRect.Y += (int)_position.Y;
+			//			//			Console.WriteLine (rectangle);
+			//			if (IntersectPixel (pidgy.collisionRect, pidgy.textureData, collisionRect, textureData))
+			//			{
+			//				//				_world.PidgyHitEnemy = true;
+			//				//				Assets.GenerateNumber = Assets.Random.Next (1, 10);
+			//				//				_position = new Vector2 (-100, -100);
+			//				Console.WriteLine ("Collission!");
+			//			}
 
 			if (_enemyClass == "Boss") {
 				_position.Y += _speed;
