@@ -83,6 +83,8 @@ TotalLife = 3
 LevelState = 0
 TotalLife = 3
 LevelState = 0
+<<<<<<< HEAD
+=======
 TotalLife = 3
 LevelState = 0
 TotalLife = 3
@@ -116,7 +118,48 @@ LevelState = 0
 TotalLife = 3
 LevelState = 0
 TotalLife = 3
-LevelState = 4
+LevelState = 1
+>>>>>>> origin/master
+TotalLife = 3
+LevelState = 0
+TotalLife = 3
+LevelState = 0
+TotalLife = 3
+<<<<<<< HEAD
+LevelState = 0
+=======
+LevelState = 1
+>>>>>>> origin/master
+TotalLife = 3
+LevelState = 0
+TotalLife = 3
+<<<<<<< HEAD
+LevelState = 0
+=======
+LevelState = 1
+>>>>>>> origin/master
+TotalLife = 3
+LevelState = 0
+TotalLife = 3
+LevelState = 0
+TotalLife = 3
+LevelState = 0
+TotalLife = 3
+LevelState = 0
+TotalLife = 3
+LevelState = 0
+TotalLife = 3
+LevelState = 0
+TotalLife = 3
+LevelState = 0
+TotalLife = 3
+LevelState = 0
+TotalLife = 3
+LevelState = 0
+TotalLife = 3
+LevelState = 0
+TotalLife = 3
+LevelState = 0
 TotalLife = 3
 LevelState = 4
 TotalLife = 3
@@ -236,6 +279,9 @@ LevelState = 4
 TotalLife = 3
 LevelState = 4
 TotalLife = 3
+LevelState = 4
+TotalLife = 3
+<<<<<<< HEAD
 LevelState = 4
 TotalLife = 3
 LevelState = 4
@@ -28495,3 +28541,997 @@ LevelState = 5
 TotalLife = 1
 LevelState = 5
 TotalLife = 1
+=======
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+Collission!
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+Song 1 Paused
+VRAAG 1
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+LevelState = 1
+TotalLife = 3
+>>>>>>> origin/master
