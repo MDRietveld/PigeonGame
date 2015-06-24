@@ -92,7 +92,7 @@ namespace PigeonGame
 			{
 				_world.PidgyHitEnemy = true;
 				Assets.GenerateNumber = Assets.Random.Next (1, 10);
-				_position = new Vector2 (-100, -100);
+				_position = new Vector2 (-300, -300);
 				Console.WriteLine ("Collission!");
 			}
 
