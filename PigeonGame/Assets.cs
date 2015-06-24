@@ -23,7 +23,7 @@ namespace PigeonGame
 		public static TimeSpan 		IntervalNewLevel, IntervalFromQuestion;
 		public static SpriteFont 	Font;
 		public static Random Random = new Random ();
-		public static int GenerateNumber, GenerateTime;
+		public static int GenerateNumber, BossGenerateNumber, GenerateTime;
 
 		public static void LoadContent(Game1 game){
 			Font 				= game.Content.Load<SpriteFont> ("Verdana");

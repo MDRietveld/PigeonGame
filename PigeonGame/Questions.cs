@@ -9,7 +9,7 @@ namespace PigeonGame
 	{
 		private World _world;
 		private SpriteFont _font;
-		private KeyboardState _keyboard;
+		private KeyboardState _keyboard, OldKeyState;
 		private bool _correctAnswer1, _correctAnswer2, _correctAnswer3, _correctAnswer4;
 		private bool _CorrectAnswer = false, _WrongAnswer = false;
 
@@ -59,50 +59,92 @@ namespace PigeonGame
 				break;
 			}
 
-			if (_world.PidgyHitEnemy) {
-				if (_keyboard.IsKeyDown(Keys.D1)) {
-					if (_correctAnswer1) {
+			switch (Assets.BossGenerateNumber) {
+			case 1:
+				_correctAnswer4 = true;
+				break;
+			case 2:
+				_correctAnswer1 = true;
+				break;
+			case 3:
+				_correctAnswer1 = true;
+				break;
+			case 4:
+				_correctAnswer4 = true;
+				break;
+			case 5:
+				_correctAnswer3 = true;
+				break;
+			/*
+			case 6:
+				break;
+			case 7:
+				break;
+			case 8:
+				break;
+			case 9:
+				break;
+			case 10:
+				break;
+			*/
+			}
+
+			KeyboardState NewKeyState = Keyboard.GetState();
+
+			if (_world.PidgyHitEnemy || _world.StartBossLevel) {
+				if (NewKeyState.IsKeyDown (Keys.D1) && OldKeyState.IsKeyUp (Keys.D1)) {
+					if (_correctAnswer1) {						
 						CorrectOrNot(gameTime, "Yes");
+						BossLoseLife ();
 						_correctAnswer1 = false;
 					} else {
 						CorrectOrNot(gameTime, "No");
 						LoseLife ();
 					}
 					_world.PidgyHitEnemy = false;
+					_world.InitiateAttack = false;
 				}
 
-				if (_keyboard.IsKeyDown (Keys.D2)) {
+				if (NewKeyState.IsKeyDown (Keys.D2) && OldKeyState.IsKeyUp (Keys.D2)) {
 					if (_correctAnswer2) {
 						CorrectOrNot(gameTime, "Yes");
+						BossLoseLife ();
 						_correctAnswer2 = false;
 					} else {
 						CorrectOrNot(gameTime, "No");
 						LoseLife ();
 					}
 					_world.PidgyHitEnemy = false;
+					_world.InitiateAttack = false;
 				}
 
-				if (_keyboard.IsKeyDown (Keys.D3)) {
+				if (NewKeyState.IsKeyDown (Keys.D3) && OldKeyState.IsKeyUp (Keys.D3)) {
 					if (_correctAnswer3) {
 						CorrectOrNot(gameTime, "Yes");
+						BossLoseLife ();
 						_correctAnswer3 = false;
 					} else {
 						CorrectOrNot(gameTime, "No");
 						LoseLife ();
 					}
 					_world.PidgyHitEnemy = false;
+					_world.InitiateAttack = false;
 				}
 
-				if (_keyboard.IsKeyDown (Keys.D4)) {
+				if (NewKeyState.IsKeyDown (Keys.D4) && OldKeyState.IsKeyUp (Keys.D4)) {
 					if (_correctAnswer4) {
 						CorrectOrNot(gameTime, "Yes");
+						BossLoseLife ();
 						_correctAnswer4 = false;
 					} else {
 						CorrectOrNot(gameTime, "No");
 						LoseLife ();
 					}
 					_world.PidgyHitEnemy = false;
+					_world.InitiateAttack = false;
 				}
+
+				OldKeyState = NewKeyState;
 			}
 
 			if (gameTime.TotalGameTime >= Assets.IntervalFromQuestion) {
@@ -113,14 +155,21 @@ namespace PigeonGame
 				
 			//Console.WriteLine ("CORRECT ANSWER BOOLEAN " + _CorrectAnswer);
 			//Console.WriteLine ("WRONG ANSWER BOOLEAN " + _WrongAnswer);
-			Console.WriteLine ("LevelState = " + _world.LevelState);
-			Console.WriteLine ("TotalLife = " + _world.TotalLife);
+			//Console.WriteLine ("LevelState = " + _world.LevelState);
+			//Console.WriteLine ("TotalLife = " + _world.TotalLife);
 		}
 
 		public void LoseLife()
 		{
 			if (_world.LevelState != 1) {
 				_world.TotalLife--;
+			}
+		}
+
+		public void BossLoseLife()
+		{
+			if (_world.LevelState == 5) {
+				_world.BossTotalLife--;
 			}
 		}
 
@@ -135,7 +184,7 @@ namespace PigeonGame
 				break;
 			}
 
-			Assets.IntervalFromQuestion = gameTime.TotalGameTime + TimeSpan.FromMilliseconds (2000);
+			Assets.IntervalFromQuestion = gameTime.TotalGameTime + TimeSpan.FromMilliseconds (1000);
 			Assets.QuestionGivenWaiting = true;
 		}
 
@@ -315,6 +364,89 @@ namespace PigeonGame
 				spriteBatch.DrawString (_font, "3. Omdat zij dan de volgende dag vrij van school hebben", new Vector2 (50, 510), Color.White);
 				spriteBatch.DrawString (_font, "4. Omdat Kraaltje en Knoopje hun moeder missen", new Vector2 (50, 540), Color.White);
 				Console.WriteLine ("VRAAG 10");
+				break;
+			}
+
+			// BOSS LEVEL
+			switch (Assets.BossGenerateNumber) {
+			case 1:
+				spriteBatch.DrawString (_font, 
+					"Kraaltje en Knoopje zitten allebei op vliegles. Tijdens vliegles \n" +
+					"leren zij hoe zij moeten vliegen als het hard waait, maar ook \n" +
+					"hoe zij vanuit de lucht voedsel moeten zoeken. De vlieglesleraar \n" +
+					"leert hun hoe zij dan moeten duiken.", new Vector2 (50, 50), Color.White);
+
+				spriteBatch.DrawString (_font, "Wat leren Kraaltje en Knoopje tijdens vliegles?", new Vector2 (50, 400), Color.White);
+
+				spriteBatch.DrawString (_font, "1. Hoe zij moeten duiken", new Vector2 (50, 450), Color.White);
+				spriteBatch.DrawString (_font, "2. Hoe zij vanuit de lucht voedsel moeten zoeken", new Vector2 (50, 480), Color.White);
+				spriteBatch.DrawString (_font, "3. Vliegles", new Vector2 (50, 510), Color.White);
+				spriteBatch.DrawString (_font, "4. Hoe zij moeten duiken als zij vanuit de lucht voedsel hebben gezocht.", new Vector2 (50, 540), Color.White);
+				Console.WriteLine ("BOSS VRAAG 1");
+				break;
+			case 2:
+				spriteBatch.DrawString (_font, 
+					"Tijdens een vakantie naar Egypte waren Pidgey en Pareltje Knoopje \n" +
+					"kwijt geraakt. Na een aantal rondje te hebben gevlogen op de plek \n" +
+					"zij elkaar voor het laatst hadden gezien vonden zij elkaar weer. \n" +
+					"Voortaan moest Knoopje altijd voor de anderen vliegen zodat zijn \n" +
+					"ouders een oogje in het zeil konden houden.", new Vector2 (50, 50), Color.White);
+
+				spriteBatch.DrawString (_font, "Wie waren Pidgey en Pareltje kwijt geraakt tijdens een vakantie in Egypte?", new Vector2 (50, 400), Color.White);
+
+				spriteBatch.DrawString (_font, "1. Knoopje", new Vector2 (50, 450), Color.White);
+				spriteBatch.DrawString (_font, "2. Kraaltje", new Vector2 (50, 480), Color.White);
+				spriteBatch.DrawString (_font, "3. De reisgids", new Vector2 (50, 510), Color.White);
+				spriteBatch.DrawString (_font, "4. Pareltje", new Vector2 (50, 540), Color.White);
+				Console.WriteLine ("BOSS VRAAG 2");
+				break;
+			case 3:
+				spriteBatch.DrawString (_font, 
+					"De duivenfamilie heeft al jaren last van vossen die wel een \n" +
+					"vogeltje lusten. Daarom heeft Pidgey zijn nest hoog in een \n" +
+					"boom gebouw. De vossen kunnen erg gemeen zijn en het nest je \n" +
+					"raken met steentjes die zij gooien. Doordat de nest hoog in \n" +
+					"de boom zit kan de nest nooit geraakt worden.", new Vector2 (50, 50), Color.White);
+
+				spriteBatch.DrawString (_font, "Waarom kunnen de vossen de nest van Pidgey nooit raken?", new Vector2 (50, 400), Color.White);
+
+				spriteBatch.DrawString (_font, "1. Omdat deze hoog in de boom zit", new Vector2 (50, 450), Color.White);
+				spriteBatch.DrawString (_font, "2. Omdat de vossen erg gemeen zijn", new Vector2 (50, 480), Color.White);
+				spriteBatch.DrawString (_font, "3. Omdat de duivenfamilie last heeft van vossen", new Vector2 (50, 510), Color.White);
+				spriteBatch.DrawString (_font, "4. Omdat de vossen niet goed kunnen gooien", new Vector2 (50, 540), Color.White);
+				Console.WriteLine ("BOSS VRAAG 3");
+				break;
+			case 4:
+				spriteBatch.DrawString (_font, 
+					"Oom Pidg is de broer van Pidgey. Pidg komt een aantal keer per \n" +
+					"jaar op bezoek. Kraaltje en Knoopje kunnen niet wachten op de \n" +
+					"Kerst is, want dan komt oom Pidg op bezoek. Oom Pidg is namelijk \n" +
+					"een piraat die elke dag een avonduur meemaakt. Kraaltje en Knoopje \n" +
+					"zijn dol op Pidg's verhalen die gaan over het leven op zee.", new Vector2 (50, 50), Color.White);
+
+				spriteBatch.DrawString (_font, "Waarom kunnen Kraaltje en Knoopje niet wachten op de Kerst?", new Vector2 (50, 400), Color.White);
+
+				spriteBatch.DrawString (_font, "1. Omdat oom Pidg een piraat is", new Vector2 (50, 450), Color.White);
+				spriteBatch.DrawString (_font, "2. Omdat oom Pidg maar een aantal keer per jaar op bezoek komt", new Vector2 (50, 480), Color.White);
+				spriteBatch.DrawString (_font, "3. Omdat oom Pidg elke dag een avonduur meemaakt", new Vector2 (50, 510), Color.White);
+				spriteBatch.DrawString (_font, "4. Omdat Kraaltje en Knoopje dol zijn op verhalen van oom Pidg", new Vector2 (50, 540), Color.White);
+				Console.WriteLine ("BOSS VRAAG 4");
+				break;
+			case 5:
+				spriteBatch.DrawString (_font, 
+					"Kraaltje en Knoopje kunnen moeilijk slapen, omdat zij morgen op \n" +
+					"schooleis gaan. Daarom heeft Pareltje een kommetje beddensoep \n" +
+					"klaargezet. Beddensoep helpt tegen altijd tegen slapeloosheid. \n" +
+					"Kraaltje en Knoopje hopen dat hierdoor de zenuwen wegtrekken en \n" +
+					"zij weer verder kunnen slapen.", new Vector2 (50, 50), Color.White);
+
+				spriteBatch.DrawString (_font, "Waarom heeft Pareltje een kommetje beddensoep klaar gezet?", new Vector2 (50, 400), Color.White);
+
+				spriteBatch.DrawString (_font, "1. Omdat beddensoep helpt tegen slapeloosheid", new Vector2 (50, 450), Color.White);
+				spriteBatch.DrawString (_font, "2. Omdat hierdoor de zenuwen wegtrekken", new Vector2 (50, 480), Color.White);
+				spriteBatch.DrawString (_font, "3. Omdat Kraaltje en Knoopje moeilijk kunnen slapen", new Vector2 (50, 510), Color.White);
+				spriteBatch.DrawString (_font, "4. Omdat Kraaltje en Knoopje morgen op schoolreis gaan", new Vector2 (50, 540), Color.White);
+				Console.WriteLine ("BOSS VRAAG 5");
 				break;
 			}
 		}

@@ -47,7 +47,7 @@ namespace PigeonGame
 
 		protected override void Update (GameTime gameTime)
 		{
-			if (_world.TotalLife == 0) {
+			if (_world.TotalLife == 0 || _world.BossTotalLife == 0) {
 				_keyboard = Keyboard.GetState ();
 
 				if(_keyboard.IsKeyDown(Keys.Q)) {
@@ -64,10 +64,13 @@ namespace PigeonGame
 		{
 			graphics.GraphicsDevice.Clear (Color.Black);
 			spriteBatch.Begin ();
+
 			if (_world.TotalLife == 0) {
-				spriteBatch.Draw(Assets.GameOverScreen, new Vector2(0,0), Color.White);
+				spriteBatch.Draw (Assets.GameOverScreen, new Vector2 (0, 0), Color.White);
 				spriteBatch.DrawString (Assets.Font, "Druk op Q om het spel te sluiten.", new Vector2 (325, 400), Color.White);
-			} else {
+			} else if(_world.BossTotalLife == 0) {
+				// PUT THE FKING FINISH HERE
+			}else {
 				_world.Draw (spriteBatch);
 			}
 			spriteBatch.End ();
