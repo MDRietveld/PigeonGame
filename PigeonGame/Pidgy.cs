@@ -11,6 +11,7 @@ namespace PigeonGame
 		Vector2 _gravity;
 		Vector2 _fly;
 		KeyboardState _keyboard;
+//		public Rectangle rectangle;
 
 		float _elapsed;
 		float _delay = 100;
@@ -22,6 +23,8 @@ namespace PigeonGame
 		float _flying = 0;
 		float _regen = 0;
 		bool _flyup = true;
+
+//		public Color[] textureData;
 
 		// PROPERTIES
 		public Vector2 GetPosition ()
@@ -41,6 +44,9 @@ namespace PigeonGame
 			_rij = 2;
 			_sourceRectangle = new Rectangle (size *0, size* _rij, size, size);
 
+//			textureData = new Color[_texture.Width * _texture.Height];
+//			_texture.GetData (textureData); 
+
 		}
 
 		public Rectangle PigeonPosition()
@@ -54,6 +60,7 @@ namespace PigeonGame
 
 		public void Update (GameTime gameTime)
 		{
+
 			if (Assets.LevelComplete) {
 				ResetPosition ();
 			}
@@ -139,6 +146,9 @@ namespace PigeonGame
 			} else {
 				_fly = new Vector2 (0, 1.5f);
 			}
+
+//			rectangle = new Rectangle (size * _frames, size * _rij, _texture.Width/12/5, _texture.Height/4/5);
+
 				
 
 

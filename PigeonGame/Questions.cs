@@ -109,8 +109,8 @@ namespace PigeonGame
 				Assets.QuestionGivenWaiting = false;
 			}
 
-			Console.WriteLine ("LevelState = " + _world.LevelState);
-			Console.WriteLine ("TotalLife = " + _world.TotalLife);
+//			Console.WriteLine ("LevelState = " + _world.LevelState);
+//			Console.WriteLine ("TotalLife = " + _world.TotalLife);
 		}
 
 		public void LoseLife()
