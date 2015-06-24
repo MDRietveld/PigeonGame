@@ -126,11 +126,11 @@ namespace PigeonGame
 				_regen = 0;
 
 			}
-			if (_flying >= 2000f) {
-				_flyup = false;
-			} else {
-				_flyup = true;
-			}
+//			if (_flying >= 2000f) {
+//				_flyup = false;
+//			} else {
+//				_flyup = true;
+//			}
 
 			if (_world.StartBossLevel) {
 				// BOSS LEVEL INITIATED SO YOU CAN'T MOVE ANYMORE.
