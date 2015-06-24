@@ -59,13 +59,18 @@ namespace PigeonGame
 			_position = new Vector2 (_game.GraphicsDevice.Viewport.Width/8, 500);
 		}
 
+		public void BossLevelPosition() {	
+			_position = new Vector2 (_game.GraphicsDevice.Viewport.Width/8, 265);
+		}
+
 		public void Update (GameTime gameTime)
 		{
 
 			if (Assets.LevelComplete) {
 				ResetPosition ();
+			} else if (_world.StartBossLevel) {
+				BossLevelPosition ();
 			}
-
 
 			int size = _texture.Width/12;
 
@@ -127,85 +132,86 @@ namespace PigeonGame
 				_flyup = true;
 			}
 
-			if (_keyboard.IsKeyDown (Keys.Up) && _flyup) {
-				_flying += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-				_fly.Y *= 1.05f;
-				if (_fly.Y > 6) 
-				{
-					_fly.Y = 6;
-				}
-				_position.Y -= _fly.Y;
-				_sourceRectangle = new Rectangle (size * _frames, size* _rij, size, size);
-
-
-				if (_flying <= 0) 
-				{
-					_flying = 0;
-				}
-
-
+			if (_world.StartBossLevel) {
+				// BOSS LEVEL INITIATED SO YOU CAN'T MOVE ANYMORE.
+				// PIDGY TOO SCARED TO MOVE.
 			} else {
-				_fly = new Vector2 (0, 1.5f);
-			}
+				if (_keyboard.IsKeyDown (Keys.Up) && _flyup) {
+					_flying += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+					_fly.Y *= 1.05f;
+					if (_fly.Y > 6) {
+						_fly.Y = 6;
+					}
+					_position.Y -= _fly.Y;
+					_sourceRectangle = new Rectangle (size * _frames, size * _rij, size, size);
 
+
+					if (_flying <= 0) {
+						_flying = 0;
+					}
+
+
+<<<<<<< HEAD
 //			rectangle = new Rectangle (size * _frames, size * _rij, _texture.Width/12, _texture.Height/4);
 //			rectangle = new Rectangle (size * _frames, size * _rij, size, size);
 //			collisionRect = new Rectangle (rectangle.X, rectangle.Y, rectangle.Width, rectangle.Height);
 //			collisionRect.X += (int)_position.X;
 //			collisionRect.Y += (int)_position.Y;
 
+=======
+				} else {
+					_fly = new Vector2 (0, 1.5f);
+				}
+//			rectangle = new Rectangle (size * _frames, size * _rij, _texture.Width/12/5, _texture.Height/4/5);
+>>>>>>> origin/master
 
 				
 
 
-			if (_keyboard.IsKeyDown (Keys.Right))
-			{
-				_sourceRectangle = new Rectangle (size * _frames, size * _rij, size, size);
+				if (_keyboard.IsKeyDown (Keys.Right)) {
+					_sourceRectangle = new Rectangle (size * _frames, size * _rij, size, size);
 
-				//_position += new Vector2 (3, 0);
-				_position += new Vector2 (3, 0);
+					//_position += new Vector2 (3, 0);
+					_position += new Vector2 (3, 0);
 
-				if (_position.Y > 499) {
-					_rij = 2;
+					if (_position.Y > 499) {
+						_rij = 2;
 
-				} else {
+					} else {
+						_rij = 0;
+						//					_sourceRectangle = new Rectangle (size * _frames, size* _rij, size, size);
+					}
+
+				}
+
+				if (_keyboard.IsKeyDown (Keys.Left)) {
+					_position -= new Vector2 (3, 0);
+					_sourceRectangle = new Rectangle (size * _frames, size * _rij, size, size);
+
+
+					if (_position.Y > 499) {
+						_rij = 3;
+						//					_sourceRectangle = new Rectangle (size * _frames, size * _rij, size, size);
+
+					} else {
+						_rij = 1;
+						//					_sourceRectangle = new Rectangle (size * _frames, size* _rij, size, size);
+					}
+
+
+				}
+
+
+
+				if (_position.Y < 0) {
+					_fly = new Vector2 (0, 0);
+				}
+
+				if (_position.Y < 500 && _rij == 2) {
 					_rij = 0;
-					//					_sourceRectangle = new Rectangle (size * _frames, size* _rij, size, size);
-				}
-
-			}
-
-			if (_keyboard.IsKeyDown (Keys.Left))
-			{
-				_position -= new Vector2 (3, 0);
-				_sourceRectangle = new Rectangle (size * _frames, size * _rij, size, size);
-
-
-				if (_position.Y > 499) {
-					_rij = 3;
-					//					_sourceRectangle = new Rectangle (size * _frames, size * _rij, size, size);
-
-				} else {
+				} else if (_position.Y < 500 && _rij == 3) {
 					_rij = 1;
-					//					_sourceRectangle = new Rectangle (size * _frames, size* _rij, size, size);
 				}
-
-
-			}
-
-
-
-			if (_position.Y < 0) 
-			{
-				_fly = new Vector2 (0, 0);
-			}
-
-			if (_position.Y < 500 && _rij == 2) 
-			{
-				_rij = 0;
-			} else if (_position.Y < 500 && _rij == 3){
-				_rij = 1;
-			}
 
 //			if (_position.Y == 500 && _rij == 0) {
 //				_rij = 2;
@@ -213,14 +219,13 @@ namespace PigeonGame
 //				_rij = 3;
 //			}
 
-			if (_position.X > _game.GraphicsDevice.Viewport.Width /2 + 1) 
-			{
-				_position.X = _game.GraphicsDevice.Viewport.Width /2 + 1;
-			}
+				if (_position.X > _game.GraphicsDevice.Viewport.Width / 2 + 1) {
+					_position.X = _game.GraphicsDevice.Viewport.Width / 2 + 1;
+				}
 
-			if (_position.X < _game.GraphicsDevice.Viewport.Width /8) 
-			{
-				_position.X = _game.GraphicsDevice.Viewport.Width /8;
+				if (_position.X < _game.GraphicsDevice.Viewport.Width / 8) {
+					_position.X = _game.GraphicsDevice.Viewport.Width / 8;
+				}
 			}
 
 

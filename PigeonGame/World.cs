@@ -22,7 +22,7 @@ namespace PigeonGame
 		GameTime _gameTime;
 
 		Game1 _game;
-		KeyboardState _keyboard;
+		KeyboardState _keyboard, OldKeyState;
 		Menu _menu;
 		bool _menuCheck;
 		FontRenderer _fontRenderer;
@@ -30,8 +30,11 @@ namespace PigeonGame
 
 
 		//List<Lives> _lives = new List <Lives>();
-		private Lives _lives1, _lives2, _lives3;
+		private Lives _lives1, _lives2, _lives3,
+					  _bossLives1, _bossLives2, _bossLives3, _bossLives4, _bossLives5;
 		public int TotalLife = 3;
+		public int BossTotalLife = 5;
+
 		public bool	RemoveLife = false;
 
 		public Level level;
@@ -41,6 +44,9 @@ namespace PigeonGame
 
 		public bool paused = false;
 		public bool PidgyHitEnemy = false;
+		public bool StartBossLevel = false;
+		public bool InitiateAttack = false;
+
 		public Score MyScore;
 
 		public World (Game1 g)
@@ -54,9 +60,17 @@ namespace PigeonGame
 			_flag = new Flag (_game, this, new Vector2 (6400, 528));
 			level = new Level (_game, this);
 			_menu = new Menu (_game, Assets.MainScreen);
+
 			_lives1 = new Lives (this, new Vector2(25, 25));
 			_lives2 = new Lives (this, new Vector2(75, 25));
 			_lives3 = new Lives (this, new Vector2(125, 25));
+
+			_bossLives1 = new Lives (this, new Vector2(775, 65));
+			_bossLives2 = new Lives (this, new Vector2(820, 65));
+			_bossLives3 = new Lives (this, new Vector2(865, 65));
+			_bossLives4 = new Lives (this, new Vector2(910, 65));
+			_bossLives5 = new Lives (this, new Vector2(955, 65));
+
 			MyScore = new Score (_game);
 
 			/**
@@ -127,6 +141,36 @@ namespace PigeonGame
 				}	
 			}
 
+			// LET THE BOSS MATCH BEGIN
+			if (LevelState == 5) {
+				
+				StartBossLevel = true;
+				/*
+				if (_keyboard.IsKeyDown (Keys.A)) {
+				
+				}
+
+				if (InitiateAttack) {
+
+
+				}
+				*/
+
+				KeyboardState NewKeyState = Keyboard.GetState();
+
+				if (InitiateAttack) {
+					// IF IN ATTACK MODE, DISABLE THE ATTACK KEY
+				}else{
+					if (NewKeyState.IsKeyDown (Keys.A) && OldKeyState.IsKeyUp (Keys.A)) {
+						Console.WriteLine ("ATTACK THIS DRAGON");	
+						Assets.BossGenerateNumber = Assets.Random.Next (1, 5);
+						InitiateAttack = true;
+					}
+				}
+					
+				OldKeyState = NewKeyState;
+			}
+
 			if (paused || PidgyHitEnemy || Assets.QuestionGivenWaiting) {
 				switch (LevelState) {
 				case 1:
@@ -184,7 +228,7 @@ namespace PigeonGame
 				if (_keyboard.IsKeyDown (Keys.Space)) {
 					_menuCheck = true;
 					Assets.LevelIntro = true;
-					this.LevelState = 4;
+					this.LevelState = 2;
 				} else {
 					_menu.Draw (spriteBatch);
 				}
@@ -204,26 +248,57 @@ namespace PigeonGame
 						
 					// PidgyHitEnemy = false
 					if (!PidgyHitEnemy) {
-							level.Draw (spriteBatch);
+						level.Draw (spriteBatch);
 
-							if (!Assets.LevelIntro) {
-								_pidgy.Draw (spriteBatch);
-								_flag.Draw (spriteBatch);
-								MyScore.Draw (spriteBatch);
+						if (!Assets.LevelIntro) {
+							_pidgy.Draw (spriteBatch);
+							_flag.Draw (spriteBatch);
+							MyScore.Draw (spriteBatch);
 
-								switch (TotalLife) {
+							switch (TotalLife) {
+							case 1:
+								_lives1.Draw (spriteBatch);
+								break;
+							case 2:
+								_lives1.Draw (spriteBatch);
+								_lives2.Draw (spriteBatch);
+								break;
+							case 3:
+								_lives1.Draw (spriteBatch);
+								_lives2.Draw (spriteBatch);
+								_lives3.Draw (spriteBatch);
+								break;
+							}
+
+							if (StartBossLevel) {
+								spriteBatch.DrawString (Assets.Font, "Draak Levens :", new Vector2 (600, 70), Color.Orange);
+								switch (BossTotalLife){
 								case 1:
-									_lives1.Draw (spriteBatch);
+									_bossLives1.Draw (spriteBatch);
 									break;
 								case 2:
-									_lives1.Draw (spriteBatch);
-									_lives2.Draw (spriteBatch);
+									_bossLives1.Draw (spriteBatch);
+									_bossLives2.Draw (spriteBatch);
 									break;
 								case 3:
-									_lives1.Draw (spriteBatch);
-									_lives2.Draw (spriteBatch);
-									_lives3.Draw (spriteBatch);
+									_bossLives1.Draw (spriteBatch);
+									_bossLives2.Draw (spriteBatch);
+									_bossLives3.Draw (spriteBatch);
 									break;
+								case 4:
+									_bossLives1.Draw (spriteBatch);
+									_bossLives2.Draw (spriteBatch);
+									_bossLives3.Draw (spriteBatch);
+									_bossLives4.Draw (spriteBatch);
+									break;
+								case 5:
+									_bossLives1.Draw (spriteBatch);
+									_bossLives2.Draw (spriteBatch);
+									_bossLives3.Draw (spriteBatch);
+									_bossLives4.Draw (spriteBatch);
+									_bossLives5.Draw (spriteBatch);
+									break;
+								}
 							}
 						}
 					}
@@ -240,6 +315,8 @@ namespace PigeonGame
 					//Console.WriteLine ("PIDGY HIT ENEMY");
 					_questions.Draw (spriteBatch);
 				} else if (Assets.QuestionGivenWaiting) {
+					_questions.Draw (spriteBatch);
+				} else if (InitiateAttack) {
 					_questions.Draw (spriteBatch);
 				}
 			}
