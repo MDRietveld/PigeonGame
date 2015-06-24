@@ -158,13 +158,10 @@ namespace PigeonGame
 				
 			//Console.WriteLine ("CORRECT ANSWER BOOLEAN " + _CorrectAnswer);
 			//Console.WriteLine ("WRONG ANSWER BOOLEAN " + _WrongAnswer);
-<<<<<<< HEAD
 //			Console.WriteLine ("LevelState = " + _world.LevelState);
 //			Console.WriteLine ("TotalLife = " + _world.TotalLife);
-=======
 			//Console.WriteLine ("LevelState = " + _world.LevelState);
 			//Console.WriteLine ("TotalLife = " + _world.TotalLife);
->>>>>>> origin/master
 		}
 
 		public void LoseLife()
