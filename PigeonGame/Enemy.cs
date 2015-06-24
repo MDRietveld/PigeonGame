@@ -113,11 +113,14 @@ namespace PigeonGame
 				break;
 			case "Kangeroo":
 				_textureFrames = 1;
-
 				break;
 			}
 
+<<<<<<< HEAD
 //			_sourceRectangle = new Rectangle (size_hor * _frames, size_ver * _rij, size_hor, size_ver);
+=======
+			//_sourceRectangle = new Rectangle (size_hor * _frames, size_ver * _rij, size_hor, size_ver);
+>>>>>>> origin/master
 
 //			rectangle = new Rectangle (size_hor * _frames, size_ver * _rij, _texture.Width/_textureFrames/5, _texture.Height/2/5);
 //
