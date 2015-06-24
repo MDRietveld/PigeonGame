@@ -20,6 +20,7 @@ namespace PigeonGame
 
 		public void Update(GameTime gameTime){
 			_score += 15;
+			Assets.Score += 15;
 		}
 
 		public void Draw(SpriteBatch spriteBatch){

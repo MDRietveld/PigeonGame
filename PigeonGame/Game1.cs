@@ -69,7 +69,8 @@ namespace PigeonGame
 				spriteBatch.Draw (Assets.GameOverScreen, new Vector2 (0, 0), Color.White);
 				spriteBatch.DrawString (Assets.Font, "Druk op Q om het spel te sluiten.", new Vector2 (325, 400), Color.White);
 			} else if(_world.BossTotalLife == 0) {
-				// PUT THE FKING FINISH HERE
+				spriteBatch.Draw (Assets.FinalScreen, new Vector2 (0, 0), Color.White);
+				spriteBatch.DrawString (Assets.Font, "Jou score : " + Assets.Score.ToString(), new Vector2 (380, 160), Color.Black);
 			}else {
 				_world.Draw (spriteBatch);
 			}

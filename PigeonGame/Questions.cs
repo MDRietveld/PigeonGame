@@ -96,7 +96,6 @@ namespace PigeonGame
 					if (_correctAnswer1) {						
 						CorrectOrNot(gameTime, "Yes");
 						BossLoseLife ();
-						_correctAnswer1 = false;
 					} else {
 						CorrectOrNot(gameTime, "No");
 						LoseLife ();
@@ -109,7 +108,6 @@ namespace PigeonGame
 					if (_correctAnswer2) {
 						CorrectOrNot(gameTime, "Yes");
 						BossLoseLife ();
-						_correctAnswer2 = false;
 					} else {
 						CorrectOrNot(gameTime, "No");
 						LoseLife ();
@@ -122,7 +120,6 @@ namespace PigeonGame
 					if (_correctAnswer3) {
 						CorrectOrNot(gameTime, "Yes");
 						BossLoseLife ();
-						_correctAnswer3 = false;
 					} else {
 						CorrectOrNot(gameTime, "No");
 						LoseLife ();
@@ -135,7 +132,6 @@ namespace PigeonGame
 					if (_correctAnswer4) {
 						CorrectOrNot(gameTime, "Yes");
 						BossLoseLife ();
-						_correctAnswer4 = false;
 					} else {
 						CorrectOrNot(gameTime, "No");
 						LoseLife ();
@@ -151,13 +147,21 @@ namespace PigeonGame
 				Assets.QuestionGivenWaiting = false;
 				_CorrectAnswer = false;
 				_WrongAnswer = false;
+				_correctAnswer1 = false;
+				_correctAnswer2 = false;
+				_correctAnswer3 = false;
+				_correctAnswer4 = false;
 			}
-
-//			Console.WriteLine ("LevelState = " + _world.LevelState);
-//			Console.WriteLine ("TotalLife = " + _world.TotalLife);
 				
-			//Console.WriteLine ("CORRECT ANSWER BOOLEAN " + _CorrectAnswer);
-			//Console.WriteLine ("WRONG ANSWER BOOLEAN " + _WrongAnswer);
+			/*
+			Console.WriteLine ("CORRECT ANSWER BOOLEAN " + _CorrectAnswer);
+			Console.WriteLine ("WRONG ANSWER BOOLEAN " + _WrongAnswer);
+			Console.WriteLine ("ANSWER A " + _correctAnswer1);
+			Console.WriteLine ("ANSWER B " + _correctAnswer2);
+			Console.WriteLine ("ANSWER C " + _correctAnswer3);
+			Console.WriteLine ("ANSWER D " + _correctAnswer4);
+			*/
+
 			//Console.WriteLine ("LevelState = " + _world.LevelState);
 			//Console.WriteLine ("TotalLife = " + _world.TotalLife);
 		}

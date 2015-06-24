@@ -143,18 +143,8 @@ namespace PigeonGame
 
 			// LET THE BOSS MATCH BEGIN
 			if (LevelState == 5) {
-				
+				Assets.GenerateNumber = 0;
 				StartBossLevel = true;
-				/*
-				if (_keyboard.IsKeyDown (Keys.A)) {
-				
-				}
-
-				if (InitiateAttack) {
-
-
-				}
-				*/
 
 				KeyboardState NewKeyState = Keyboard.GetState();
 
@@ -228,7 +218,7 @@ namespace PigeonGame
 				if (_keyboard.IsKeyDown (Keys.Space)) {
 					_menuCheck = true;
 					Assets.LevelIntro = true;
-					this.LevelState = 2;
+					this.LevelState = 1;
 				} else {
 					_menu.Draw (spriteBatch);
 				}

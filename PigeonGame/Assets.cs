@@ -12,7 +12,7 @@ namespace PigeonGame
 	{
 		public static Texture2D 	MainScreen, PauseScreen, FontTexture, 
 									NestTexture, PigeonTexture, EagleTexture, FoxTexture, GorillaTexture, KangerooTexture, BossTexture,
-									Heart, Flag, FoodTexture, QuestionScreen, GameOverScreen,
+									Heart, Flag, FoodTexture, QuestionScreen, GameOverScreen, FinalScreen,
 									Level1Intro, Level1Map, Level2Intro, Level2Map, Level3Intro, Level3Map, Level4Intro, Level4Map, Level5Intro, Level5Map;
 
 		public static SoundEffect	Level1Song, Level2Song, Level3Song, Level4Song, Level5Song;
@@ -23,7 +23,7 @@ namespace PigeonGame
 		public static TimeSpan 		IntervalNewLevel, IntervalFromQuestion;
 		public static SpriteFont 	Font;
 		public static Random Random = new Random ();
-		public static int GenerateNumber, BossGenerateNumber, GenerateTime;
+		public static int GenerateNumber, BossGenerateNumber, GenerateTime, Score;
 
 		public static void LoadContent(Game1 game){
 			Font 				= game.Content.Load<SpriteFont> ("Verdana");
@@ -31,6 +31,7 @@ namespace PigeonGame
 			MainScreen 			= game.Content.Load<Texture2D> ("Main");
 			PauseScreen 		= game.Content.Load<Texture2D> ("Pause");
 			QuestionScreen 		= game.Content.Load<Texture2D> ("Questions");
+			FinalScreen			= game.Content.Load<Texture2D> ("Ending");
 			GameOverScreen 		= game.Content.Load<Texture2D> ("GameOver");
 			FontTexture 		= game.Content.Load<Texture2D> ("minecrafter_0.png");
 
