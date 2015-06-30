@@ -28,6 +28,8 @@ namespace PigeonGame
 		FontRenderer _fontRenderer;
 		public Flag _flag;
 
+		float _delay;
+
 
 		//List<Lives> _lives = new List <Lives>();
 		private Lives _lives1, _lives2, _lives3,
@@ -114,9 +116,15 @@ namespace PigeonGame
 
 
 
-			if (!paused || !PidgyHitEnemy || !Assets.QuestionGivenWaiting) {
-				level.Update (gameTime, _pidgy);
-				_pidgy.Update (gameTime);
+			if (!paused) {
+				_delay += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+				if (_delay >= 1000) {
+					level.Update (gameTime, _pidgy);
+					_pidgy.Update (gameTime);
+				}
+
+			} else {
+				_delay = 0;
 			}
 
 			_flag.Update (gameTime, _pidgy);

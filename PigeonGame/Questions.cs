@@ -13,6 +13,8 @@ namespace PigeonGame
 		private bool _correctAnswer1, _correctAnswer2, _correctAnswer3, _correctAnswer4;
 		private bool _CorrectAnswer = false, _WrongAnswer = false;
 
+		float _delay = 0;
+
 		public Questions (World w)
 		{
 			_world = w;
@@ -193,6 +195,10 @@ namespace PigeonGame
 
 			Assets.IntervalFromQuestion = gameTime.TotalGameTime + TimeSpan.FromMilliseconds (1000);
 			Assets.QuestionGivenWaiting = true;
+			if (Assets.QuestionGivenWaiting) 
+			{
+				_world.paused = false;
+			}
 		}
 
 		public void Draw(SpriteBatch spriteBatch)

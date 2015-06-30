@@ -95,6 +95,7 @@ namespace PigeonGame
 			if(pidgy.PigeonPosition().Intersects(EnemyPosition()))
 			{
 				_world.PidgyHitEnemy = true;
+				_world.paused = true;
 				Assets.GenerateNumber = Assets.Random.Next (1, 10);
 				_position = new Vector2 (-300, -300);
 				Console.WriteLine ("Collission!");
