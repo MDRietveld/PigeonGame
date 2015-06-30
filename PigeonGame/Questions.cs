@@ -428,14 +428,14 @@ namespace PigeonGame
 					"Oom Pidg is de broer van Pidgey. Pidg komt een aantal keer per \n" +
 					"jaar op bezoek. Kraaltje en Knoopje kunnen niet wachten op de \n" +
 					"Kerst is, want dan komt oom Pidg op bezoek. Oom Pidg is namelijk \n" +
-					"een piraat die elke dag een avonduur meemaakt. Kraaltje en Knoopje \n" +
+					"een piraat die elke dag een avontuur meemaakt. Kraaltje en Knoopje \n" +
 					"zijn dol op Pidg's verhalen die gaan over het leven op zee.", new Vector2 (50, 50), Color.White);
 
 				spriteBatch.DrawString (_font, "Waarom kunnen Kraaltje en Knoopje niet wachten op de Kerst?", new Vector2 (50, 400), Color.White);
 
 				spriteBatch.DrawString (_font, "1. Omdat oom Pidg een piraat is", new Vector2 (50, 450), Color.White);
 				spriteBatch.DrawString (_font, "2. Omdat oom Pidg maar een aantal keer per jaar op bezoek komt", new Vector2 (50, 480), Color.White);
-				spriteBatch.DrawString (_font, "3. Omdat oom Pidg elke dag een avonduur meemaakt", new Vector2 (50, 510), Color.White);
+				spriteBatch.DrawString (_font, "3. Omdat oom Pidg elke dag een avontuur meemaakt", new Vector2 (50, 510), Color.White);
 				spriteBatch.DrawString (_font, "4. Omdat Kraaltje en Knoopje dol zijn op verhalen van oom Pidg", new Vector2 (50, 540), Color.White);
 				Console.WriteLine ("BOSS VRAAG 4");
 				break;

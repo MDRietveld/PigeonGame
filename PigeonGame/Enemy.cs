@@ -37,6 +37,10 @@ namespace PigeonGame
 
 //			textureData = new Color[_texture.Width * _texture.Height];
 //			_texture.GetData (textureData);
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 			if (_enemyClass == "Boss") {
 				_sourceRectangle = new Rectangle (0, 0, size_hor, size_ver);
 			} else {
@@ -45,6 +49,10 @@ namespace PigeonGame
 
 			//			textureData = new Color[_texture.Width * _texture.Height];
 			//			_texture.GetData (textureData);
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 		}
 
 		public Rectangle EnemyPosition()
