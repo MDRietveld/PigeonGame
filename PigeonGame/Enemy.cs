@@ -35,10 +35,8 @@ namespace PigeonGame
 			_rij = 1;
 			_kolom = 0;
 
-<<<<<<< Updated upstream
 //			textureData = new Color[_texture.Width * _texture.Height];
 //			_texture.GetData (textureData);
-=======
 			if (_enemyClass == "Boss") {
 				_sourceRectangle = new Rectangle (0, 0, size_hor, size_ver);
 			} else {
@@ -47,7 +45,6 @@ namespace PigeonGame
 
 			//			textureData = new Color[_texture.Width * _texture.Height];
 			//			_texture.GetData (textureData);
->>>>>>> Stashed changes
 		}
 
 		public Rectangle EnemyPosition()
@@ -120,7 +117,6 @@ namespace PigeonGame
 
 				break;
 			}
-<<<<<<< Updated upstream
 				
 			if (_enemyClass == "Boss") {
 				_sourceRectangle = new Rectangle (0, 0, size_hor, size_ver);
@@ -145,7 +141,6 @@ namespace PigeonGame
 //				//				_position = new Vector2 (-100, -100);
 //				Console.WriteLine ("Collission!");
 //			}
-=======
 
 //			_sourceRectangle = new Rectangle (size_hor * _frames, size_ver * _rij, size_hor, size_ver);
 
@@ -165,7 +160,6 @@ namespace PigeonGame
 			//				//				_position = new Vector2 (-100, -100);
 			//				Console.WriteLine ("Collission!");
 			//			}
->>>>>>> Stashed changes
 
 			if (_enemyClass == "Boss") {
 				_position.Y += _speed;
